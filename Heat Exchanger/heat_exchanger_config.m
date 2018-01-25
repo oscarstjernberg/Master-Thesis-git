@@ -29,11 +29,11 @@ m_wort=1;
 % Mass of water in heat exchanger
 m_H2O=1;
 % Steady state values for the states
-x_wort_0=30;
-x_H2O_0=60;
+x_wort_0=25;
+x_H2O_0=16;
 % Steady state values for the inputs
-u_wort_0=5;
-u_H2O_0=5;
+u_wort_0=1;
+u_H2O_0=7;
 % Reference value for the wort output temperature
 Reference = [25 0];
 % Mass flow limits for the wort
@@ -52,9 +52,9 @@ A(1,2) = U*Area/(m_wort*cp_wort);
 A(2,1) = U*Area/(m_H2O*cp_H2O);
 A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
 
-% Constructing the linearized B-Matrix
-  B = [(cp_H2O*(T_H2O_in - x_H2O_0))/(m_H2O*cp_H2O) -(cp_wort*(T_wort_in - x_wort_0))/(m_wort*cp_wort)
-     -(cp_H2O*(T_H2O_in - x_H2O_0))/(m_H2O*cp_H2O) (cp_wort*(T_wort_in - x_wort_0))/(m_wort*cp_wort)];
+ % Constructing the linearized B-Matrix
+   B = [(cp_wort*(T_wort_in - x_wort_0))/(m_wort*cp_wort) 0
+      0 (cp_H2O*(T_H2O_in - x_H2O_0))/(m_H2O*cp_H2O)];
 
  % Constructing C-matrix, we want to measure the outgoing temperature of
  % the wort
@@ -71,5 +71,5 @@ A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
  SYS=ss(A,B,C,D);
  % Calculate the LQR-gain
  [LQR_gain,S,E]= lqr(SYS,Q,R);
- 
+ % Calculating the reference gain
  Kr=inv(D-(C-D*LQR_gain)*inv(A-B*LQR_gain));
