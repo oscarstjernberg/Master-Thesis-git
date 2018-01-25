@@ -12,7 +12,7 @@ close all
 %% Variable list for transfer functions
 % heat transfer coefficient
 U=1000;
-% Hej detta är en kommentar
+% Oscar du har en fin tröja på dig idag
 % Area of plate
 Area=2;
 % Heat capacity wort
