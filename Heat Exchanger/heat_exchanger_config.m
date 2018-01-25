@@ -13,7 +13,7 @@ close all
 % heat transfer coefficient
 U=1000;
 % Area of plate
-Area=2;
+Area=20;
 % Heat capacity wort
 cp_wort=4000;
 % Heat capacity water
