@@ -9,9 +9,9 @@ clc
 clear
 close all
 
-%% Variable list for transfer functions
+%% constants list for transfer functions
 % heat transfer coefficient
-U=1000;
+U=100;
 % Area of plate
 Area=20;
 % Heat capacity wort
@@ -29,19 +29,21 @@ m_wort=1;
 % Mass of water in heat exchanger
 m_H2O=1;
 % Steady state values for the states
-x_wort_0=25;
-x_H2O_0=16;
+x_wort_0=0;
+x_H2O_0=0;
 % Steady state values for the inputs
 u_wort_0=1;
 u_H2O_0=7;
 % Reference value for the wort output temperature
-Reference = [25 0];
+Reference = [25 16];
+% Reference flow for the wort and the cooling water for steady state
+Reference_flow =[1 7];
 % Mass flow limits for the wort
 wort_up_lim=10;
 wort_low_lim=0.1;
 % Mass flow limits for the cooling water
-water_up_lim=10;
-water_low_lim=0.1;
+H2O_up_lim=100;
+H2O_low_lim=0.1;
 % Delay for heat exchanger
 HE_delay = 5;
 
@@ -64,7 +66,7 @@ A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
   
  %% LQR
  % Weight matrix for the states
- Q=diag([1 1]);
+ Q=diag([3 1]);
  % Weights matrix for the inputs
  R=diag([1 1]);
  % Create the system from the matrix
