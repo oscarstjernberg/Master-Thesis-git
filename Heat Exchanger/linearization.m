@@ -33,8 +33,8 @@ Reference_flow =[1 7];
 wort_up_lim=10;
 wort_low_lim=0.1;
 % Mass flow limits for the cooling water
-water_up_lim=10;
-water_low_lim=0.1;
+H2O_up_lim=10;
+H2O_low_lim=0.1;
 % Delay for heat exchanger
 HE_delay = 5;
 
@@ -44,8 +44,11 @@ HE_delay = 5;
 var_list=[x1 x2 u1 u2];
 var_val=[T_wort_in T_H2O_in u1_0 u2_0];
 
-x1_dot= (u1*cp_wort*(x1_0-x1)-U*Area*(x1-x2))/(m_wort*cp_wort);
-x2_dot=(u2*cp_H2O*(x2_0-x2)-U*Area*(x2-x1))/(m_H2O*cp_H2O);
+%x1_dot= (u1*cp_wort*(x1_0-x1)-U*Area*(x1-x2))/(m_wort*cp_wort);
+%x2_dot=(u2*cp_H2O*(x2_0-x2)-U*Area*(x2-x1))/(m_H2O*cp_H2O);
+
+x1_dot = 2/m_wort*(u1*(T_wort_in - x1) + U*Area*log(x1-x2)/cp_wort);
+x2_dot = 2/m_H2O*(u2*(T_H2O_in - x2) - U*Area*log(x2-x1)/cp_H2O);
 
 df1dx1=diff(x1_dot,x1);
 df2dx1=diff(x2_dot,x1);
