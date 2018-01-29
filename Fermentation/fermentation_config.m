@@ -17,10 +17,13 @@ close all
 i = 2;
 T(i) = [4, 8, 12, 16]';
 % Glucose concentration, mol/m^3
+G_0 = 70;
 %G = 
 % Maltose concentration, mol/m^3
+M_0 = 40;
 %M = 
 % Maltotriose concentration, mol/m^3
+N_0 = 230;
 %N = 
 % Biomass concentration, mol/m^3
 %X = 
@@ -30,7 +33,7 @@ T(i) = [4, 8, 12, 16]';
 %my_3 = 
 % maximum reaction velocity for ith sugar (G, M, N), h^-1
 V_G(i) = [0.0048, 0.013, 0.015, 0.0302]';
-V_M(i = [0.0144, 0.0268, 0.028, 0.0364]';
+V_M(i) = [0.0144, 0.0268, 0.028, 0.0364]';
 V_N(i) = [0.087, 0.113, 0.13, 0.151]';
 % Michaelis constant for ith sugar  (G, M, N), mol/m^3
 K_G(i) = [23.5, 4.7, 1.8, 0.102]';
@@ -39,6 +42,14 @@ K_N(i) = [10900, 7160, 4460, 2410]';
 % inhibition constant for ith sugar (G, M)
 Ki_G(i) = [123, 182, 240, 262]';
 Ki_M(i) = [2090, 6360, 8010, 17500]';
+% Reaction parameters
+R_EG = 1.92;
+R_EM = 3.84;
+R_EN = 5.76;
+R_XG = 0.134;
+R_XM = 0.268;
+R_XN = 0.402;
+
 
 
 
