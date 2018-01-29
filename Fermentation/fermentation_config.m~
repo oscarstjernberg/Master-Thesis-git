@@ -14,20 +14,19 @@ close all
 
 %% constants list for transfer functions
 % Fermentation temperature 4, 8 ,12, 16 [C]
-i = 2;
-T(i) = [4, 8, 12, 16]';
+T = 8;
 % Glucose concentration, mol/m^3
-%G = 
+G = 
 % Maltose concentration, mol/m^3
-%M = 
+M = 
 % Maltotriose concentration, mol/m^3
-%N = 
+N = 
 % Biomass concentration, mol/m^3
-%X = 
+X = 
 % Specific rate of sugar uptake, h^-1
-%my_1 = 
-%my_2 = 
-%my_3 = 
+my_1 = 
+my_2 = 
+my_3 = 
 % maximum reaction velocity for ith sugar (G, M, N), h^-1
 V_G(i) = [0.0048, 0.013, 0.015, 0.0302]';
 V_M(i = [0.0144, 0.0268, 0.028, 0.0364]';
