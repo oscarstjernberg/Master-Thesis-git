@@ -50,6 +50,8 @@ R_EN = 5.76;
 R_XG = 0.134;
 R_XM = 0.268;
 R_XN = 0.402;
+% Initial ethanol
+E_0 = 0;
 
 
 
