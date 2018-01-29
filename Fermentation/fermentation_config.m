@@ -52,9 +52,33 @@ R_XM = 0.268;
 R_XN = 0.402;
 % Initial ethanol
 E_0 = 0;
+% Gas constant
+R = 1.987 % cal/mol*K
 
 
+% Arrhenius parameters
+% activation energy
+E_VG = 22.6;
+E_VM = 11.3;
+E_VN = 7.16;
 
+E_KG = -68.6;
+E_KM = -14.4;
+E_KN = -19.9;
 
+Ei_KG = 10.2;
+Ei_KM = 26.3
+% Frequency factor at 8C
+V_G0 = 0.013;
+V_M0 = 0.0268;
+V_N0 = 0.113;
 
+% requency factor for Michaelis constant at 8C
+k_G0 = 4.7;
+k_M0 = 814;
+k_N0 = 7160;
+
+% requency factor for inhibition constant
+ki_G0 = 182;
+ki_M0 = 6360;
 

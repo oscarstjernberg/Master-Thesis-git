@@ -15,7 +15,7 @@ close all
 %% constants list for transfer functions
 % Fermentation temperature 4, 8 ,12, 16 [C]
 i = 2;
-T(i) = [4, 8, 12, 16]';
+T = [4, 8, 12, 16]';
 % Glucose concentration, mol/m^3
 G_0 = 70;
 %G = 
@@ -26,31 +26,53 @@ M_0 = 40;
 N_0 = 230;
 %N = 
 % Biomass concentration, mol/m^3
+X_0 = 200; % initial biomass
 %X = 
 % Specific rate of sugar uptake, h^-1
 %my_1 = 
 %my_2 = 
 %my_3 = 
 % maximum reaction velocity for ith sugar (G, M, N), h^-1
-V_G(i) = [0.0048, 0.013, 0.015, 0.0302]';
-V_M(i) = [0.0144, 0.0268, 0.028, 0.0364]';
-V_N(i) = [0.087, 0.113, 0.13, 0.151]';
+V_G = [0.0048, 0.013, 0.015, 0.0302]';
+V_M = [0.0144, 0.0268, 0.028, 0.0364]';
+V_N = [0.087, 0.113, 0.13, 0.151]';
 % Michaelis constant for ith sugar  (G, M, N), mol/m^3
-K_G(i) = [23.5, 4.7, 1.8, 0.102]';
-K_M(i) = [1100, 814, 610, 360]';
-K_N(i) = [10900, 7160, 4460, 2410]';
+K_G = [23.5, 4.7, 1.8, 0.102]';
+K_M = [1100, 814, 610, 360]';
+K_N = [10900, 7160, 4460, 2410]';
 % inhibition constant for ith sugar (G, M)
-Ki_G(i) = [123, 182, 240, 262]';
-Ki_M(i) = [2090, 6360, 8010, 17500]';
+Ki_G = [123, 182, 240, 262]';
+Ki_M = [2090, 6360, 8010, 17500]';
 % Reaction parameters
 R_EG = 1.92;
 R_EM = 3.84;
 R_EN = 5.76;
 R_XG = 0.134;
-R_XM = 
+R_XM = 0.268;
+R_XN = 0.402;
+% Initial ethanol
+E_0 = 0;
+% Gas constant
+R = 1.987 % cal/mol*K
 
 
+% Arrhenius parameters
+% activation energy
+E_VG = 
+E_VM = 
+E_VN = 
 
+% Frequency factor
+V_G0 = 
+V_M0 = 
+V_N0 = 
 
+% requency factor for Michaelis constant
+k_G0 = 
+k_M0 = 
+k_N0 = 
 
-
+% requency factor for inhibition constant
+ki_G0 = 
+ki_M0 = 
+ki_N0 = 
