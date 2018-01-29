@@ -80,8 +80,8 @@ A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
  %% Transfer function definition exact linearization
  
  % Constructing the linear parts of the system in the A matrix
- A_exact=[-U*Area/(m_wort*cp_wort) U*Area/(m_wort*cp_wort) ;
-     U*Area/(m_H2O*cp_H2O) -U*Area/(m_H2O*cp_H2O)];
+ A_exact=[-U*Area U*Area ;
+     U*Area -U*Area];
   % Constructing the B-Matrix, where the non-linear parts are in u
  B_exact=[1 0 ; 0 1];
   % Constructing C-matrix, we want to measure the outgoing temperatures
@@ -92,14 +92,14 @@ A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
  
    %% LQR_exact
  % Weight matrix for the states
- Q_exact=diag([300 0.01]);
+ Q_exact=diag([3 1]);
  % Weights matrix for the inputs
- R_exact=diag([0.01 0.01]);
+ R_exact=diag([1 1]);
  % Create the system from the matrix
  SYS_exact=ss(A_exact,B_exact,C_exact,D);
  % Calculate the LQR-gain
- [LQR_gain_exact,S_exact,E_exact]= lqr(SYS_exact,Q_exact,R_exact);
+ [LQR_gain,S,E]= lqr(SYS,Q,R);
  % Calculating the reference gain
- Kr_exact=inv(D-(C_exact-D*LQR_gain_exact)*inv(A_exact-B_exact*LQR_gain_exact));
+ Kr=inv(D-(C-D*LQR_gain)*inv(A-B*LQR_gain));
   
 
