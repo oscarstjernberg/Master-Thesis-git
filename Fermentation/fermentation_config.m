@@ -107,9 +107,3 @@ T_ref(:,1)=0:250;
 T_ref (1:50,2) = 2;
 T_ref(51:120,2)= 2;
 T_ref(121:251,2)=2;
-global duty_cycle_weight_sigmf
-duty_cycle_weight_sigmf =0;
-
-
-
-
