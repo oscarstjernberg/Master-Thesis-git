@@ -53,7 +53,7 @@ R_XN = 0.402;
 % Initial ethanol
 E_0 = 0;
 % Gas constant
-R = 1.987 % cal/mol*K
+R = 1.987; % cal/mol*K
 
 
 % Arrhenius parameters
@@ -67,7 +67,7 @@ E_KM = -14.4;
 E_KN = -19.9;
 
 Ei_KG = 10.2;
-Ei_KM = 26.3
+Ei_KM = 26.3;
 % Frequency factor at 8C
 V_G0 = 0.013;
 V_M0 = 0.0268;
