@@ -34,15 +34,31 @@ X_0 = 200; % initial biomass
 %my_3 = 
 % maximum reaction velocity for ith sugar (G, M, N), h^-1
 V_G = [0.0048, 0.013, 0.015, 0.0302]';
+p_VG=polyfit(T,V_G,1);
+
 V_M = [0.0144, 0.0268, 0.028, 0.0364]';
+p_VM=polyfit(T,V_M,1);
+
 V_N = [0.087, 0.113, 0.13, 0.151]';
+p_VN=polyfit(T,V_N,1);
+
 % Michaelis constant for ith sugar  (G, M, N), mol/m^3
 K_G = [23.5, 4.7, 1.8, 0.102]';
+p_KG=polyfit(T,K_G,1);
+
 K_M = [1100, 814, 610, 360]';
+p_KM=polyfit(T,K_M,1);
+
 K_N = [10900, 7160, 4460, 2410]';
+p_KN=polyfit(T,K_N,1);
+
 % inhibition constant for ith sugar (G, M)
 Ki_G = [123, 182, 240, 262]';
+p_KiG=polyfit(T,Ki_G,1);
+
 Ki_M = [2090, 6360, 8010, 17500]';
+p_KiM=polyfit(T,Ki_M,1);
+
 % Reaction parameters
 R_EG = 1.92;
 R_EM = 3.84;
@@ -54,7 +70,6 @@ R_XN = 0.402;
 E_0 = 0;
 % Gas constant
 R = 1.987; % cal/mol*K
-
 
 % Arrhenius parameters
 % activation energy
@@ -81,4 +96,20 @@ k_N0 = 7160;
 % requency factor for inhibition constant
 ki_G0 = 182;
 ki_M0 = 6360;
+
+% Reference values
+% Coolant temperature
+T_c =2;
+% Surrounding temperature
+T_s=15;
+% Reference value
+T_ref(:,1)=0:250;
+T_ref (1:50,2) = 2;
+T_ref(51:120,2)= 2;
+T_ref(121:251,2)=2;
+global duty_cycle_weight_sigmf
+duty_cycle_weight_sigmf =0;
+
+
+
 
