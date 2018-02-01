@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Configuration file for the fermentation model in simulink
-% Master thesis: Modeling and control of temperature dependent processes of batch beer brewing
+% Master thesis: Modelling and control of temperature dependent processes of batch beer brewing
 % By: Alexander Lydh
 %       Oscar Stjernberg
 %   2018
