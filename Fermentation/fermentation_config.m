@@ -98,12 +98,14 @@ ki_G0 = 182;
 ki_M0 = 6360;
 
 % Reference values
+T_0 = 17;
 % Coolant temperature
 T_c =2;
 % Surrounding temperature
 T_s=15;
 % Reference value
 T_ref(:,1)=0:250;
-T_ref (1:50,2) = 2;
-T_ref(51:120,2)= 2;
-T_ref(121:251,2)=2;
+T_ref (1:50,2) = 10;
+T_ref(51:120,2)= 12;
+T_ref(121:251,2)=8;
+
