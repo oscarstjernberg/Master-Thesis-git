@@ -9,34 +9,71 @@ clc
 clear
 close all
 
-%% constants list for transfer functions
-% heat transfer coefficient
-U=1000;
-% Area of plate
-Area=2;
+%% Data from experiment
+
+% Time for cooling procedure
+t_cooling= 40 * 60;
+% Heigth difference in hot water tank after experiment in m
+diff_h_HT = 0.15; 
+% Hot tank diameter in m
+d_HT = 1.68;
+% Volume difference in hot tank aka amount of cooling water used in liters
+diff_V_HT = (1.68/2)^2*pi*diff_h_HT*1000;
+% Mass flow cooling water
+m_dot_H2O = diff_V_HT/t_cooling;
+
+
+%% Constants list for transfer functions
+% Number of plates
+n = 25; 
+% Area of heat exchange for each plate
+A_heat_plate = 6.67/25;
+% Total heat exchange area for heat exchanger
+Area=n*A_heat_plate;
 % Heat capacity wort
-cp_wort=4000;
+cp_wort=4062;
 % Heat capacity water
 cp_H2O = 4190;
 % Temperature in-flow wort
-T_wort_in=70;
+T_wort_in=95;
+% Temparatur for out-flow wort
+T_wort_out=16;
 %Temperature in-flow water
-T_H2O_in=10;
+T_H2O_in=5;
+% Temperature for out-flow water
+T_H2O_out=81.29;
 % Density of wort
 rho_wort=1.06; % Same as the specific gravity
 % Mass of wort in heat exchanger
-m_wort=1;
+m_wort=10;
 % Mass of water in heat exchanger
-m_H2O=1;
+m_H2O=m_wort;
+
+% Calculation of heat exchange coefficient U
+m_dot_h_data=2954/3600; % Massflow per second
+Delta_T1= abs(T_wort_out-T_H2O_out); % Difference in outflow temperature
+Delta_T2= abs(T_wort_in-T_H2O_in); % Difference in inflow temperature
+
+U = (m_dot_h_data*cp_wort*(T_wort_in-T_wort_out)*log(Delta_T2/Delta_T1))/...
+    (Area*(Delta_T2-Delta_T1));
+
+% Updating parameters to match existing heat exchanger
+% Number of plates
+n = 37; 
+% Total heat exchange area for heat exchanger
+Area=n*A_heat_plate;
+
+%% Parameters for model
 % Steady state values for the states
 x_wort_0=0;
 x_H2O_0=0;
 % Steady state values for the inputs
-u_wort_0=1;
-u_H2O_0=7;
+u_wort_0=0.23;
+u_H2O_0=m_dot_H2O;
 % Reference value for the wort output temperature
-Reference = [25 16];
-% Reference flow for the wort and the cooling water for steady state
+Reference = [20 70];
+% Reference flow for the wort and the cooling water for steady
+% state
 Reference_flow =[1 7];
 % Mass flow limits for the wort
 wort_up_lim=10;
@@ -45,7 +82,7 @@ wort_low_lim=0.1;
 H2O_up_lim=100;
 H2O_low_lim=0.1;
 % Delay for heat exchanger
-HE_delay = 5;
+HE_delay = 25;
 
 %% Transfer function definition linearization
 % Constructing the linearized A-matrix
@@ -63,14 +100,16 @@ A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
  % Constructing the D matrix
  D=zeros(length(C(:,1)),length(B(1,:)));
  
- 
+ % Linearized plant from simulink model
+  load("linsys1.mat");
   %% LQR
  % Weight matrix for the states
- Q=diag([3 1]);
+ Q=diag([3000 1]);
  % Weights matrix for the inputs
  R=diag([1 1]);
  % Create the system from the matrix
- SYS=ss(A,B,C,D);
+ % SYS=ss(A,B,C,D);
+ SYS= LinearAnalysisToolProject.LocalVariables.Value;
  % Calculate the LQR-gain
  [LQR_gain,S,E]= lqr(SYS,Q,R);
  % Calculating the reference gain
@@ -91,6 +130,7 @@ A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
  
  
    %% LQR_exact
+  
  % Weight matrix for the states
  Q_exact=diag([300 0.01]);
  % Weights matrix for the inputs
