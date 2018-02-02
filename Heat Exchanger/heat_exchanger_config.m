@@ -70,7 +70,7 @@ x_H2O_0=0;
 % Steady state values for the inputs
 u_wort_0=0.23;
 u_H2O_0=m_dot_H2O;
-% Reference value for the wort output temperature
+% Reference value for the output temperatures
 Reference = [20 70];
 % Reference flow for the wort and the cooling water for steady
 % state
