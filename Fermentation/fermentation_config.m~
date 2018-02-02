@@ -116,5 +116,5 @@ T_ref(181:251,2) = 16;
 Kp = 10;
 Ki = 0.001;
 Kd = 2;
-Kb = 1;
+Kb = 
 N = 1; % Filter coefficient
