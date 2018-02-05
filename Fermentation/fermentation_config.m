@@ -28,6 +28,8 @@ N_0 = 230;
 % Biomass concentration, mol/m^3
 X_0 = 200; % initial biomass
 %X = 
+ % Ethanol
+ E_mol_mass = 0.04607; % kg
 % Specific rate of sugar uptake, h^-1
 %my_1 = 
 %my_2 = 
