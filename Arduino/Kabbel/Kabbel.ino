@@ -29,7 +29,7 @@ void setup() {
   sendDebug("AT");
   delay(5000);
   connectWiFi();
-  Serial.println(WiFi.localIP());
+ 
   
   if (Serial.find("OK"))
   {
