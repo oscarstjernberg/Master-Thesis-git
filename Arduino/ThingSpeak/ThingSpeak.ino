@@ -4,18 +4,17 @@
 
 
 #include <SoftwareSerial.h>
-#include "ESP8266.h"
-//#include "WiFi.h"
-//#include "WiFi101.h"
+#include "WiFiEsp.h"
 #include "ThingSpeak.h"
 
 int PotPin = A0;
 
 
 // Create WiFi module object on GPIO pin 6 (RX) and 7 (TX)
-SoftwareSerial mySerial(6, 7);
+SoftwareSerial SerialWifi(6, 7);
+WiFiEspClient client;
 
-ESP8266 wifi(mySerial);
+
 // Declare and initialise global arrays for WiFi settings
 char ssid[] = "Combine";
 char pass[] = "plasmakorv";
@@ -30,62 +29,58 @@ const char * myWriteAPIKey = "A86F3R21OEZKIIQQ";
 
 void setup() {
 
-  pinMode(LED_BUILTIN, OUTPUT);
   
   // Initialize serial for debugging
   Serial.begin(115200);
   
   // Initialize serial for ESP module
-  mySerial.begin(9600);
+  SerialWifi.begin(9600);
   //Serial.begin(9600);
   
-  // Initialize WiFi-module
-  //WiFi.init(&Serial1);
-  status = WiFi.begin(ssid, pass);
-
+  connectToWiFi();
 
 //  WiFiClient client;
-  //ThingSpeak.begin(&Serial1);
+  ThingSpeak.begin(client);
   
+}// end of setup
+
+void connectToWiFi()
+{
+  // Initialize ESP module
+  WiFi.init(&SerialWifi);
+
   // Check for the presence of the shield
-  
   if (WiFi.status() == WL_NO_SHIELD) {
-    Serial.println("WiFi shield not present");
-    
+    Serial.println(F("WiFi shield not present"));
+
     // Don't continue
     while (true);
   }
-  
-  
+
   // Attempt to connect to WiFi network
   while (status != WL_CONNECTED) {
-    Serial.print("Attempting to connect to SSID: ");
+    Serial.print(F("Attempting to connect to SSID: "));
     Serial.println(ssid);
-    
+
     // Connect to WPA/WPA2 network
     status = WiFi.begin(ssid, pass);
   }
-  
-  //Serial.println("You're connected to the network");
+
+  Serial.println(F("You're connected to the network"));
   printWifiStatus();
-
-
- 
-}// end of setup
-
+}//connectToWiFi
 
 void printWifiStatus() {
-  
+
   // Print the SSID of the network
   Serial.print("SSID: ");
   Serial.println(WiFi.SSID());
 
   // Print the IP address
   IPAddress ip = WiFi.localIP();
-  Serial.print("IP Address: ");
+  Serial.print(F("IP Address: "));
   Serial.println(ip);
-}
-
+}// printWifiStatus
 
 
 
@@ -100,8 +95,5 @@ void loop() {
 
   ThingSpeak.setField(1,p);
   ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
-
-
-
 
 }
