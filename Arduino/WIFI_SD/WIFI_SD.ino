@@ -4,6 +4,7 @@
 #include <string.h>
 #include <SD.h>
 #include <avr/pgmspace.h>
+#include "ThingSpeak.h"
 
 
 ////////////////////////////////////
@@ -24,6 +25,12 @@ char cmd[100];
 // Declare and initialise variable for radio status
 int status = WL_IDLE_STATUS;
 
+////////////////////////////////////
+//      ThingSpeak SETTINGS       //
+////////////////////////////////////
+
+unsigned long myChannelNumber  = 420692; // Channel ID
+const char * myWriteAPIKey = "A86F3R21OEZKIIQQ";  // Channel API-key
 
 ////////////////////////////////////
 //          SD SETTINGS           //
@@ -68,6 +75,9 @@ void setup() {
   // Connect to wifi
   connectToWiFi();
 
+  // Initialize ThingSpeak
+  ThingSpeak.begin(client);
+
 }
 
 
@@ -84,6 +94,11 @@ void loop() {
     connectToWiFi();
       Serial.println("reconnect");
     }
+
+
+  // Write to ThingSpeak
+  ThingSpeak.setField(1,P );
+  ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
     
   // Write to google spreadsheet
   sendToSpreadsheet(P);

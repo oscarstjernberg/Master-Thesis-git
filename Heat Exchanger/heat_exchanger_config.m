@@ -40,7 +40,6 @@ T_wort_in=95;
 T_wort_out=16;
 %Temperature in-flow water
 T_H2O_in=5;
-N_H2O =
 % Temperature for out-flow water
 T_H2O_out=81.29;
 % Density of wort
@@ -143,4 +142,9 @@ A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
  % Calculating the reference gain
  Kr_exact=inv(D-(C_exact-D*LQR_gain_exact)*inv(A_exact-B_exact*LQR_gain_exact));
   
-
+ %% Nyquist
+ Ts = 1;
+ u = 0;
+ y = 0;
+ 
+ data = iddata(y,u,Ts);
