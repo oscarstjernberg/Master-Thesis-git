@@ -1,0 +1,1296 @@
+ serialRunOnArduino_cgxe
+
+ Timestamp is 5a841ee9 (Wed Feb 14 12:35:05 2018)
+
+ Preferred load address is 0000000180000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000b2c0H .text$mn                CODE
+ 0001:0000b2c0 000000d2H .text$mn$00             CODE
+ 0001:0000b392 00000081H .text$x                 CODE
+ 0002:00000000 00000320H .idata$5                DATA
+ 0002:00000320 00000020H .00cfg                  DATA
+ 0002:00000340 00000008H .CRT$XCA                DATA
+ 0002:00000348 00000008H .CRT$XCZ                DATA
+ 0002:00000350 00000008H .CRT$XIA                DATA
+ 0002:00000358 00000008H .CRT$XIZ                DATA
+ 0002:00000360 00000008H .CRT$XPA                DATA
+ 0002:00000368 00000008H .CRT$XPZ                DATA
+ 0002:00000370 00000008H .CRT$XTA                DATA
+ 0002:00000378 00000008H .CRT$XTZ                DATA
+ 0002:00000380 00000000H .gfids$y                DATA
+ 0002:00000380 00000258H .rdata                  DATA
+ 0002:000005d8 00000218H .rdata$zzzdbg           DATA
+ 0002:000007f0 00000008H .rtc$IAA                DATA
+ 0002:000007f8 00000008H .rtc$IZZ                DATA
+ 0002:00000800 00000008H .rtc$TAA                DATA
+ 0002:00000808 00000008H .rtc$TZZ                DATA
+ 0002:00000810 00000710H .xdata                  DATA
+ 0002:00000f20 00000084H .edata                  DATA
+ 0002:00000fa4 000000c8H .idata$2                DATA
+ 0002:0000106c 00000014H .idata$3                DATA
+ 0002:00001080 00000320H .idata$4                DATA
+ 0002:000013a0 000007eeH .idata$6                DATA
+ 0003:00000000 000027d0H .data                   DATA
+ 0003:000027d0 00001630H .bss                    DATA
+ 0004:00000000 0000084cH .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base               Lib:Object
+
+ 0000:00000000       __guard_iat_count          0000000000000000     <absolute>
+ 0000:00000000       __guard_longjmp_count      0000000000000000     <absolute>
+ 0000:00000000       __guard_fids_table         0000000000000000     <absolute>
+ 0000:00000000       __guard_fids_count         0000000000000000     <absolute>
+ 0000:00000000       __hybrid_code_map_count    0000000000000000     <absolute>
+ 0000:00000000       __hybrid_code_map          0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
+ 0000:00000000       __dynamic_value_reloc_table 0000000000000000     <absolute>
+ 0000:00000000       __enclave_config           0000000000000000     <absolute>
+ 0000:00000000       __guard_longjmp_table      0000000000000000     <absolute>
+ 0000:00000000       __hybrid_auxiliary_iat     0000000000000000     <absolute>
+ 0000:00000000       __guard_iat_table          0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
+ 0000:00000100       __guard_flags              0000000000000100     <absolute>
+ 0000:00000000       __ImageBase                0000000180000000     <linker-defined>
+ 0001:00000000       mexfilerequiredapiversion  0000000180001000 f   c_mexapi_version.obj
+ 0001:00000030       cgxe_serialRunOnArduino_method_dispatcher 0000000180001030 f   serialRunOnArduino_cgxe.obj
+ 0001:000000d0       method_dispatcher_IyR1VrgVeRDv1KZbpA4XqG 00000001800010d0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001ec0       cgxe_IyR1VrgVeRDv1KZbpA4XqG_BuildInfoUpdate 0000000180002ec0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00002100       cgxe_IyR1VrgVeRDv1KZbpA4XqG_fallback_info 0000000180003100 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:000021a0       mexFunction                00000001800031a0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00003f00       _ssSetInputPortDirectFeedThroughFcn 0000000180004f00 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004070       _ssGetInputPortSignalPtrsFcn 0000000180005070 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004400       _ssGetInputPortSignalFcn   0000000180005400 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004790       _ssSetInputPortReusableFcn 0000000180005790 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004890       _ssSetOutputPortReusableFcn 0000000180005890 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004990       _ssSetSymbolicDimsSupport  0000000180005990 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004a00       _ssRegisterSymbolicDimsExpr 0000000180005a00 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004a80       _ssRegisterSymbolicDims    0000000180005a80 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004b20       _ssRegisterSymbolicDimsString 0000000180005b20 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004ba0       _ssRegisterSymbolicDimsIntValue 0000000180005ba0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004c10       _ssRegisterSymbolicDimsPlus 0000000180005c10 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004c90       _ssRegisterSymbolicDimsMinus 0000000180005c90 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004d10       _ssRegisterSymbolicDimsMultiply 0000000180005d10 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004d90       _ssRegisterSymbolicDimsDivide 0000000180005d90 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004e10       _ssGetNumSymbolicDims      0000000180005e10 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004e80       _ssGetSymbolicDim          0000000180005e80 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004f00       _ssSetInputPortSymbolicDimsId 0000000180005f00 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004f70       _ssGetCompInputPortSymbolicDimsId 0000000180005f70 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00004fe0       _ssSetCompInputPortSymbolicDimsId 0000000180005fe0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005050       _ssSetOutputPortSymbolicDimsId 0000000180006050 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000050c0       _ssGetCompOutputPortSymbolicDimsId 00000001800060c0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005130       _ssSetCompOutputPortSymbolicDimsId 0000000180006130 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000051a0       _ssSetCompDWorkSymbolicDimsId 00000001800061a0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005210       ssGetIsZeroCrossControlDisabled 0000000180006210 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005280       ssSetIsInputPortUsedForContZcSignal 0000000180006280 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000052f0       ssSetZcSignalIsZcElementDisc 00000001800062f0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000053a0       ssSetZcSignalName          00000001800063a0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005410       ssSetZcSignalWidth         0000000180006410 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005480       ssSetZcSignalZcEventType   0000000180006480 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000054f0       ssSetZcSignalType          00000001800064f0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005560       ssSetZcSignalZcTol         0000000180006560 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000055d0       ssSetZcSignalNeedsEventNotification 00000001800065d0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005640       ssCreateAndAddZcSignalInfo 0000000180006640 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000056b0       ssCloneAndAddZcSignalInfo  00000001800066b0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005720       ssGetNumZcSignals          0000000180006720 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005790       ssGetZcSignalVector        0000000180006790 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005800       ssGetZcSignalName          0000000180006800 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005870       ssGetZcSignalWidth         0000000180006870 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000058e0       ssGetZcSignalZcEventType   00000001800068e0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005950       ssGetZcSignalZcEvents      0000000180006950 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000059c0       ssGetZcSignalType          00000001800069c0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005a30       ssGetZcSignalZcTol         0000000180006a30 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005ab0       ssGetZcSignalNeedsEventNotification 0000000180006ab0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005b20       ssGetZcSignalIsZcElementDisc 0000000180006b20 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005bc0       ssGetIsInputPortElementContinuous 0000000180006bc0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005c60       _ssSetIWorkValueFcn        0000000180006c60 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005ce0       _ssGetIWorkValueFcn        0000000180006ce0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005d50       _ssSetRWorkValueFcn        0000000180006d50 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005dd0       _ssGetRWorkValueFcn        0000000180006dd0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005e40       _ssSetPWorkValueFcn        0000000180006e40 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005ec0       _ssGetPWorkValueFcn        0000000180006ec0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00005f30       ssGetDTypeIdFromMxArray    0000000180006f30 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00006050       ssWriteRTWStr              0000000180007050 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000060b0       ssWriteRTWNameValuePair    00000001800070b0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000065b0       ssWriteRTWParamSettings    00000001800075b0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00006ca0       ssWriteRTWParameters       0000000180007ca0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00007260       ssWriteRTWWorkVect         0000000180008260 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000077c0       ssWriteRTWMxVectParam      00000001800087c0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00007840       ssWriteRTWMx2dMatParam     0000000180008840 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000078d0       _ssSetInputPortMatrixDimensions 00000001800088d0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000079f0       _ssSetOutputPortMatrixDimensions 00000001800089f0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00007b10       _ssSetInputPortVectorDimension 0000000180008b10 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00007bc0       _ssSetOutputPortVectorDimension 0000000180008bc0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00007c70       ssIsRunTimeParamTunable    0000000180008c70 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00007ce0       ssGetSFuncBlockHandle      0000000180008ce0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00007d50       _ssGetCurrentInputPortWidth 0000000180008d50 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00007e70       _ssGetCurrentOutputPortWidth 0000000180008e70 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00007f90       _ssGetCallSystemNumFcnCallDestinations 0000000180008f90 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008000       ssGetParameterTuningCompliance 0000000180009000 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008070       ssWarning                  0000000180009070 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008160       _ssGetAbsTol               0000000180009160 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000081d0       _ssSetStateAbsTol          00000001800091d0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00009bf0       __local_stdio_printf_options 000000018000abf0 f i serialRunOnArduino_cgxe_registry.obj
+ 0001:00009c00       _vsnprintf_l               000000018000ac00 f i serialRunOnArduino_cgxe_registry.obj
+ 0001:00009c80       _vsprintf_l                000000018000ac80 f i serialRunOnArduino_cgxe_registry.obj
+ 0001:00009cd0       sprintf                    000000018000acd0 f i serialRunOnArduino_cgxe_registry.obj
+ 0001:00009d1f       mxSetCell_730              000000018000ad1f f   libmx:libmx.dll
+ 0001:00009d25       mxSetFieldByNumber_730     000000018000ad25 f   libmx:libmx.dll
+ 0001:00009d2b       mxCreateString             000000018000ad2b f   libmx:libmx.dll
+ 0001:00009d31       mxCreateCellMatrix_730     000000018000ad31 f   libmx:libmx.dll
+ 0001:00009d37       mxCreateStructMatrix_730   000000018000ad37 f   libmx:libmx.dll
+ 0001:00009d3d       mxCalloc                   000000018000ad3d f   libmx:libmx.dll
+ 0001:00009d43       mxGetM                     000000018000ad43 f   libmx:libmx.dll
+ 0001:00009d49       mxGetClassID               000000018000ad49 f   libmx:libmx.dll
+ 0001:00009d4f       mxGetData                  000000018000ad4f f   libmx:libmx.dll
+ 0001:00009d55       mxIsNumeric                000000018000ad55 f   libmx:libmx.dll
+ 0001:00009d5b       mxIsChar                   000000018000ad5b f   libmx:libmx.dll
+ 0001:00009d61       mxIsComplex                000000018000ad61 f   libmx:libmx.dll
+ 0001:00009d67       mxGetPr                    000000018000ad67 f   libmx:libmx.dll
+ 0001:00009d6d       mxGetN                     000000018000ad6d f   libmx:libmx.dll
+ 0001:00009d73       mxSetField_730             000000018000ad73 f   libmx:libmx.dll
+ 0001:00009d79       mxCreateNumericMatrix_730  000000018000ad79 f   libmx:libmx.dll
+ 0001:00009d7f       mxCreateDoubleMatrix_730   000000018000ad7f f   libmx:libmx.dll
+ 0001:00009d85       mxCreateDoubleScalar       000000018000ad85 f   libmx:libmx.dll
+ 0001:00009d8b       mxGetString_730            000000018000ad8b f   libmx:libmx.dll
+ 0001:00009d91       mexWarnMsgTxt              000000018000ad91 f   libmex:libmex.dll
+ 0001:00009d97       mexPrintf                  000000018000ad97 f   libmex:libmex.dll
+ 0001:00009d9d       mexCallMATLABWithObject    000000018000ad9d f   libmex:libmex.dll
+ 0001:00009da3       mexUnlock                  000000018000ada3 f   libmex:libmex.dll
+ 0001:00009da9       mexIsLocked                000000018000ada9 f   libmex:libmex.dll
+ 0001:00009daf       emlrtAlias                 000000018000adaf f   libemlrt:libemlrt.dll
+ 0001:00009db5       emlrtAssign                000000018000adb5 f   libemlrt:libemlrt.dll
+ 0001:00009dbb       emlrtAssignP               000000018000adbb f   libemlrt:libemlrt.dll
+ 0001:00009dc1       emlrtCreateStructMatrix    000000018000adc1 f   libemlrt:libemlrt.dll
+ 0001:00009dc7       emlrtCreateStructArray     000000018000adc7 f   libemlrt:libemlrt.dll
+ 0001:00009dcd       emlrtGetFieldR2017b        000000018000adcd f   libemlrt:libemlrt.dll
+ 0001:00009dd3       emlrtSetFieldR2017b        000000018000add3 f   libemlrt:libemlrt.dll
+ 0001:00009dd9       emlrtCreateCellMatrix      000000018000add9 f   libemlrt:libemlrt.dll
+ 0001:00009ddf       emlrtSetCell               000000018000addf f   libemlrt:libemlrt.dll
+ 0001:00009de5       emlrtGetCell               000000018000ade5 f   libemlrt:libemlrt.dll
+ 0001:00009deb       emlrtCreateNumericMatrix   000000018000adeb f   libemlrt:libemlrt.dll
+ 0001:00009df1       emlrtCreateNumericArray    000000018000adf1 f   libemlrt:libemlrt.dll
+ 0001:00009df7       emlrtCreateLogicalScalar   000000018000adf7 f   libemlrt:libemlrt.dll
+ 0001:00009dfd       emlrtCreateCharArray       000000018000adfd f   libemlrt:libemlrt.dll
+ 0001:00009e03       emlrtDestroyArray          000000018000ae03 f   libemlrt:libemlrt.dll
+ 0001:00009e09       emlrtCallMATLABR2012b      000000018000ae09 f   libemlrt:libemlrt.dll
+ 0001:00009e0f       emlrtInitCharArrayR2013a   000000018000ae0f f   libemlrt:libemlrt.dll
+ 0001:00009e15       emlrtCheckBuiltInR2012b    000000018000ae15 f   libemlrt:libemlrt.dll
+ 0001:00009e1b       emlrtCheckStructR2012b     000000018000ae1b f   libemlrt:libemlrt.dll
+ 0001:00009e21       emlrtMxGetData             000000018000ae21 f   libemlrt:libemlrt.dll
+ 0001:00009e27       emlrtMxGetLogicals         000000018000ae27 f   libemlrt:libemlrt.dll
+ 0001:00009e2d       cgxertGetInputPortSignal   000000018000ae2d f   libmwcgxert:libmwcgxert.dll
+ 0001:00009e33       cgxertGetRuntimeInstance   000000018000ae33 f   libmwcgxert:libmwcgxert.dll
+ 0001:00009e39       cgxertSetRuntimeInstance   000000018000ae39 f   libmwcgxert:libmwcgxert.dll
+ 0001:00009e3f       cgxertGetEMLRTCtx          000000018000ae3f f   libmwcgxert:libmwcgxert.dll
+ 0001:00009e45       cgxertSetGcb               000000018000ae45 f   libmwcgxert:libmwcgxert.dll
+ 0001:00009e4b       cgxertRestoreGcb           000000018000ae4b f   libmwcgxert:libmwcgxert.dll
+ 0001:00009e54       __GSHandlerCheck           000000018000ae54 f   MSVCRT:_gshandler_.obj
+ 0001:00009e74       __GSHandlerCheckCommon     000000018000ae74 f   MSVCRT:_gshandler_.obj
+ 0001:00009ee0       __security_check_cookie    000000018000aee0 f   MSVCRT:_amdsecgs_.obj
+ 0001:00009f04       __raise_securityfailure    000000018000af04 f   MSVCRT:gs_report.obj
+ 0001:00009f38       __report_gsfailure         000000018000af38 f   MSVCRT:gs_report.obj
+ 0001:0000a00c       __report_rangecheckfailure 000000018000b00c f   MSVCRT:gs_report.obj
+ 0001:0000a020       __report_securityfailure   000000018000b020 f   MSVCRT:gs_report.obj
+ 0001:0000a0bc       __report_securityfailureEx 000000018000b0bc f   MSVCRT:gs_report.obj
+ 0001:0000a5ec       _CRT_INIT                  000000018000b5ec f   MSVCRT:dll_dllmain.obj
+ 0001:0000a5f4       _DllMainCRTStartup         000000018000b5f4 f   MSVCRT:dll_dllmain.obj
+ 0001:0000a6a0       __security_init_cookie     000000018000b6a0 f   MSVCRT:gs_support.obj
+ 0001:0000a74c       DllMain                    000000018000b74c f   MSVCRT:dll_dllmain_stub.obj
+ 0001:0000a770       ?__scrt_initialize_type_info@@YAXXZ 000000018000b770 f   MSVCRT:tncleanup.obj
+ 0001:0000a780       ?__scrt_uninitialize_type_info@@YAXXZ 000000018000b780 f   MSVCRT:tncleanup.obj
+ 0001:0000a78c       __local_stdio_scanf_options 000000018000b78c f i MSVCRT:default_local_stdio_options.obj
+ 0001:0000a794       __scrt_initialize_default_local_stdio_options 000000018000b794 f   MSVCRT:default_local_stdio_options.obj
+ 0001:0000a7b0       ??$__crt_fast_decode_pointer@PEAP6AXXZ@@YAPEAP6AXXZQEAP6AXXZ@Z 000000018000b7b0 f i MSVCRT:utility.obj
+ 0001:0000a7c8       ??$__crt_fast_encode_pointer@PEAP6AXXZ@@YAPEAP6AXXZQEAP6AXXZ@Z 000000018000b7c8 f i MSVCRT:utility.obj
+ 0001:0000a7e8       ?__crt_rotate_pointer_value@@YA_K_KH@Z 000000018000b7e8 f i MSVCRT:utility.obj
+ 0001:0000a7f4       ?configure_argv@__scrt_narrow_argv_policy@@SAHXZ 000000018000b7f4 f i MSVCRT:utility.obj
+ 0001:0000a854       ?initialize_environment@__scrt_narrow_environment_policy@@SAHXZ 000000018000b854 f i MSVCRT:utility.obj
+ 0001:0000a88c       NtCurrentTeb               000000018000b88c f i MSVCRT:utility.obj
+ 0001:0000a898       __scrt_acquire_startup_lock 000000018000b898 f   MSVCRT:utility.obj
+ 0001:0000a8d4       __scrt_dllmain_after_initialize_c 000000018000b8d4 f   MSVCRT:utility.obj
+ 0001:0000a908       __scrt_dllmain_before_initialize_c 000000018000b908 f   MSVCRT:utility.obj
+ 0001:0000a920       __scrt_dllmain_crt_thread_attach 000000018000b920 f   MSVCRT:utility.obj
+ 0001:0000a948       __scrt_dllmain_crt_thread_detach 000000018000b948 f   MSVCRT:utility.obj
+ 0001:0000a960       __scrt_dllmain_exception_filter 000000018000b960 f   MSVCRT:utility.obj
+ 0001:0000a9c4       __scrt_dllmain_uninitialize_c 000000018000b9c4 f   MSVCRT:utility.obj
+ 0001:0000a9f4       __scrt_dllmain_uninitialize_critical 000000018000b9f4 f   MSVCRT:utility.obj
+ 0001:0000aa08       __scrt_initialize_crt      000000018000ba08 f   MSVCRT:utility.obj
+ 0001:0000aa54       __scrt_initialize_onexit_tables 000000018000ba54 f   MSVCRT:utility.obj
+ 0001:0000ab34       __scrt_is_nonwritable_in_current_image 000000018000bb34 f   MSVCRT:utility.obj
+ 0001:0000abd0       __scrt_release_startup_lock 000000018000bbd0 f   MSVCRT:utility.obj
+ 0001:0000abf4       __scrt_uninitialize_crt    000000018000bbf4 f   MSVCRT:utility.obj
+ 0001:0000ac20       _onexit                    000000018000bc20 f   MSVCRT:utility.obj
+ 0001:0000ac70       at_quick_exit              000000018000bc70 f   MSVCRT:utility.obj
+ 0001:0000aca8       atexit                     000000018000bca8 f   MSVCRT:utility.obj
+ 0001:0000acc0       __scrt_get_dyn_tls_init_callback 000000018000bcc0 f   MSVCRT:dyn_tls_init.obj
+ 0001:0000acc8       __crt_debugger_hook        000000018000bcc8 f   MSVCRT:utility_desktop.obj
+ 0001:0000acd0       __scrt_fastfail            000000018000bcd0 f   MSVCRT:utility_desktop.obj
+ 0001:0000ae1c       __scrt_get_show_window_mode 000000018000be1c f   MSVCRT:utility_desktop.obj
+ 0001:0000ae58       __scrt_initialize_winrt    000000018000be58 f   MSVCRT:utility_desktop.obj
+ 0001:0000ae5c       __scrt_is_managed_app      000000018000be5c f   MSVCRT:utility_desktop.obj
+ 0001:0000aeb0       __scrt_set_unhandled_exception_filter 000000018000beb0 f   MSVCRT:utility_desktop.obj
+ 0001:0000aec0       __scrt_unhandled_exception_filter 000000018000bec0 f   MSVCRT:utility_desktop.obj
+ 0001:0000aef8       _RTC_Initialize            000000018000bef8 f   MSVCRT:_initsect_.obj
+ 0001:0000af44       _RTC_Terminate             000000018000bf44 f   MSVCRT:_initsect_.obj
+ 0001:0000af90       _guard_check_icall         000000018000bf90 f i MSVCRT:checkcfg.obj
+ 0001:0000af98       __isa_available_init       000000018000bf98 f   MSVCRT:_cpu_disp_.obj
+ 0001:0000b154       _get_startup_argv_mode     000000018000c154 f   MSVCRT:argv_mode.obj
+ 0001:0000b15c       __scrt_is_ucrt_dll_in_use  000000018000c15c f   MSVCRT:ucrt_detection.obj
+ 0001:0000b168       _guard_check_icall_nop     000000018000c168 f i MSVCRT:guard_support.obj
+ 0001:0000b16c       ReadNoFence64              000000018000c16c f i MSVCRT:guard_support.obj
+ 0001:0000b170       ReadPointerNoFence         000000018000c170 f i MSVCRT:guard_support.obj
+ 0001:0000b174       __guard_ss_common_verify_stub 000000018000c174 f i MSVCRT:guard_support.obj
+ 0001:0000b178       _guard_icall_checks_enforced 000000018000c178 f i MSVCRT:guard_support.obj
+ 0001:0000b190       _guard_rf_checks_enforced  000000018000c190 f i MSVCRT:guard_support.obj
+ 0001:0000b1b0       RtlCaptureContext          000000018000c1b0 f   kernel32:KERNEL32.dll
+ 0001:0000b1b6       RtlLookupFunctionEntry     000000018000c1b6 f   kernel32:KERNEL32.dll
+ 0001:0000b1bc       RtlVirtualUnwind           000000018000c1bc f   kernel32:KERNEL32.dll
+ 0001:0000b1c2       UnhandledExceptionFilter   000000018000c1c2 f   kernel32:KERNEL32.dll
+ 0001:0000b1c8       SetUnhandledExceptionFilter 000000018000c1c8 f   kernel32:KERNEL32.dll
+ 0001:0000b1ce       GetCurrentProcess          000000018000c1ce f   kernel32:KERNEL32.dll
+ 0001:0000b1d4       TerminateProcess           000000018000c1d4 f   kernel32:KERNEL32.dll
+ 0001:0000b1da       IsProcessorFeaturePresent  000000018000c1da f   kernel32:KERNEL32.dll
+ 0001:0000b1e0       QueryPerformanceCounter    000000018000c1e0 f   kernel32:KERNEL32.dll
+ 0001:0000b1e6       GetCurrentProcessId        000000018000c1e6 f   kernel32:KERNEL32.dll
+ 0001:0000b1ec       GetCurrentThreadId         000000018000c1ec f   kernel32:KERNEL32.dll
+ 0001:0000b1f2       GetSystemTimeAsFileTime    000000018000c1f2 f   kernel32:KERNEL32.dll
+ 0001:0000b1f8       DisableThreadLibraryCalls  000000018000c1f8 f   kernel32:KERNEL32.dll
+ 0001:0000b1fe       InitializeSListHead        000000018000c1fe f   kernel32:KERNEL32.dll
+ 0001:0000b204       IsDebuggerPresent          000000018000c204 f   kernel32:KERNEL32.dll
+ 0001:0000b20a       GetStartupInfoW            000000018000c20a f   kernel32:KERNEL32.dll
+ 0001:0000b210       GetModuleHandleW           000000018000c210 f   kernel32:KERNEL32.dll
+ 0001:0000b216       memcpy                     000000018000c216 f   vcruntime:VCRUNTIME140.dll
+ 0001:0000b21c       __C_specific_handler       000000018000c21c f   vcruntime:VCRUNTIME140.dll
+ 0001:0000b222       __std_type_info_destroy_list 000000018000c222 f   vcruntime:VCRUNTIME140.dll
+ 0001:0000b228       memset                     000000018000c228 f   vcruntime:VCRUNTIME140.dll
+ 0001:0000b22e       calloc                     000000018000c22e f   ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0001:0000b234       free                       000000018000c234 f   ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0001:0000b23a       strcmp                     000000018000c23a f   ucrt:api-ms-win-crt-string-l1-1-0.dll
+ 0001:0000b240       strlen                     000000018000c240 f   ucrt:api-ms-win-crt-string-l1-1-0.dll
+ 0001:0000b246       __stdio_common_vsprintf    000000018000c246 f   ucrt:api-ms-win-crt-stdio-l1-1-0.dll
+ 0001:0000b24c       malloc                     000000018000c24c f   ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0001:0000b252       _initterm                  000000018000c252 f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b258       _initterm_e                000000018000c258 f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b25e       _seh_filter_dll            000000018000c25e f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b264       _configure_narrow_argv     000000018000c264 f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b26a       _initialize_narrow_environment 000000018000c26a f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b270       _initialize_onexit_table   000000018000c270 f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b276       _register_onexit_function  000000018000c276 f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b27c       _execute_onexit_table      000000018000c27c f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b282       _crt_atexit                000000018000c282 f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b288       _crt_at_quick_exit         000000018000c288 f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b28e       _cexit                     000000018000c28e f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b294       terminate                  000000018000c294 f   ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0001:0000b29c       __vcrt_initialize          000000018000c29c f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b29c       __acrt_initialize          000000018000c29c f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b29c       __scrt_stub_for_acrt_initialize 000000018000c29c f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2a0       __vcrt_thread_attach       000000018000c2a0 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2a0       __scrt_stub_for_acrt_thread_attach 000000018000c2a0 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2a0       __acrt_thread_attach       000000018000c2a0 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2a4       __vcrt_thread_detach       000000018000c2a4 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2a4       __acrt_thread_detach       000000018000c2a4 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2a4       __scrt_stub_for_acrt_thread_detach 000000018000c2a4 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2a8       __scrt_stub_for_acrt_uninitialize 000000018000c2a8 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2a8       __acrt_uninitialize        000000018000c2a8 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2a8       __vcrt_uninitialize        000000018000c2a8 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2ac       __scrt_stub_for_acrt_uninitialize_critical 000000018000c2ac f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2ac       __acrt_uninitialize_critical 000000018000c2ac f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2ac       __vcrt_uninitialize_critical 000000018000c2ac f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2b0       _is_c_termination_complete 000000018000c2b0 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2b0       __scrt_stub_for_is_c_termination_complete 000000018000c2b0 f   MSVCRT:ucrt_stubs.obj
+ 0001:0000b2d0       _guard_dispatch_icall_nop  000000018000c2d0 f   MSVCRT:_guard_dispatch_.obj
+ 0001:0000b2f0       __guard_ss_verify_failure  000000018000c2f0 f   MSVCRT:_rfgfailure_.obj
+ 0001:0000b2fb       __guard_ss_verify_failure_rcx 000000018000c2fb     MSVCRT:_rfgfailure_.obj
+ 0001:0000b301       __guard_ss_verify_failure_rdx 000000018000c301     MSVCRT:_rfgfailure_.obj
+ 0001:0000b307       __guard_ss_verify_failure_r8 000000018000c307     MSVCRT:_rfgfailure_.obj
+ 0001:0000b30d       __guard_ss_verify_failure_r9 000000018000c30d     MSVCRT:_rfgfailure_.obj
+ 0001:0000b313       __guard_ss_verify_failure_r10 000000018000c313     MSVCRT:_rfgfailure_.obj
+ 0001:0000b320       __guard_ss_verify_failure_default 000000018000c320 f   MSVCRT:_rfgfailure_.obj
+ 0001:0000b380       __guard_ss_verify_sp       000000018000c380 f   MSVCRT:_rfgfailure_.obj
+ 0001:0000b390       __guard_ss_verify_sp_default 000000018000c390 f   MSVCRT:_rfgfailure_.obj
+ 0002:00000000       __imp_GetCurrentProcessId  000000018000d000     kernel32:KERNEL32.dll
+ 0002:00000008       __imp_IsDebuggerPresent    000000018000d008     kernel32:KERNEL32.dll
+ 0002:00000010       __imp_GetStartupInfoW      000000018000d010     kernel32:KERNEL32.dll
+ 0002:00000018       __imp_RtlCaptureContext    000000018000d018     kernel32:KERNEL32.dll
+ 0002:00000020       __imp_RtlLookupFunctionEntry 000000018000d020     kernel32:KERNEL32.dll
+ 0002:00000028       __imp_RtlVirtualUnwind     000000018000d028     kernel32:KERNEL32.dll
+ 0002:00000030       __imp_UnhandledExceptionFilter 000000018000d030     kernel32:KERNEL32.dll
+ 0002:00000038       __imp_SetUnhandledExceptionFilter 000000018000d038     kernel32:KERNEL32.dll
+ 0002:00000040       __imp_GetCurrentProcess    000000018000d040     kernel32:KERNEL32.dll
+ 0002:00000048       __imp_TerminateProcess     000000018000d048     kernel32:KERNEL32.dll
+ 0002:00000050       __imp_IsProcessorFeaturePresent 000000018000d050     kernel32:KERNEL32.dll
+ 0002:00000058       __imp_QueryPerformanceCounter 000000018000d058     kernel32:KERNEL32.dll
+ 0002:00000060       __imp_InitializeSListHead  000000018000d060     kernel32:KERNEL32.dll
+ 0002:00000068       __imp_GetCurrentThreadId   000000018000d068     kernel32:KERNEL32.dll
+ 0002:00000070       __imp_GetSystemTimeAsFileTime 000000018000d070     kernel32:KERNEL32.dll
+ 0002:00000078       __imp_DisableThreadLibraryCalls 000000018000d078     kernel32:KERNEL32.dll
+ 0002:00000080       __imp_GetModuleHandleW     000000018000d080     kernel32:KERNEL32.dll
+ 0002:00000088       \177KERNEL32_NULL_THUNK_DATA 000000018000d088     kernel32:KERNEL32.dll
+ 0002:00000090       __imp_memcpy               000000018000d090     vcruntime:VCRUNTIME140.dll
+ 0002:00000098       __imp___C_specific_handler 000000018000d098     vcruntime:VCRUNTIME140.dll
+ 0002:000000a0       __imp_memset               000000018000d0a0     vcruntime:VCRUNTIME140.dll
+ 0002:000000a8       __imp___std_type_info_destroy_list 000000018000d0a8     vcruntime:VCRUNTIME140.dll
+ 0002:000000b0       \177VCRUNTIME140_NULL_THUNK_DATA 000000018000d0b0     vcruntime:VCRUNTIME140.dll
+ 0002:000000b8       __imp_malloc               000000018000d0b8     ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0002:000000c0       __imp_calloc               000000018000d0c0     ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0002:000000c8       __imp_free                 000000018000d0c8     ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0002:000000d0       \177api-ms-win-crt-heap-l1-1-0_NULL_THUNK_DATA 000000018000d0d0     ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0002:000000d8       __imp__seh_filter_dll      000000018000d0d8     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:000000e0       __imp__configure_narrow_argv 000000018000d0e0     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:000000e8       __imp__initialize_narrow_environment 000000018000d0e8     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:000000f0       __imp__initialize_onexit_table 000000018000d0f0     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:000000f8       __imp__initterm_e          000000018000d0f8     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:00000100       __imp__execute_onexit_table 000000018000d100     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:00000108       __imp__crt_atexit          000000018000d108     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:00000110       __imp__crt_at_quick_exit   000000018000d110     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:00000118       __imp__cexit               000000018000d118     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:00000120       __imp_terminate            000000018000d120     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:00000128       __imp__register_onexit_function 000000018000d128     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:00000130       __imp__initterm            000000018000d130     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:00000138       \177api-ms-win-crt-runtime-l1-1-0_NULL_THUNK_DATA 000000018000d138     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:00000140       __imp___stdio_common_vsprintf 000000018000d140     ucrt:api-ms-win-crt-stdio-l1-1-0.dll
+ 0002:00000148       \177api-ms-win-crt-stdio-l1-1-0_NULL_THUNK_DATA 000000018000d148     ucrt:api-ms-win-crt-stdio-l1-1-0.dll
+ 0002:00000150       __imp_strcmp               000000018000d150     ucrt:api-ms-win-crt-string-l1-1-0.dll
+ 0002:00000158       __imp_strlen               000000018000d158     ucrt:api-ms-win-crt-string-l1-1-0.dll
+ 0002:00000160       \177api-ms-win-crt-string-l1-1-0_NULL_THUNK_DATA 000000018000d160     ucrt:api-ms-win-crt-string-l1-1-0.dll
+ 0002:00000168       __imp_emlrtMxGetLogicals   000000018000d168     libemlrt:libemlrt.dll
+ 0002:00000170       __imp_emlrtInitCharArrayR2013a 000000018000d170     libemlrt:libemlrt.dll
+ 0002:00000178       __imp_emlrtCheckBuiltInR2012b 000000018000d178     libemlrt:libemlrt.dll
+ 0002:00000180       __imp_emlrtCallMATLABR2012b 000000018000d180     libemlrt:libemlrt.dll
+ 0002:00000188       __imp_emlrtMxGetData       000000018000d188     libemlrt:libemlrt.dll
+ 0002:00000190       __imp_emlrtCheckStructR2012b 000000018000d190     libemlrt:libemlrt.dll
+ 0002:00000198       __imp_emlrtDestroyArray    000000018000d198     libemlrt:libemlrt.dll
+ 0002:000001a0       __imp_emlrtAlias           000000018000d1a0     libemlrt:libemlrt.dll
+ 0002:000001a8       __imp_emlrtAssign          000000018000d1a8     libemlrt:libemlrt.dll
+ 0002:000001b0       __imp_emlrtCreateLogicalScalar 000000018000d1b0     libemlrt:libemlrt.dll
+ 0002:000001b8       __imp_emlrtCreateNumericArray 000000018000d1b8     libemlrt:libemlrt.dll
+ 0002:000001c0       __imp_emlrtCreateNumericMatrix 000000018000d1c0     libemlrt:libemlrt.dll
+ 0002:000001c8       __imp_emlrtGetCell         000000018000d1c8     libemlrt:libemlrt.dll
+ 0002:000001d0       __imp_emlrtSetCell         000000018000d1d0     libemlrt:libemlrt.dll
+ 0002:000001d8       __imp_emlrtCreateCellMatrix 000000018000d1d8     libemlrt:libemlrt.dll
+ 0002:000001e0       __imp_emlrtSetFieldR2017b  000000018000d1e0     libemlrt:libemlrt.dll
+ 0002:000001e8       __imp_emlrtGetFieldR2017b  000000018000d1e8     libemlrt:libemlrt.dll
+ 0002:000001f0       __imp_emlrtCreateStructArray 000000018000d1f0     libemlrt:libemlrt.dll
+ 0002:000001f8       __imp_emlrtCreateStructMatrix 000000018000d1f8     libemlrt:libemlrt.dll
+ 0002:00000200       __imp_emlrtAssignP         000000018000d200     libemlrt:libemlrt.dll
+ 0002:00000208       __imp_emlrtCreateCharArray 000000018000d208     libemlrt:libemlrt.dll
+ 0002:00000210       \177libemlrt_NULL_THUNK_DATA 000000018000d210     libemlrt:libemlrt.dll
+ 0002:00000218       __imp_mexWarnMsgTxt        000000018000d218     libmex:libmex.dll
+ 0002:00000220       __imp_mexIsLocked          000000018000d220     libmex:libmex.dll
+ 0002:00000228       __imp_mexUnlock            000000018000d228     libmex:libmex.dll
+ 0002:00000230       __imp_mexCallMATLABWithObject 000000018000d230     libmex:libmex.dll
+ 0002:00000238       __imp_mexPrintf            000000018000d238     libmex:libmex.dll
+ 0002:00000240       \177libmex_NULL_THUNK_DATA 000000018000d240     libmex:libmex.dll
+ 0002:00000248       __imp_cgxertSetRuntimeInstance 000000018000d248     libmwcgxert:libmwcgxert.dll
+ 0002:00000250       __imp_cgxertGetRuntimeInstance 000000018000d250     libmwcgxert:libmwcgxert.dll
+ 0002:00000258       __imp_cgxertGetInputPortSignal 000000018000d258     libmwcgxert:libmwcgxert.dll
+ 0002:00000260       __imp_cgxertSetGcb         000000018000d260     libmwcgxert:libmwcgxert.dll
+ 0002:00000268       __imp_cgxertRestoreGcb     000000018000d268     libmwcgxert:libmwcgxert.dll
+ 0002:00000270       __imp_cgxertGetEMLRTCtx    000000018000d270     libmwcgxert:libmwcgxert.dll
+ 0002:00000278       \177libmwcgxert_NULL_THUNK_DATA 000000018000d278     libmwcgxert:libmwcgxert.dll
+ 0002:00000280       __imp_mxSetFieldByNumber_730 000000018000d280     libmx:libmx.dll
+ 0002:00000288       __imp_mxGetString_730      000000018000d288     libmx:libmx.dll
+ 0002:00000290       __imp_mxCreateDoubleScalar 000000018000d290     libmx:libmx.dll
+ 0002:00000298       __imp_mxCreateDoubleMatrix_730 000000018000d298     libmx:libmx.dll
+ 0002:000002a0       __imp_mxCreateNumericMatrix_730 000000018000d2a0     libmx:libmx.dll
+ 0002:000002a8       __imp_mxSetField_730       000000018000d2a8     libmx:libmx.dll
+ 0002:000002b0       __imp_mxGetN               000000018000d2b0     libmx:libmx.dll
+ 0002:000002b8       __imp_mxGetPr              000000018000d2b8     libmx:libmx.dll
+ 0002:000002c0       __imp_mxIsComplex          000000018000d2c0     libmx:libmx.dll
+ 0002:000002c8       __imp_mxIsChar             000000018000d2c8     libmx:libmx.dll
+ 0002:000002d0       __imp_mxIsNumeric          000000018000d2d0     libmx:libmx.dll
+ 0002:000002d8       __imp_mxGetData            000000018000d2d8     libmx:libmx.dll
+ 0002:000002e0       __imp_mxGetClassID         000000018000d2e0     libmx:libmx.dll
+ 0002:000002e8       __imp_mxGetM               000000018000d2e8     libmx:libmx.dll
+ 0002:000002f0       __imp_mxCalloc             000000018000d2f0     libmx:libmx.dll
+ 0002:000002f8       __imp_mxCreateStructMatrix_730 000000018000d2f8     libmx:libmx.dll
+ 0002:00000300       __imp_mxCreateCellMatrix_730 000000018000d300     libmx:libmx.dll
+ 0002:00000308       __imp_mxCreateString       000000018000d308     libmx:libmx.dll
+ 0002:00000310       __imp_mxSetCell_730        000000018000d310     libmx:libmx.dll
+ 0002:00000318       \177libmx_NULL_THUNK_DATA  000000018000d318     libmx:libmx.dll
+ 0002:00000320       __guard_check_icall_fptr   000000018000d320     MSVCRT:guard_support.obj
+ 0002:00000328       __guard_dispatch_icall_fptr 000000018000d328     MSVCRT:guard_support.obj
+ 0002:00000330       __guard_ss_verify_failure_fptr 000000018000d330     MSVCRT:guard_support.obj
+ 0002:00000338       __guard_ss_verify_sp_fptr  000000018000d338     MSVCRT:guard_support.obj
+ 0002:00000340       __xc_a                     000000018000d340     MSVCRT:initializers.obj
+ 0002:00000348       __xc_z                     000000018000d348     MSVCRT:initializers.obj
+ 0002:00000350       __xi_a                     000000018000d350     MSVCRT:initializers.obj
+ 0002:00000358       __xi_z                     000000018000d358     MSVCRT:initializers.obj
+ 0002:00000360       __xp_a                     000000018000d360     MSVCRT:initializers.obj
+ 0002:00000368       __xp_z                     000000018000d368     MSVCRT:initializers.obj
+ 0002:00000370       __xt_a                     000000018000d370     MSVCRT:initializers.obj
+ 0002:00000378       __xt_z                     000000018000d378     MSVCRT:initializers.obj
+ 0002:00000410       DYNAMIC_DIMENSION_DEF      000000018000d410     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000428       __real@0000000000000000    000000018000d428     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000430       __real@4010000000000000    000000018000d430     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000438       __real@41602cbca0000000    000000018000d438     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000440       __real@41abc582ea000000    000000018000d440     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000448       __real@41b5fd78ee000000    000000018000d448     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000450       __real@41cc19a00b000000    000000018000d450     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000458       __real@41cf0cb5dd000000    000000018000d458     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000460       __real@41d0df14bb000000    000000018000d460     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000468       __real@41d68e7e90c00000    000000018000d468     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000470       __real@41d7c2753d400000    000000018000d470     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000478       __real@41ddb496f7400000    000000018000d478     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000480       __real@41dea9188a000000    000000018000d480     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000488       __real@41e342c5dd200000    000000018000d488     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000490       __real@41e4da13cee00000    000000018000d490     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000498       __real@41e8ba1dd9c00000    000000018000d498     serialRunOnArduino_cgxe_registry.obj
+ 0002:000004a0       __real@bff0000000000000    000000018000d4a0     serialRunOnArduino_cgxe_registry.obj
+ 0002:000004b8       _pRawDllMain               000000018000d4b8     MSVCRT:dll_dllmain.obj
+ 0002:000004b8       _pDefaultRawDllMain        000000018000d4b8     MSVCRT:dll_dllmain.obj
+ 0002:000004e0       _load_config_used          000000018000d4e0     MSVCRT:loadcfg.obj
+ 0002:000007f0       __rtc_iaa                  000000018000d7f0     MSVCRT:_initsect_.obj
+ 0002:000007f8       __rtc_izz                  000000018000d7f8     MSVCRT:_initsect_.obj
+ 0002:00000800       __rtc_taa                  000000018000d800     MSVCRT:_initsect_.obj
+ 0002:00000808       __rtc_tzz                  000000018000d808     MSVCRT:_initsect_.obj
+ 0002:00000fa4       __IMPORT_DESCRIPTOR_libmx  000000018000dfa4     libmx:libmx.dll
+ 0002:00000fb8       __IMPORT_DESCRIPTOR_libmex 000000018000dfb8     libmex:libmex.dll
+ 0002:00000fcc       __IMPORT_DESCRIPTOR_libemlrt 000000018000dfcc     libemlrt:libemlrt.dll
+ 0002:00000fe0       __IMPORT_DESCRIPTOR_libmwcgxert 000000018000dfe0     libmwcgxert:libmwcgxert.dll
+ 0002:00000ff4       __IMPORT_DESCRIPTOR_KERNEL32 000000018000dff4     kernel32:KERNEL32.dll
+ 0002:00001008       __IMPORT_DESCRIPTOR_VCRUNTIME140 000000018000e008     vcruntime:VCRUNTIME140.dll
+ 0002:0000101c       __IMPORT_DESCRIPTOR_api-ms-win-crt-heap-l1-1-0 000000018000e01c     ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0002:00001030       __IMPORT_DESCRIPTOR_api-ms-win-crt-string-l1-1-0 000000018000e030     ucrt:api-ms-win-crt-string-l1-1-0.dll
+ 0002:00001044       __IMPORT_DESCRIPTOR_api-ms-win-crt-stdio-l1-1-0 000000018000e044     ucrt:api-ms-win-crt-stdio-l1-1-0.dll
+ 0002:00001058       __IMPORT_DESCRIPTOR_api-ms-win-crt-runtime-l1-1-0 000000018000e058     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0002:0000106c       __NULL_IMPORT_DESCRIPTOR   000000018000e06c     libmx:libmx.dll
+ 0003:00001d48       DYNAMIC_DIMENSION          0000000180010d48     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002790       __security_cookie_complement 0000000180011790     MSVCRT:gs_cookie.obj
+ 0003:00002798       __security_cookie          0000000180011798     MSVCRT:gs_cookie.obj
+ 0003:000027a0       _fltused                   00000001800117a0     MSVCRT:fltused.obj
+ 0003:000027a4       __scrt_native_dllmain_reason 00000001800117a4     MSVCRT:utility.obj
+ 0003:000027a8       __isa_available            00000001800117a8     MSVCRT:_cpu_disp_.obj
+ 0003:000027ac       __isa_enabled              00000001800117ac     MSVCRT:_cpu_disp_.obj
+ 0003:000027b0       __memcpy_nt_iters          00000001800117b0     MSVCRT:_cpu_disp_.obj
+ 0003:000027c0       __scrt_ucrt_dll_is_in_use  00000001800117c0     MSVCRT:ucrt_stubs.obj
+ 0003:00003d80       ?__type_info_root_node@@3U__type_info_node@@A 0000000180012d80     MSVCRT:tncleanup.obj
+ 0003:00003d90       ?_OptionsStorage@?1??__local_stdio_printf_options@@9@4_KA 0000000180012d90     MSVCRT:default_local_stdio_options.obj
+ 0003:00003d98       ?_OptionsStorage@?1??__local_stdio_scanf_options@@9@4_KA 0000000180012d98     MSVCRT:default_local_stdio_options.obj
+ 0003:00003da0       __scrt_current_native_startup_state 0000000180012da0     MSVCRT:utility.obj
+ 0003:00003da8       __scrt_native_startup_lock 0000000180012da8     MSVCRT:utility.obj
+ 0003:00003de4       __scrt_debugger_hook_flag  0000000180012de4     MSVCRT:utility_desktop.obj
+ 0003:00003de8       __favor                    0000000180012de8     MSVCRT:_cpu_disp_.obj
+ 0003:00003df0       ?_OptionsStorage@?1??__local_stdio_printf_options@@9@9 0000000180012df0     <common>
+ 0003:00003df8       __dyn_tls_init_callback    0000000180012df8     <common>
+
+ entry point at        0001:0000a5f4
+
+ Static symbols
+
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     serialRunOnArduino_cgxe.exp
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-stdio-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-string-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     ucrt:api-ms-win-crt-string-l1-1-0.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     vcruntime:VCRUNTIME140.dll
+ 0000:00000000       .debug$S                   0000000180000000     vcruntime:VCRUNTIME140.dll
+ 0000:00000000       .debug$S                   0000000180000000     vcruntime:VCRUNTIME140.dll
+ 0000:00000000       .debug$S                   0000000180000000     vcruntime:VCRUNTIME140.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0002:ffff3000       __guard_fids___scrt_set_unhandled_exception_filter 0000000180000000     MSVCRT:utility_desktop.obj
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmwcgxert:libmwcgxert.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmwcgxert:libmwcgxert.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmwcgxert:libmwcgxert.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmwcgxert:libmwcgxert.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmwcgxert:libmwcgxert.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmwcgxert:libmwcgxert.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     libemlrt:libemlrt.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmex:libmex.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0002:ffff3000       __guard_fids_?dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180000000     MSVCRT:dll_dllmain.obj
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0002:ffff3000       __guard_fids__             0000000180000000     MSVCRT:guard_support.obj
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0000:00000000       .debug$S                   0000000180000000     libmx:libmx.dll
+ 0002:ffff3000       __guard_fids__guard_icall_checks_enforced 0000000180000000     MSVCRT:guard_support.obj
+ 0001:00000160       cgxe_mdl_start             0000000180001160 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:000004f0       cgxe_mdl_initialize        00000001800014f0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00000770       cgxe_mdl_outputs           0000000180001770 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00000c80       cgxe_mdl_update            0000000180001c80 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00000cd0       cgxe_mdl_terminate         0000000180001cd0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:000010e0       cgxe_mdl_get_sim_state     00000001800020e0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:000013e0       emlrt_marshallIn           00000001800023e0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:000014b0       b_emlrt_marshallIn         00000001800024b0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001630       c_emlrt_marshallIn         0000000180002630 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001680       d_emlrt_marshallIn         0000000180002680 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001770       e_emlrt_marshallIn         0000000180002770 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:000017c0       f_emlrt_marshallIn         00000001800027c0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001830       g_emlrt_marshallIn         0000000180002830 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001880       cgxe_mdl_set_sim_state     0000000180002880 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001990       message                    0000000180002990 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001a20       error                      0000000180002a20 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001a90       h_emlrt_marshallIn         0000000180002a90 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001b00       i_emlrt_marshallIn         0000000180002b00 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001ba0       j_emlrt_marshallIn         0000000180002ba0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001c20       init_simulink_io_address   0000000180002c20 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001c70       mdlOutputs_IyR1VrgVeRDv1KZbpA4XqG 0000000180002c70 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001cb0       mdlInitialize_IyR1VrgVeRDv1KZbpA4XqG 0000000180002cb0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001ce0       mdlUpdate_IyR1VrgVeRDv1KZbpA4XqG 0000000180002ce0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001d20       getSimState_IyR1VrgVeRDv1KZbpA4XqG 0000000180002d20 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001d60       setSimState_IyR1VrgVeRDv1KZbpA4XqG 0000000180002d60 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001da0       mdlTerminate_IyR1VrgVeRDv1KZbpA4XqG 0000000180002da0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001de0       mdlStart_IyR1VrgVeRDv1KZbpA4XqG 0000000180002de0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00001eb0       mdlProcessParameters_IyR1VrgVeRDv1KZbpA4XqG 0000000180002eb0 f   m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0001:00003e28       $LN140                     0000000180004e28     serialRunOnArduino_cgxe_registry.obj
+ 0001:00005ff4       $LN17                      0000000180006ff4     serialRunOnArduino_cgxe_registry.obj
+ 0001:0000657c       $LN26                      000000018000757c     serialRunOnArduino_cgxe_registry.obj
+ 0001:00006c64       $LN23                      0000000180007c64     serialRunOnArduino_cgxe_registry.obj
+ 0001:00007234       $LN26                      0000000180008234     serialRunOnArduino_cgxe_registry.obj
+ 0001:000082b0       mdlStart                   00000001800092b0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000082f0       mdlInitializeConditions    00000001800092f0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008310       mdlUpdate                  0000000180009310 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008340       mdlOutputs                 0000000180009340 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008370       mdlTerminate               0000000180009370 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008390       mdlInitializeSizes         0000000180009390 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000083a0       mdlInitializeSampleTimes   00000001800093a0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000083b0       cgxe_get_supported_modules 00000001800093b0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008480       cgxe_process_get_checksums 0000000180009480 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008800       cgxe_mex_unlock_call       0000000180009800 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008840       cgxe_unpack_simstruct      0000000180009840 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000088e0       cgxe_get_sim_state         00000001800098e0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008950       cgxe_set_sim_state         0000000180009950 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:000089d0       cgxe_get_BuildInfoUpdate   00000001800099d0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008aa0       cgxe_get_fallback_info     0000000180009aa0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008b70       ProcessMexSfunctionCmdLineCall 0000000180009b70 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008da0       mdlZeroCrossings           0000000180009da0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008df0       mdlGetTimeOfNextVarHit     0000000180009df0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008e40       _RegNumInputPortsCB        0000000180009e40 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008ec0       _RegNumOutputPortsCB       0000000180009ec0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00008f40       _CreateSimStruct           0000000180009f40 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00009140       _ProcessMexSfunctionCmdLineCall 000000018000a140 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00009ad0       ReportIndexOutOfBoundsError 000000018000aad0 f   serialRunOnArduino_cgxe_registry.obj
+ 0001:00009ed0       $$000000                   000000018000aed0     MSVCRT:_amdsecgs_.obj
+ 0001:0000a1cc       capture_current_context    000000018000b1cc f   MSVCRT:gs_report.obj
+ 0001:0000a23c       capture_previous_context   000000018000b23c f   MSVCRT:gs_report.obj
+ 0001:0000a2b0       ?dllmain_crt_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 000000018000b2b0 f   MSVCRT:dll_dllmain.obj
+ 0001:0000a300       ?dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z 000000018000b300 f   MSVCRT:dll_dllmain.obj
+ 0001:0000a414       ?dllmain_crt_process_detach@@YAH_N@Z 000000018000b414 f   MSVCRT:dll_dllmain.obj
+ 0001:0000a4a0       ?dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 000000018000b4a0 f   MSVCRT:dll_dllmain.obj
+ 0001:0000a598       ?dllmain_raw@@YAHQEAUHINSTANCE__@@KQEAX@Z 000000018000b598 f   MSVCRT:dll_dllmain.obj
+ 0001:0000a634       __get_entropy              000000018000b634 f   MSVCRT:gs_support.obj
+ 0001:0000a808       ?find_pe_section@@YAPEAU_IMAGE_SECTION_HEADER@@QEAE_K@Z 000000018000b808 f   MSVCRT:utility.obj
+ 0001:0000a85c       ?is_potentially_valid_image_base@@YA_NQEAX@Z 000000018000b85c f   MSVCRT:utility.obj
+ 0001:0000b2c0       $$000000                   000000018000c2c0     MSVCRT:_guard_dispatch_.obj
+ 0001:0000b2e0       $$000000                   000000018000c2e0     MSVCRT:_rfgfailure_.obj
+ 0001:0000b392       ?fin$0@?0??dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z@4HA 000000018000c392 f   MSVCRT:dll_dllmain.obj
+ 0001:0000b3a9       ?fin$0@?0??dllmain_crt_process_detach@@YAH_N@Z@4HA 000000018000c3a9 f   MSVCRT:dll_dllmain.obj
+ 0001:0000b3c5       ?filt$0@?0??dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z@4HA 000000018000c3c5 f   MSVCRT:dll_dllmain.obj
+ 0001:0000b3fb       __scrt_is_nonwritable_in_current_image$filt$0 000000018000c3fb f   MSVCRT:utility.obj
+ 0002:00000380       ?iv0@?1??cgxe_mdl_start@@9@9 000000018000d380     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000388       ?iv1@?1??cgxe_mdl_start@@9@9 000000018000d388     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000390       ?iv2@?1??cgxe_mdl_start@@9@9 000000018000d390     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000398       ?iv3@?1??cgxe_mdl_start@@9@9 000000018000d398     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003a0       ?iv4@?1??cgxe_mdl_initialize@@9@9 000000018000d3a0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003a8       ?iv5@?1??cgxe_mdl_initialize@@9@9 000000018000d3a8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003b0       ?iv6@?1??cgxe_mdl_outputs@@9@9 000000018000d3b0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003b8       ?iv7@?1??cgxe_mdl_outputs@@9@9 000000018000d3b8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003c0       ?iv8@?1??cgxe_mdl_outputs@@9@9 000000018000d3c0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003c8       ?iv9@?1??cgxe_mdl_outputs@@9@9 000000018000d3c8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003d0       ?iv10@?1??cgxe_mdl_terminate@@9@9 000000018000d3d0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003d8       ?iv11@?1??cgxe_mdl_terminate@@9@9 000000018000d3d8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003e0       ?iv12@?1??cgxe_mdl_terminate@@9@9 000000018000d3e0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003e8       ?iv13@?1??cgxe_mdl_terminate@@9@9 000000018000d3e8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003f0       ?iv15@?1??cgxe_mdl_get_sim_state@@9@9 000000018000d3f0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003f8       ?dims@?1??b_emlrt_marshallIn@@9@9 000000018000d3f8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000003fc       ?dims@?1??d_emlrt_marshallIn@@9@9 000000018000d3fc     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000400       ?dims@?1??h_emlrt_marshallIn@@9@9 000000018000d400     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000404       ?dims@?1??j_emlrt_marshallIn@@9@9 000000018000d404     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000408       ?dims@?1??i_emlrt_marshallIn@@9@9 000000018000d408     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000004a8       GS_ExceptionPointers       000000018000d4a8     MSVCRT:gs_report.obj
+ 0002:00000810       $unwind$cgxe_serialRunOnArduino_method_dispatcher 000000018000d810     serialRunOnArduino_cgxe.obj
+ 0002:00000818       $unwind$method_dispatcher_IyR1VrgVeRDv1KZbpA4XqG 000000018000d818     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000820       $unwind$cgxe_mdl_start     000000018000d820     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000834       $unwind$cgxe_mdl_initialize 000000018000d834     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:0000083c       $unwind$cgxe_mdl_outputs   000000018000d83c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000850       $unwind$cgxe_mdl_update    000000018000d850     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000858       $unwind$cgxe_mdl_terminate 000000018000d858     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000860       $unwind$cgxe_mdl_get_sim_state 000000018000d860     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000874       $unwind$emlrt_marshallIn   000000018000d874     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000888       $unwind$b_emlrt_marshallIn 000000018000d888     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:0000089c       $unwind$c_emlrt_marshallIn 000000018000d89c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008a4       $unwind$d_emlrt_marshallIn 000000018000d8a4     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008ac       $unwind$e_emlrt_marshallIn 000000018000d8ac     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008b4       $unwind$f_emlrt_marshallIn 000000018000d8b4     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008bc       $unwind$g_emlrt_marshallIn 000000018000d8bc     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008c4       $unwind$cgxe_mdl_set_sim_state 000000018000d8c4     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008d0       $unwind$message            000000018000d8d0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008d8       $unwind$error              000000018000d8d8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008e0       $unwind$h_emlrt_marshallIn 000000018000d8e0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008e8       $unwind$i_emlrt_marshallIn 000000018000d8e8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008f0       $unwind$j_emlrt_marshallIn 000000018000d8f0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:000008f8       $unwind$init_simulink_io_address 000000018000d8f8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000900       $unwind$mdlOutputs_IyR1VrgVeRDv1KZbpA4XqG 000000018000d900     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000908       $unwind$mdlInitialize_IyR1VrgVeRDv1KZbpA4XqG 000000018000d908     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000910       $unwind$mdlUpdate_IyR1VrgVeRDv1KZbpA4XqG 000000018000d910     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000918       $unwind$getSimState_IyR1VrgVeRDv1KZbpA4XqG 000000018000d918     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000920       $unwind$setSimState_IyR1VrgVeRDv1KZbpA4XqG 000000018000d920     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000928       $unwind$mdlTerminate_IyR1VrgVeRDv1KZbpA4XqG 000000018000d928     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000930       $unwind$mdlStart_IyR1VrgVeRDv1KZbpA4XqG 000000018000d930     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000938       $unwind$cgxe_IyR1VrgVeRDv1KZbpA4XqG_BuildInfoUpdate 000000018000d938     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000940       $unwind$cgxe_IyR1VrgVeRDv1KZbpA4XqG_fallback_info 000000018000d940     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0002:00000948       $unwind$_vsnprintf_l       000000018000d948     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000950       $unwind$_vsprintf_l        000000018000d950     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000958       $unwind$sprintf            000000018000d958     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000960       $unwind$mexFunction        000000018000d960     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000970       $unwind$_ssSetInputPortDirectFeedThroughFcn 000000018000d970     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000980       $unwind$_ssGetInputPortSignalPtrsFcn 000000018000d980     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000990       $unwind$_ssGetInputPortSignalFcn 000000018000d990     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009a0       $unwind$_ssSetInputPortReusableFcn 000000018000d9a0     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009a8       $unwind$_ssSetOutputPortReusableFcn 000000018000d9a8     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009b0       $unwind$_ssSetSymbolicDimsSupport 000000018000d9b0     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009b8       $unwind$_ssRegisterSymbolicDimsExpr 000000018000d9b8     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009c0       $unwind$_ssRegisterSymbolicDims 000000018000d9c0     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009c8       $unwind$_ssRegisterSymbolicDimsString 000000018000d9c8     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009d0       $unwind$_ssRegisterSymbolicDimsIntValue 000000018000d9d0     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009d8       $unwind$_ssRegisterSymbolicDimsPlus 000000018000d9d8     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009e0       $unwind$_ssRegisterSymbolicDimsMinus 000000018000d9e0     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009e8       $unwind$_ssRegisterSymbolicDimsMultiply 000000018000d9e8     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009f0       $unwind$_ssRegisterSymbolicDimsDivide 000000018000d9f0     serialRunOnArduino_cgxe_registry.obj
+ 0002:000009f8       $unwind$_ssGetNumSymbolicDims 000000018000d9f8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a00       $unwind$_ssGetSymbolicDim  000000018000da00     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a08       $unwind$_ssSetInputPortSymbolicDimsId 000000018000da08     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a10       $unwind$_ssGetCompInputPortSymbolicDimsId 000000018000da10     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a18       $unwind$_ssSetCompInputPortSymbolicDimsId 000000018000da18     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a20       $unwind$_ssSetOutputPortSymbolicDimsId 000000018000da20     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a28       $unwind$_ssGetCompOutputPortSymbolicDimsId 000000018000da28     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a30       $unwind$_ssSetCompOutputPortSymbolicDimsId 000000018000da30     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a38       $unwind$_ssSetCompDWorkSymbolicDimsId 000000018000da38     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a40       $unwind$ssGetIsZeroCrossControlDisabled 000000018000da40     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a48       $unwind$ssSetIsInputPortUsedForContZcSignal 000000018000da48     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a50       $unwind$ssSetZcSignalIsZcElementDisc 000000018000da50     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a60       $unwind$ssSetZcSignalName  000000018000da60     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a68       $unwind$ssSetZcSignalWidth 000000018000da68     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a70       $unwind$ssSetZcSignalZcEventType 000000018000da70     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a78       $unwind$ssSetZcSignalType  000000018000da78     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a80       $unwind$ssSetZcSignalZcTol 000000018000da80     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a88       $unwind$ssSetZcSignalNeedsEventNotification 000000018000da88     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a90       $unwind$ssCreateAndAddZcSignalInfo 000000018000da90     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000a98       $unwind$ssCloneAndAddZcSignalInfo 000000018000da98     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000aa0       $unwind$ssGetNumZcSignals  000000018000daa0     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000aa8       $unwind$ssGetZcSignalVector 000000018000daa8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ab0       $unwind$ssGetZcSignalName  000000018000dab0     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ab8       $unwind$ssGetZcSignalWidth 000000018000dab8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ac0       $unwind$ssGetZcSignalZcEventType 000000018000dac0     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ac8       $unwind$ssGetZcSignalZcEvents 000000018000dac8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ad0       $unwind$ssGetZcSignalType  000000018000dad0     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ad8       $unwind$ssGetZcSignalZcTol 000000018000dad8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ae0       $unwind$ssGetZcSignalNeedsEventNotification 000000018000dae0     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ae8       $unwind$ssGetZcSignalIsZcElementDisc 000000018000dae8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000af8       $unwind$ssGetIsInputPortElementContinuous 000000018000daf8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b08       $unwind$_ssSetIWorkValueFcn 000000018000db08     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b10       $unwind$_ssGetIWorkValueFcn 000000018000db10     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b18       $unwind$_ssSetRWorkValueFcn 000000018000db18     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b20       $unwind$_ssGetRWorkValueFcn 000000018000db20     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b28       $unwind$_ssSetPWorkValueFcn 000000018000db28     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b30       $unwind$_ssGetPWorkValueFcn 000000018000db30     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b38       $unwind$ssGetDTypeIdFromMxArray 000000018000db38     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b40       $unwind$ssWriteRTWStr      000000018000db40     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b48       $unwind$ssWriteRTWNameValuePair 000000018000db48     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b50       $unwind$ssWriteRTWParamSettings 000000018000db50     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b58       $unwind$ssWriteRTWParameters 000000018000db58     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b60       $unwind$ssWriteRTWWorkVect 000000018000db60     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b74       $unwind$ssWriteRTWMxVectParam 000000018000db74     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b7c       $unwind$ssWriteRTWMx2dMatParam 000000018000db7c     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b84       $unwind$_ssSetInputPortMatrixDimensions 000000018000db84     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b90       $unwind$_ssSetOutputPortMatrixDimensions 000000018000db90     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000b9c       $unwind$_ssSetInputPortVectorDimension 000000018000db9c     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ba8       $unwind$_ssSetOutputPortVectorDimension 000000018000dba8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000bb4       $unwind$ssIsRunTimeParamTunable 000000018000dbb4     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000bbc       $unwind$ssGetSFuncBlockHandle 000000018000dbbc     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000bc4       $unwind$_ssGetCurrentInputPortWidth 000000018000dbc4     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000bcc       $unwind$_ssGetCurrentOutputPortWidth 000000018000dbcc     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000bd4       $unwind$_ssGetCallSystemNumFcnCallDestinations 000000018000dbd4     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000bdc       $unwind$ssGetParameterTuningCompliance 000000018000dbdc     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000be4       $unwind$ssWarning          000000018000dbe4     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000bf8       $unwind$_ssGetAbsTol       000000018000dbf8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c00       $unwind$mdlStart           000000018000dc00     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c08       $unwind$mdlInitializeConditions 000000018000dc08     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c10       $unwind$mdlUpdate          000000018000dc10     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c18       $unwind$mdlOutputs         000000018000dc18     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c20       $unwind$mdlTerminate       000000018000dc20     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c28       $unwind$cgxe_get_supported_modules 000000018000dc28     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c30       $unwind$cgxe_process_get_checksums 000000018000dc30     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c40       $unwind$cgxe_mex_unlock_call 000000018000dc40     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c48       $unwind$cgxe_unpack_simstruct 000000018000dc48     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c50       $unwind$cgxe_get_sim_state 000000018000dc50     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c58       $unwind$cgxe_set_sim_state 000000018000dc58     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c60       $unwind$cgxe_get_BuildInfoUpdate 000000018000dc60     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c70       $unwind$cgxe_get_fallback_info 000000018000dc70     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c80       $unwind$ProcessMexSfunctionCmdLineCall 000000018000dc80     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c90       $unwind$_RegNumInputPortsCB 000000018000dc90     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000c98       $unwind$_RegNumOutputPortsCB 000000018000dc98     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ca0       $unwind$_CreateSimStruct   000000018000dca0     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000ca8       $unwind$_ProcessMexSfunctionCmdLineCall 000000018000dca8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000cb8       $unwind$ReportIndexOutOfBoundsError 000000018000dcb8     serialRunOnArduino_cgxe_registry.obj
+ 0002:00000cc0       $unwind$__GSHandlerCheckCommon 000000018000dcc0     MSVCRT:_gshandler_.obj
+ 0002:00000cc8       $unwind$__GSHandlerCheck   000000018000dcc8     MSVCRT:_gshandler_.obj
+ 0002:00000cd0       $xdatasym                  000000018000dcd0     MSVCRT:_amdsecgs_.obj
+ 0002:00000cd4       $unwind$__report_securityfailure 000000018000dcd4     MSVCRT:gs_report.obj
+ 0002:00000cdc       $unwind$__report_securityfailureEx 000000018000dcdc     MSVCRT:gs_report.obj
+ 0002:00000ce4       $unwind$__report_rangecheckfailure 000000018000dce4     MSVCRT:gs_report.obj
+ 0002:00000cec       $unwind$__report_gsfailure 000000018000dcec     MSVCRT:gs_report.obj
+ 0002:00000cf4       $unwind$capture_current_context 000000018000dcf4     MSVCRT:gs_report.obj
+ 0002:00000d00       $unwind$capture_previous_context 000000018000dd00     MSVCRT:gs_report.obj
+ 0002:00000d0c       $unwind$__raise_securityfailure 000000018000dd0c     MSVCRT:gs_report.obj
+ 0002:00000d14       $unwind$?dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z 000000018000dd14     MSVCRT:dll_dllmain.obj
+ 0002:00000d40       $unwind$?fin$0@?0??dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z@4HA 000000018000dd40     MSVCRT:dll_dllmain.obj
+ 0002:00000d48       $unwind$?dllmain_crt_process_detach@@YAH_N@Z 000000018000dd48     MSVCRT:dll_dllmain.obj
+ 0002:00000d70       $unwind$?fin$0@?0??dllmain_crt_process_detach@@YAH_N@Z@4HA 000000018000dd70     MSVCRT:dll_dllmain.obj
+ 0002:00000d78       $unwind$?dllmain_crt_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 000000018000dd78     MSVCRT:dll_dllmain.obj
+ 0002:00000d80       $unwind$?dllmain_raw@@YAHQEAUHINSTANCE__@@KQEAX@Z 000000018000dd80     MSVCRT:dll_dllmain.obj
+ 0002:00000d94       $unwind$?dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 000000018000dd94     MSVCRT:dll_dllmain.obj
+ 0002:00000dbc       $unwind$?filt$0@?0??dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z@4HA 000000018000ddbc     MSVCRT:dll_dllmain.obj
+ 0002:00000dc4       $unwind$_DllMainCRTStartup 000000018000ddc4     MSVCRT:dll_dllmain.obj
+ 0002:00000dd4       $unwind$__security_init_cookie 000000018000ddd4     MSVCRT:gs_support.obj
+ 0002:00000de0       $unwind$__get_entropy      000000018000dde0     MSVCRT:gs_support.obj
+ 0002:00000de8       $unwind$DllMain            000000018000dde8     MSVCRT:dll_dllmain_stub.obj
+ 0002:00000df0       $unwind$__scrt_initialize_default_local_stdio_options 000000018000ddf0     MSVCRT:default_local_stdio_options.obj
+ 0002:00000df8       $unwind$atexit             000000018000ddf8     MSVCRT:utility.obj
+ 0002:00000e00       $unwind$_onexit            000000018000de00     MSVCRT:utility.obj
+ 0002:00000e08       $unwind$__scrt_is_nonwritable_in_current_image 000000018000de08     MSVCRT:utility.obj
+ 0002:00000e28       $unwind$__scrt_is_nonwritable_in_current_image$filt$0 000000018000de28     MSVCRT:utility.obj
+ 0002:00000e30       $unwind$__scrt_acquire_startup_lock 000000018000de30     MSVCRT:utility.obj
+ 0002:00000e38       $unwind$__scrt_release_startup_lock 000000018000de38     MSVCRT:utility.obj
+ 0002:00000e40       $unwind$__scrt_initialize_crt 000000018000de40     MSVCRT:utility.obj
+ 0002:00000e48       $unwind$__scrt_uninitialize_crt 000000018000de48     MSVCRT:utility.obj
+ 0002:00000e50       $unwind$__scrt_initialize_onexit_tables 000000018000de50     MSVCRT:utility.obj
+ 0002:00000e5c       $unwind$__scrt_dllmain_exception_filter 000000018000de5c     MSVCRT:utility.obj
+ 0002:00000e70       $unwind$__scrt_dllmain_before_initialize_c 000000018000de70     MSVCRT:utility.obj
+ 0002:00000e78       $unwind$__scrt_dllmain_after_initialize_c 000000018000de78     MSVCRT:utility.obj
+ 0002:00000e80       $unwind$__scrt_dllmain_uninitialize_c 000000018000de80     MSVCRT:utility.obj
+ 0002:00000e88       $unwind$__scrt_dllmain_uninitialize_critical 000000018000de88     MSVCRT:utility.obj
+ 0002:00000e90       $unwind$__scrt_dllmain_crt_thread_attach 000000018000de90     MSVCRT:utility.obj
+ 0002:00000e98       $unwind$__scrt_dllmain_crt_thread_detach 000000018000de98     MSVCRT:utility.obj
+ 0002:00000ea0       $unwind$?configure_argv@__scrt_narrow_argv_policy@@SAHXZ 000000018000dea0     MSVCRT:utility.obj
+ 0002:00000ea8       $unwind$__scrt_get_show_window_mode 000000018000dea8     MSVCRT:utility_desktop.obj
+ 0002:00000eb0       $unwind$__scrt_is_managed_app 000000018000deb0     MSVCRT:utility_desktop.obj
+ 0002:00000eb8       $unwind$__scrt_fastfail    000000018000deb8     MSVCRT:utility_desktop.obj
+ 0002:00000ec8       $unwind$__scrt_unhandled_exception_filter 000000018000dec8     MSVCRT:utility_desktop.obj
+ 0002:00000ed0       $unwind$_RTC_Initialize    000000018000ded0     MSVCRT:_initsect_.obj
+ 0002:00000ee0       $unwind$_RTC_Terminate     000000018000dee0     MSVCRT:_initsect_.obj
+ 0002:00000ef0       $unwind$__isa_available_init 000000018000def0     MSVCRT:_cpu_disp_.obj
+ 0002:00000f08       $xdatasym                  000000018000df08     MSVCRT:_guard_dispatch_.obj
+ 0002:00000f10       $xdatasym                  000000018000df10     MSVCRT:_rfgfailure_.obj
+ 0002:00000f20       .edata                     000000018000df20     serialRunOnArduino_cgxe.exp
+ 0002:00000f48       rgpv                       000000018000df48     serialRunOnArduino_cgxe.exp
+ 0002:00000f50       rgszName                   000000018000df50     serialRunOnArduino_cgxe.exp
+ 0002:00000f58       rgwOrd                     000000018000df58     serialRunOnArduino_cgxe.exp
+ 0002:00000f5c       szName                     000000018000df5c     serialRunOnArduino_cgxe.exp
+ 0002:00000f7b       $N00001                    000000018000df7b     serialRunOnArduino_cgxe.exp
+ 0002:00000f87       $N00002                    000000018000df87     serialRunOnArduino_cgxe.exp
+ 0002:000014f4       .idata$6                   000000018000e4f4     libmx:libmx.dll
+ 0002:0000154e       .idata$6                   000000018000e54e     libmex:libmex.dll
+ 0002:0000172c       .idata$6                   000000018000e72c     libemlrt:libemlrt.dll
+ 0002:000017c6       .idata$6                   000000018000e7c6     libmwcgxert:libmwcgxert.dll
+ 0002:00001962       .idata$6                   000000018000e962     kernel32:KERNEL32.dll
+ 0002:000019bc       .idata$6                   000000018000e9bc     vcruntime:VCRUNTIME140.dll
+ 0002:00001b0a       .idata$6                   000000018000eb0a     ucrt:api-ms-win-crt-heap-l1-1-0.dll
+ 0002:00001b2a       .idata$6                   000000018000eb2a     ucrt:api-ms-win-crt-string-l1-1-0.dll
+ 0002:00001b4c       .idata$6                   000000018000eb4c     ucrt:api-ms-win-crt-stdio-l1-1-0.dll
+ 0002:00001b6c       .idata$6                   000000018000eb6c     ucrt:api-ms-win-crt-runtime-l1-1-0.dll
+ 0003:00000000       emlrtRSI                   000000018000f000     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000018       $SG14357                   000000018000f018     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:0000002c       ?b_u@?1??cgxe_mdl_outputs@@9@9 000000018000f02c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000030       $SG14358                   000000018000f030     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000000c8       b_emlrtRSI                 000000018000f0c8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000000e0       $SG14360                   000000018000f0e0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000000e8       c_emlrtRSI                 000000018000f0e8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000100       $SG14361                   000000018000f100     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:0000015c       $SG14712                   000000018000f15c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000160       $SG14363                   000000018000f160     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000170       $SG14364                   000000018000f170     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000001d0       d_emlrtRSI                 000000018000f1d0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000001e8       $SG14366                   000000018000f1e8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000001f8       e_emlrtRSI                 000000018000f1f8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000210       $SG14367                   000000018000f210     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000270       $SG14369                   000000018000f270     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000280       $SG14370                   000000018000f280     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000002e8       f_emlrtRSI                 000000018000f2e8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000300       $SG14372                   000000018000f300     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000310       $SG14373                   000000018000f310     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:0000036c       ?c_u@?1??cgxe_mdl_terminate@@9@9 000000018000f36c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000374       $SG14714                   000000018000f374     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000378       g_emlrtRSI                 000000018000f378     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000390       $SG14375                   000000018000f390     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000003a8       h_emlrtRSI                 000000018000f3a8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000003c0       $SG14376                   000000018000f3c0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000418       i_emlrtRSI                 000000018000f418     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000430       j_emlrtRSI                 000000018000f430     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000448       k_emlrtRSI                 000000018000f448     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000460       l_emlrtRSI                 000000018000f460     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000478       m_emlrtRSI                 000000018000f478     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000490       emlrtMCI                   000000018000f490     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000004a8       $SG14396                   000000018000f4a8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000004b8       ?u@?1??cgxe_mdl_start@@9@9 000000018000f4b8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000004f0       $SG14397                   000000018000f4f0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000550       ?b_u@?1??cgxe_mdl_start@@9@9 000000018000f550     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000558       ?u@?1??cgxe_mdl_initialize@@9@9 000000018000f558     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000588       ?b_u@?1??cgxe_mdl_initialize@@9@9 000000018000f588     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000590       ?u@?1??cgxe_mdl_outputs@@9@9 000000018000f590     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000005c0       ?c_u@?1??cgxe_mdl_outputs@@9@9 000000018000f5c0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000005f4       ?d_u@?1??cgxe_mdl_outputs@@9@9 000000018000f5f4     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000005fc       $SG14768                   000000018000f5fc     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000600       ?u@?1??cgxe_mdl_terminate@@9@9 000000018000f600     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000630       ?b_u@?1??cgxe_mdl_terminate@@9@9 000000018000f630     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000638       ?sv0@?1??cgxe_mdl_get_sim_state@@9@9 000000018000f638     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000648       ?sv1@?1??cgxe_mdl_get_sim_state@@9@9 000000018000f648     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000650       $SG14710                   000000018000f650     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000660       $SG14711                   000000018000f660     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000670       $SG14713                   000000018000f670     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000680       $SG14715                   000000018000f680     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000690       ?fieldNames@?1??b_emlrt_marshallIn@@9@9 000000018000f690     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000006a0       $SG14740                   000000018000f6a0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000006b0       $SG14741                   000000018000f6b0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000006c0       $SG14742                   000000018000f6c0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000006d0       $SG14743                   000000018000f6d0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000006e0       $SG14744                   000000018000f6e0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000006f0       $SG14745                   000000018000f6f0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000700       ?fieldNames@?1??d_emlrt_marshallIn@@9@9 000000018000f700     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000708       $SG14769                   000000018000f708     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:0000070c       $SG14770                   000000018000f70c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000710       $SG14809                   000000018000f710     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000718       $SG14810                   000000018000f718     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000720       $SG14811                   000000018000f720     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000734       $SG14834                   000000018000f734     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:0000073c       $SG14863                   000000018000f73c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000748       $SG14812                   000000018000f748     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:0000075c       $SG14846                   000000018000f75c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000768       $SG14824                   000000018000f768     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000770       $SG14874                   000000018000f770     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000778       $SG14972                   000000018000f778     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000007b0       $SG14973                   000000018000f7b0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000007c0       $SG14974                   000000018000f7c0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000007d8       $SG14982                   000000018000f7d8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000007e8       $SG14983                   000000018000f7e8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000007f8       $SG14984                   000000018000f7f8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000810       $SG14985                   000000018000f810     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000828       $SG14986                   000000018000f828     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000838       $SG14987                   000000018000f838     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:00000870       $SG16387                   000000018000f870     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000890       $SG16388                   000000018000f890     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000910       $SG14342                   000000018000f910     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000944       $SG14395                   000000018000f944     serialRunOnArduino_cgxe_registry.obj
+ 0003:0000094c       $SG16028                   000000018000f94c     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000950       $SG16392                   000000018000f950     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000970       $SG16393                   000000018000f970     serialRunOnArduino_cgxe_registry.obj
+ 0003:000009f0       $SG14347                   000000018000f9f0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000a24       $SG16106                   000000018000fa24     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000a28       $SG16397                   000000018000fa28     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000a48       $SG16402                   000000018000fa48     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000a70       $SG16398                   000000018000fa70     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000af0       $SG16403                   000000018000faf0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000b70       $SG16407                   000000018000fb70     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000b98       $SG16422                   000000018000fb98     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000bb0       $SG16408                   000000018000fbb0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000c30       $SG16412                   000000018000fc30     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000c50       $SG16413                   000000018000fc50     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000cd0       $SG16417                   000000018000fcd0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000cf0       $SG16418                   000000018000fcf0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000d70       $SG16423                   000000018000fd70     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000df0       $SG16427                   000000018000fdf0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000e10       $SG16428                   000000018000fe10     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000e90       $SG16432                   000000018000fe90     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000eb0       $SG16433                   000000018000feb0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000f30       $SG16437                   000000018000ff30     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000f50       $SG14389                   000000018000ff50     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000f58       $SG14390                   000000018000ff58     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000f60       $SG16438                   000000018000ff60     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000fe0       $SG14391                   000000018000ffe0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000fe8       $SG14392                   000000018000ffe8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000ff0       $SG14393                   000000018000fff0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00000ffc       $SG14396                   000000018000fffc     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001008       $SG16442                   0000000180010008     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001028       $SG14394                   0000000180010028     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001038       $SG14397                   0000000180010038     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001040       $SG16443                   0000000180010040     serialRunOnArduino_cgxe_registry.obj
+ 0003:000010c0       $SG14398                   00000001800100c0     serialRunOnArduino_cgxe_registry.obj
+ 0003:000010c8       $SG16447                   00000001800100c8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000010e8       $SG14399                   00000001800100e8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000010f0       $SG16448                   00000001800100f0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001170       $SG14400                   0000000180010170     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001178       $SG14401                   0000000180010178     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001184       $SG14402                   0000000180010184     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001190       $SG14403                   0000000180010190     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001198       $SG16452                   0000000180010198     serialRunOnArduino_cgxe_registry.obj
+ 0003:000011b8       $SG16458                   00000001800101b8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000011d0       $SG16453                   00000001800101d0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001250       $SG16459                   0000000180010250     serialRunOnArduino_cgxe_registry.obj
+ 0003:000012d0       $SG16463                   00000001800102d0     serialRunOnArduino_cgxe_registry.obj
+ 0003:000012e8       $SG16473                   00000001800102e8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001300       $SG16464                   0000000180010300     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001380       $SG16468                   0000000180010380     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001390       $SG16469                   0000000180010390     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001410       $SG16474                   0000000180010410     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001490       $SG16482                   0000000180010490     serialRunOnArduino_cgxe_registry.obj
+ 0003:000014a0       $SG16483                   00000001800104a0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001520       $SG16485                   0000000180010520     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001594       $SG15089                   0000000180010594     serialRunOnArduino_cgxe_registry.obj
+ 0003:000015a0       $SG16487                   00000001800105a0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001614       $SG15095                   0000000180010614     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001620       $SG16491                   0000000180010620     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001698       $SG14448                   0000000180010698     serialRunOnArduino_cgxe_registry.obj
+ 0003:000016c8       $SG14463                   00000001800106c8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000016f8       $SG16528                   00000001800106f8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001708       $SG14481                   0000000180010708     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001720       $SG16516                   0000000180010720     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001798       $SG16538                   0000000180010798     serialRunOnArduino_cgxe_registry.obj
+ 0003:000017a8       $SG14499                   00000001800107a8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000017c0       $SG16550                   00000001800107c0     serialRunOnArduino_cgxe_registry.obj
+ 0003:000017d0       $SG16560                   00000001800107d0     serialRunOnArduino_cgxe_registry.obj
+ 0003:000017e0       $SG14517                   00000001800107e0     serialRunOnArduino_cgxe_registry.obj
+ 0003:000017f0       $SG14519                   00000001800107f0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001800       $SG14521                   0000000180010800     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001810       $SG14523                   0000000180010810     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001820       $SG16572                   0000000180010820     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001830       $SG14525                   0000000180010830     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001848       $SG14527                   0000000180010848     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001860       $SG16582                   0000000180010860     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001870       $SG14541                   0000000180010870     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001898       _sfcnName                  0000000180010898     serialRunOnArduino_cgxe_registry.obj
+ 0003:000018c8       $SG14882                   00000001800108c8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000018e0       $SG14558                   00000001800108e0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001958       $SG14883                   0000000180010958     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001970       $SG14563                   0000000180010970     serialRunOnArduino_cgxe_registry.obj
+ 0003:000019e8       $SG14897                   00000001800109e8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000019f8       $SG15087                   00000001800109f8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001a38       $SG15088                   0000000180010a38     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001a40       $SG15093                   0000000180010a40     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001a88       $SG15094                   0000000180010a88     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001a90       $SG15096                   0000000180010a90     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001ae8       $SG15097                   0000000180010ae8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001af0       $SG15098                   0000000180010af0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001af8       $SG15120                   0000000180010af8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001b38       $SG15121                   0000000180010b38     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001b40       $SG15122                   0000000180010b40     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001b48       $SG15127                   0000000180010b48     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001b50       $SG15126                   0000000180010b50     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001b98       $SG15128                   0000000180010b98     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001ba0       $SG15129                   0000000180010ba0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001bf8       $SG15130                   0000000180010bf8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001c00       $SG15131                   0000000180010c00     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001c08       $SG15147                   0000000180010c08     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001c10       $SG15146                   0000000180010c10     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001c60       $SG15148                   0000000180010c60     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001c68       $SG15161                   0000000180010c68     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001c70       $SG15160                   0000000180010c70     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001cd0       $SG15162                   0000000180010cd0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001cd8       $SG15175                   0000000180010cd8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001ce0       $SG15174                   0000000180010ce0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001d40       $SG15176                   0000000180010d40     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001d50       $SG15391                   0000000180010d50     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001dc8       $SG16013                   0000000180010dc8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001de0       $SG15394                   0000000180010de0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001e54       $SG16080                   0000000180010e54     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001e60       $SG15399                   0000000180010e60     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001ed8       $SG16081                   0000000180010ed8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001ee0       $SG15407                   0000000180010ee0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001f50       $SG15682                   0000000180010f50     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001fc8       $SG16082                   0000000180010fc8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00001fd0       $SG15687                   0000000180010fd0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002048       $SG16088                   0000000180011048     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002050       $SG16025                   0000000180011050     serialRunOnArduino_cgxe_registry.obj
+ 0003:000020c8       $SG16091                   00000001800110c8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000020d0       $SG16083                   00000001800110d0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002148       $SG16094                   0000000180011148     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002150       $SG16085                   0000000180011150     serialRunOnArduino_cgxe_registry.obj
+ 0003:000021d0       $SG16095                   00000001800111d0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002250       $SG16096                   0000000180011250     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002260       $SG16098                   0000000180011260     serialRunOnArduino_cgxe_registry.obj
+ 0003:0000226c       $SG16100                   000000018001126c     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002274       $SG16102                   0000000180011274     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002280       $SG16104                   0000000180011280     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002290       $SG16109                   0000000180011290     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002340       $SG16214                   0000000180011340     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002370       $SG16215                   0000000180011370     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002378       $SG16216                   0000000180011378     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002380       $SG16218                   0000000180011380     serialRunOnArduino_cgxe_registry.obj
+ 0003:000023b8       $SG16219                   00000001800113b8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000023c0       $SG16220                   00000001800113c0     serialRunOnArduino_cgxe_registry.obj
+ 0003:000023c8       $SG16223                   00000001800113c8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002400       $SG16224                   0000000180011400     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002408       $SG16225                   0000000180011408     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002410       $SG16227                   0000000180011410     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002448       $SG16228                   0000000180011448     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002450       $SG16229                   0000000180011450     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002458       $SG16231                   0000000180011458     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002490       $SG16232                   0000000180011490     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002498       $SG16233                   0000000180011498     serialRunOnArduino_cgxe_registry.obj
+ 0003:000024a0       $SG16236                   00000001800114a0     serialRunOnArduino_cgxe_registry.obj
+ 0003:000024b8       $SG16238                   00000001800114b8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000024d0       $SG16239                   00000001800114d0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002508       $SG16240                   0000000180011508     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002510       $SG16241                   0000000180011510     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002518       $SG14323                   0000000180011518     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002548       $SG16372                   0000000180011548     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002568       $SG14328                   0000000180011568     serialRunOnArduino_cgxe_registry.obj
+ 0003:000025a8       $SG16377                   00000001800115a8     serialRunOnArduino_cgxe_registry.obj
+ 0003:000025c0       $SG16373                   00000001800115c0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002640       $SG16378                   0000000180011640     serialRunOnArduino_cgxe_registry.obj
+ 0003:000026c0       $SG16382                   00000001800116c0     serialRunOnArduino_cgxe_registry.obj
+ 0003:000026d8       $SG14335                   00000001800116d8     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002710       $SG16383                   0000000180011710     serialRunOnArduino_cgxe_registry.obj
+ 0003:000027d0       $SG14378                   00000001800117d0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027d1       $SG14379                   00000001800117d1     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027d2       $SG14381                   00000001800117d2     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027d3       $SG14382                   00000001800117d3     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027d4       $SG14384                   00000001800117d4     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027d5       $SG14385                   00000001800117d5     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027d6       $SG14387                   00000001800117d6     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027d7       $SG14388                   00000001800117d7     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027d8       $SG14390                   00000001800117d8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027d9       $SG14391                   00000001800117d9     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027da       $SG14393                   00000001800117da     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027db       $SG14394                   00000001800117db     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027e0       eml_mx                     00000001800117e0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027e8       b_eml_mx                   00000001800117e8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0003:000027f0       $SG16076                   00000001800117f0     serialRunOnArduino_cgxe_registry.obj
+ 0003:00002800       ?msg@?3??ReportIndexOutOfBoundsError@@9@9 0000000180011800     serialRunOnArduino_cgxe_registry.obj
+ 0003:00003800       GS_ExceptionRecord         0000000180012800     MSVCRT:gs_report.obj
+ 0003:000038a0       GS_ContextRecord           00000001800128a0     MSVCRT:gs_report.obj
+ 0003:00003d70       ?__proc_attached@@3HA      0000000180012d70     MSVCRT:dll_dllmain.obj
+ 0003:00003da4       ?module_local_atexit_table_initialized@@3_NA 0000000180012da4     MSVCRT:utility.obj
+ 0003:00003db0       ?module_local_atexit_table@@3U_onexit_table_t@@A 0000000180012db0     MSVCRT:utility.obj
+ 0003:00003dc8       ?module_local_at_quick_exit_table@@3U_onexit_table_t@@A 0000000180012dc8     MSVCRT:utility.obj
+ 0003:00003de0       ?is_initialized_as_dll@@3_NA 0000000180012de0     MSVCRT:utility.obj
+ 0004:00000000       $pdata$cgxe_serialRunOnArduino_method_dispatcher 0000000180013000     serialRunOnArduino_cgxe.obj
+ 0004:0000000c       $pdata$method_dispatcher_IyR1VrgVeRDv1KZbpA4XqG 000000018001300c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000018       $pdata$cgxe_mdl_start      0000000180013018     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000024       $pdata$cgxe_mdl_initialize 0000000180013024     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000030       $pdata$cgxe_mdl_outputs    0000000180013030     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:0000003c       $pdata$cgxe_mdl_update     000000018001303c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000048       $pdata$cgxe_mdl_terminate  0000000180013048     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000054       $pdata$cgxe_mdl_get_sim_state 0000000180013054     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000060       $pdata$emlrt_marshallIn    0000000180013060     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:0000006c       $pdata$b_emlrt_marshallIn  000000018001306c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000078       $pdata$c_emlrt_marshallIn  0000000180013078     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000084       $pdata$d_emlrt_marshallIn  0000000180013084     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000090       $pdata$e_emlrt_marshallIn  0000000180013090     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:0000009c       $pdata$f_emlrt_marshallIn  000000018001309c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:000000a8       $pdata$g_emlrt_marshallIn  00000001800130a8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:000000b4       $pdata$cgxe_mdl_set_sim_state 00000001800130b4     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:000000c0       $pdata$message             00000001800130c0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:000000cc       $pdata$error               00000001800130cc     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:000000d8       $pdata$h_emlrt_marshallIn  00000001800130d8     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:000000e4       $pdata$i_emlrt_marshallIn  00000001800130e4     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:000000f0       $pdata$j_emlrt_marshallIn  00000001800130f0     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:000000fc       $pdata$init_simulink_io_address 00000001800130fc     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000108       $pdata$mdlOutputs_IyR1VrgVeRDv1KZbpA4XqG 0000000180013108     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000114       $pdata$mdlInitialize_IyR1VrgVeRDv1KZbpA4XqG 0000000180013114     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000120       $pdata$mdlUpdate_IyR1VrgVeRDv1KZbpA4XqG 0000000180013120     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:0000012c       $pdata$getSimState_IyR1VrgVeRDv1KZbpA4XqG 000000018001312c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000138       $pdata$setSimState_IyR1VrgVeRDv1KZbpA4XqG 0000000180013138     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000144       $pdata$mdlTerminate_IyR1VrgVeRDv1KZbpA4XqG 0000000180013144     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000150       $pdata$mdlStart_IyR1VrgVeRDv1KZbpA4XqG 0000000180013150     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:0000015c       $pdata$cgxe_IyR1VrgVeRDv1KZbpA4XqG_BuildInfoUpdate 000000018001315c     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000168       $pdata$cgxe_IyR1VrgVeRDv1KZbpA4XqG_fallback_info 0000000180013168     m_IyR1VrgVeRDv1KZbpA4XqG.obj
+ 0004:00000174       $pdata$mexFunction         0000000180013174     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000180       $pdata$_ssSetInputPortDirectFeedThroughFcn 0000000180013180     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000018c       $pdata$_ssGetInputPortSignalPtrsFcn 000000018001318c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000198       $pdata$_ssGetInputPortSignalFcn 0000000180013198     serialRunOnArduino_cgxe_registry.obj
+ 0004:000001a4       $pdata$_ssSetInputPortReusableFcn 00000001800131a4     serialRunOnArduino_cgxe_registry.obj
+ 0004:000001b0       $pdata$_ssSetOutputPortReusableFcn 00000001800131b0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000001bc       $pdata$_ssSetSymbolicDimsSupport 00000001800131bc     serialRunOnArduino_cgxe_registry.obj
+ 0004:000001c8       $pdata$_ssRegisterSymbolicDimsExpr 00000001800131c8     serialRunOnArduino_cgxe_registry.obj
+ 0004:000001d4       $pdata$_ssRegisterSymbolicDims 00000001800131d4     serialRunOnArduino_cgxe_registry.obj
+ 0004:000001e0       $pdata$_ssRegisterSymbolicDimsString 00000001800131e0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000001ec       $pdata$_ssRegisterSymbolicDimsIntValue 00000001800131ec     serialRunOnArduino_cgxe_registry.obj
+ 0004:000001f8       $pdata$_ssRegisterSymbolicDimsPlus 00000001800131f8     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000204       $pdata$_ssRegisterSymbolicDimsMinus 0000000180013204     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000210       $pdata$_ssRegisterSymbolicDimsMultiply 0000000180013210     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000021c       $pdata$_ssRegisterSymbolicDimsDivide 000000018001321c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000228       $pdata$_ssGetNumSymbolicDims 0000000180013228     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000234       $pdata$_ssGetSymbolicDim   0000000180013234     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000240       $pdata$_ssSetInputPortSymbolicDimsId 0000000180013240     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000024c       $pdata$_ssGetCompInputPortSymbolicDimsId 000000018001324c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000258       $pdata$_ssSetCompInputPortSymbolicDimsId 0000000180013258     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000264       $pdata$_ssSetOutputPortSymbolicDimsId 0000000180013264     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000270       $pdata$_ssGetCompOutputPortSymbolicDimsId 0000000180013270     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000027c       $pdata$_ssSetCompOutputPortSymbolicDimsId 000000018001327c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000288       $pdata$_ssSetCompDWorkSymbolicDimsId 0000000180013288     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000294       $pdata$ssGetIsZeroCrossControlDisabled 0000000180013294     serialRunOnArduino_cgxe_registry.obj
+ 0004:000002a0       $pdata$ssSetIsInputPortUsedForContZcSignal 00000001800132a0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000002ac       $pdata$ssSetZcSignalIsZcElementDisc 00000001800132ac     serialRunOnArduino_cgxe_registry.obj
+ 0004:000002b8       $pdata$ssSetZcSignalName   00000001800132b8     serialRunOnArduino_cgxe_registry.obj
+ 0004:000002c4       $pdata$ssSetZcSignalWidth  00000001800132c4     serialRunOnArduino_cgxe_registry.obj
+ 0004:000002d0       $pdata$ssSetZcSignalZcEventType 00000001800132d0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000002dc       $pdata$ssSetZcSignalType   00000001800132dc     serialRunOnArduino_cgxe_registry.obj
+ 0004:000002e8       $pdata$ssSetZcSignalZcTol  00000001800132e8     serialRunOnArduino_cgxe_registry.obj
+ 0004:000002f4       $pdata$ssSetZcSignalNeedsEventNotification 00000001800132f4     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000300       $pdata$ssCreateAndAddZcSignalInfo 0000000180013300     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000030c       $pdata$ssCloneAndAddZcSignalInfo 000000018001330c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000318       $pdata$ssGetNumZcSignals   0000000180013318     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000324       $pdata$ssGetZcSignalVector 0000000180013324     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000330       $pdata$ssGetZcSignalName   0000000180013330     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000033c       $pdata$ssGetZcSignalWidth  000000018001333c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000348       $pdata$ssGetZcSignalZcEventType 0000000180013348     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000354       $pdata$ssGetZcSignalZcEvents 0000000180013354     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000360       $pdata$ssGetZcSignalType   0000000180013360     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000036c       $pdata$ssGetZcSignalZcTol  000000018001336c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000378       $pdata$ssGetZcSignalNeedsEventNotification 0000000180013378     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000384       $pdata$ssGetZcSignalIsZcElementDisc 0000000180013384     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000390       $pdata$ssGetIsInputPortElementContinuous 0000000180013390     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000039c       $pdata$_ssSetIWorkValueFcn 000000018001339c     serialRunOnArduino_cgxe_registry.obj
+ 0004:000003a8       $pdata$_ssGetIWorkValueFcn 00000001800133a8     serialRunOnArduino_cgxe_registry.obj
+ 0004:000003b4       $pdata$_ssSetRWorkValueFcn 00000001800133b4     serialRunOnArduino_cgxe_registry.obj
+ 0004:000003c0       $pdata$_ssGetRWorkValueFcn 00000001800133c0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000003cc       $pdata$_ssSetPWorkValueFcn 00000001800133cc     serialRunOnArduino_cgxe_registry.obj
+ 0004:000003d8       $pdata$_ssGetPWorkValueFcn 00000001800133d8     serialRunOnArduino_cgxe_registry.obj
+ 0004:000003e4       $pdata$ssGetDTypeIdFromMxArray 00000001800133e4     serialRunOnArduino_cgxe_registry.obj
+ 0004:000003f0       $pdata$ssWriteRTWStr       00000001800133f0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000003fc       $pdata$ssWriteRTWNameValuePair 00000001800133fc     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000408       $pdata$ssWriteRTWParamSettings 0000000180013408     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000414       $pdata$ssWriteRTWParameters 0000000180013414     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000420       $pdata$ssWriteRTWWorkVect  0000000180013420     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000042c       $pdata$ssWriteRTWMxVectParam 000000018001342c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000438       $pdata$ssWriteRTWMx2dMatParam 0000000180013438     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000444       $pdata$_ssSetInputPortMatrixDimensions 0000000180013444     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000450       $pdata$_ssSetOutputPortMatrixDimensions 0000000180013450     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000045c       $pdata$_ssSetInputPortVectorDimension 000000018001345c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000468       $pdata$_ssSetOutputPortVectorDimension 0000000180013468     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000474       $pdata$ssIsRunTimeParamTunable 0000000180013474     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000480       $pdata$ssGetSFuncBlockHandle 0000000180013480     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000048c       $pdata$_ssGetCurrentInputPortWidth 000000018001348c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000498       $pdata$_ssGetCurrentOutputPortWidth 0000000180013498     serialRunOnArduino_cgxe_registry.obj
+ 0004:000004a4       $pdata$_ssGetCallSystemNumFcnCallDestinations 00000001800134a4     serialRunOnArduino_cgxe_registry.obj
+ 0004:000004b0       $pdata$ssGetParameterTuningCompliance 00000001800134b0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000004bc       $pdata$ssWarning           00000001800134bc     serialRunOnArduino_cgxe_registry.obj
+ 0004:000004c8       $pdata$_ssGetAbsTol        00000001800134c8     serialRunOnArduino_cgxe_registry.obj
+ 0004:000004d4       $pdata$mdlStart            00000001800134d4     serialRunOnArduino_cgxe_registry.obj
+ 0004:000004e0       $pdata$mdlInitializeConditions 00000001800134e0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000004ec       $pdata$mdlUpdate           00000001800134ec     serialRunOnArduino_cgxe_registry.obj
+ 0004:000004f8       $pdata$mdlOutputs          00000001800134f8     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000504       $pdata$mdlTerminate        0000000180013504     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000510       $pdata$cgxe_get_supported_modules 0000000180013510     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000051c       $pdata$cgxe_process_get_checksums 000000018001351c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000528       $pdata$cgxe_mex_unlock_call 0000000180013528     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000534       $pdata$cgxe_unpack_simstruct 0000000180013534     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000540       $pdata$cgxe_get_sim_state  0000000180013540     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000054c       $pdata$cgxe_set_sim_state  000000018001354c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000558       $pdata$cgxe_get_BuildInfoUpdate 0000000180013558     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000564       $pdata$cgxe_get_fallback_info 0000000180013564     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000570       $pdata$ProcessMexSfunctionCmdLineCall 0000000180013570     serialRunOnArduino_cgxe_registry.obj
+ 0004:0000057c       $pdata$_RegNumInputPortsCB 000000018001357c     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000588       $pdata$_RegNumOutputPortsCB 0000000180013588     serialRunOnArduino_cgxe_registry.obj
+ 0004:00000594       $pdata$_CreateSimStruct    0000000180013594     serialRunOnArduino_cgxe_registry.obj
+ 0004:000005a0       $pdata$_ProcessMexSfunctionCmdLineCall 00000001800135a0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000005ac       $pdata$ReportIndexOutOfBoundsError 00000001800135ac     serialRunOnArduino_cgxe_registry.obj
+ 0004:000005b8       $pdata$_vsnprintf_l        00000001800135b8     serialRunOnArduino_cgxe_registry.obj
+ 0004:000005c4       $pdata$_vsprintf_l         00000001800135c4     serialRunOnArduino_cgxe_registry.obj
+ 0004:000005d0       $pdata$sprintf             00000001800135d0     serialRunOnArduino_cgxe_registry.obj
+ 0004:000005dc       $pdata$__GSHandlerCheck    00000001800135dc     MSVCRT:_gshandler_.obj
+ 0004:000005e8       $pdata$__GSHandlerCheckCommon 00000001800135e8     MSVCRT:_gshandler_.obj
+ 0004:00000600       $pdata$__raise_securityfailure 0000000180013600     MSVCRT:gs_report.obj
+ 0004:0000060c       $pdata$__report_gsfailure  000000018001360c     MSVCRT:gs_report.obj
+ 0004:00000618       $pdata$__report_rangecheckfailure 0000000180013618     MSVCRT:gs_report.obj
+ 0004:00000624       $pdata$__report_securityfailure 0000000180013624     MSVCRT:gs_report.obj
+ 0004:00000630       $pdata$__report_securityfailureEx 0000000180013630     MSVCRT:gs_report.obj
+ 0004:0000063c       $pdata$capture_current_context 000000018001363c     MSVCRT:gs_report.obj
+ 0004:00000648       $pdata$capture_previous_context 0000000180013648     MSVCRT:gs_report.obj
+ 0004:00000654       $pdata$?dllmain_crt_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180013654     MSVCRT:dll_dllmain.obj
+ 0004:00000660       $pdata$?dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z 0000000180013660     MSVCRT:dll_dllmain.obj
+ 0004:0000066c       $pdata$?dllmain_crt_process_detach@@YAH_N@Z 000000018001366c     MSVCRT:dll_dllmain.obj
+ 0004:00000678       $pdata$?dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180013678     MSVCRT:dll_dllmain.obj
+ 0004:00000684       $pdata$?dllmain_raw@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180013684     MSVCRT:dll_dllmain.obj
+ 0004:00000690       $pdata$_DllMainCRTStartup  0000000180013690     MSVCRT:dll_dllmain.obj
+ 0004:0000069c       $pdata$__get_entropy       000000018001369c     MSVCRT:gs_support.obj
+ 0004:000006a8       $pdata$__security_init_cookie 00000001800136a8     MSVCRT:gs_support.obj
+ 0004:000006b4       $pdata$DllMain             00000001800136b4     MSVCRT:dll_dllmain_stub.obj
+ 0004:000006c0       $pdata$__scrt_initialize_default_local_stdio_options 00000001800136c0     MSVCRT:default_local_stdio_options.obj
+ 0004:000006cc       $pdata$?configure_argv@__scrt_narrow_argv_policy@@SAHXZ 00000001800136cc     MSVCRT:utility.obj
+ 0004:000006d8       $pdata$__scrt_acquire_startup_lock 00000001800136d8     MSVCRT:utility.obj
+ 0004:000006e4       $pdata$__scrt_dllmain_after_initialize_c 00000001800136e4     MSVCRT:utility.obj
+ 0004:000006f0       $pdata$__scrt_dllmain_before_initialize_c 00000001800136f0     MSVCRT:utility.obj
+ 0004:000006fc       $pdata$__scrt_dllmain_crt_thread_attach 00000001800136fc     MSVCRT:utility.obj
+ 0004:00000708       $pdata$__scrt_dllmain_crt_thread_detach 0000000180013708     MSVCRT:utility.obj
+ 0004:00000714       $pdata$__scrt_dllmain_exception_filter 0000000180013714     MSVCRT:utility.obj
+ 0004:00000720       $pdata$__scrt_dllmain_uninitialize_c 0000000180013720     MSVCRT:utility.obj
+ 0004:0000072c       $pdata$__scrt_dllmain_uninitialize_critical 000000018001372c     MSVCRT:utility.obj
+ 0004:00000738       $pdata$__scrt_initialize_crt 0000000180013738     MSVCRT:utility.obj
+ 0004:00000744       $pdata$__scrt_initialize_onexit_tables 0000000180013744     MSVCRT:utility.obj
+ 0004:00000750       $pdata$__scrt_is_nonwritable_in_current_image 0000000180013750     MSVCRT:utility.obj
+ 0004:0000075c       $pdata$__scrt_release_startup_lock 000000018001375c     MSVCRT:utility.obj
+ 0004:00000768       $pdata$__scrt_uninitialize_crt 0000000180013768     MSVCRT:utility.obj
+ 0004:00000774       $pdata$_onexit             0000000180013774     MSVCRT:utility.obj
+ 0004:00000780       $pdata$atexit              0000000180013780     MSVCRT:utility.obj
+ 0004:0000078c       $pdata$__scrt_fastfail     000000018001378c     MSVCRT:utility_desktop.obj
+ 0004:00000798       $pdata$__scrt_get_show_window_mode 0000000180013798     MSVCRT:utility_desktop.obj
+ 0004:000007a4       $pdata$__scrt_is_managed_app 00000001800137a4     MSVCRT:utility_desktop.obj
+ 0004:000007b0       $pdata$__scrt_unhandled_exception_filter 00000001800137b0     MSVCRT:utility_desktop.obj
+ 0004:000007bc       $pdata$_RTC_Initialize     00000001800137bc     MSVCRT:_initsect_.obj
+ 0004:000007c8       $pdata$_RTC_Terminate      00000001800137c8     MSVCRT:_initsect_.obj
+ 0004:000007d4       $pdata$__isa_available_init 00000001800137d4     MSVCRT:_cpu_disp_.obj
+ 0004:0000081c       $pdata$?fin$0@?0??dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z@4HA 000000018001381c     MSVCRT:dll_dllmain.obj
+ 0004:00000828       $pdata$?fin$0@?0??dllmain_crt_process_detach@@YAH_N@Z@4HA 0000000180013828     MSVCRT:dll_dllmain.obj
+ 0004:00000834       $pdata$?filt$0@?0??dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z@4HA 0000000180013834     MSVCRT:dll_dllmain.obj
+ 0004:00000840       $pdata$__scrt_is_nonwritable_in_current_image$filt$0 0000000180013840     MSVCRT:utility.obj
