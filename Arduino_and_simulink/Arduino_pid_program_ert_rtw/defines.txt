@@ -1,4 +1,3 @@
-_RTT_USE_SERIAL0_
 MODEL=Arduino_pid_program
 NUMST=1
 NCSTATES=0

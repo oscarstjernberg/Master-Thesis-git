@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Arduino_pid_program'.
  *
- * Model version                  : 1.55
+ * Model version                  : 1.56
  * Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
- * C/C++ source code generated on : Thu Feb 15 11:22:06 2018
+ * C/C++ source code generated on : Thu Feb 15 13:20:57 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -53,7 +53,7 @@ volatile boolean_T stopRequested = false;
 int main(void)
 {
   volatile boolean_T runModel = true;
-  float modelBaseRate = 0.01;
+  float modelBaseRate = 1.0;
   float systemClock = 0;
   init();
   MW_Arduino_Init();
@@ -69,7 +69,7 @@ int main(void)
 
 #endif;
 
-  sei ();
+  sei();
   while (runModel) {
     stopRequested = !(
                       rtmGetErrorStatus(Arduino_pid_program_M) == (NULL));

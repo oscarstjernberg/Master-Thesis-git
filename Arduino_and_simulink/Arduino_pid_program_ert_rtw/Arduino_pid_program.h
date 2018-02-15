@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Arduino_pid_program'.
  *
- * Model version                  : 1.55
+ * Model version                  : 1.56
  * Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
- * C/C++ source code generated on : Thu Feb 15 11:22:06 2018
+ * C/C++ source code generated on : Thu Feb 15 13:20:57 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -26,14 +26,11 @@
 #include "rtwtypes.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
-#include "MW_SerialWrite.h"
-#include "MW_SerialRead.h"
+#include "MW_digitalio.h"
+#include "arduino_analoginput_lct.h"
 #endif                                 /* Arduino_pid_program_COMMON_INCLUDES_ */
 
 #include "Arduino_pid_program_types.h"
-
-/* Shared type includes */
-#include "multiword_types.h"
 #include "MW_target_hardware_resources.h"
 
 /* Macros for accessing real-time model data structure */
@@ -45,55 +42,15 @@
 # define rtmSetErrorStatus(rtm, val)   ((rtm)->errorStatus = (val))
 #endif
 
-/* Block signals (auto storage) */
-typedef struct {
-  int128m_T r0;
-  int128m_T r1;
-  int128m_T r2;
-  int128m_T r3;
-  int64m_T Add;                        /* '<S1>/Add' */
-  int64m_T r4;
-  int64m_T r5;
-  int64m_T r6;
-  int32_T Saturation;                  /* '<S1>/Saturation' */
-} B_Arduino_pid_program_T;
-
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  codertarget_arduinobase_int_d_T obj; /* '<Root>/Serial Transmit' */
-  codertarget_arduinobase_inter_T obj_m;/* '<Root>/Serial Receive' */
-  int32_T DiscreteTimeIntegrator_DSTATE;/* '<S1>/Discrete-Time Integrator' */
-  int32_T DiscreteTimeIntegrator1_DSTATE;/* '<S1>/Discrete-Time Integrator1' */
+  codertarget_arduinobase_block_T obj; /* '<S1>/Digital Output' */
 } DW_Arduino_pid_program_T;
 
 /* Parameters (auto storage) */
 struct P_Arduino_pid_program_T_ {
-  int64m_T N;                          /* Variable: N
-                                        * Referenced by: '<S1>/Gain3'
-                                        */
-  int64m_T Kb;                         /* Variable: Kb
-                                        * Referenced by: '<S1>/Gain4'
-                                        */
-  int32_T Kp;                          /* Variable: Kp
-                                        * Referenced by: '<S1>/Gain'
-                                        */
-  int32_T Ki;                          /* Variable: Ki
-                                        * Referenced by: '<S1>/Gain1'
-                                        */
-  int32_T Kd;                          /* Variable: Kd
-                                        * Referenced by: '<S1>/Gain2'
-                                        */
-  int32_T Saturation_UpperSat;         /* Computed Parameter: Saturation_UpperSat
-                                        * Referenced by: '<S1>/Saturation'
-                                        */
-  int32_T Saturation_LowerSat;         /* Computed Parameter: Saturation_LowerSat
-                                        * Referenced by: '<S1>/Saturation'
-                                        */
-  int32_T DiscreteTimeIntegrator_IC;   /* Computed Parameter: DiscreteTimeIntegrator_IC
-                                        * Referenced by: '<S1>/Discrete-Time Integrator'
-                                        */
-  int32_T DiscreteTimeIntegrator1_IC;  /* Computed Parameter: DiscreteTimeIntegrator1_IC
-                                        * Referenced by: '<S1>/Discrete-Time Integrator1'
+  uint32_T AnalogInput_p1;             /* Computed Parameter: AnalogInput_p1
+                                        * Referenced by: '<Root>/Analog Input'
                                         */
 };
 
@@ -104,9 +61,6 @@ struct tag_RTM_Arduino_pid_program_T {
 
 /* Block parameters (auto storage) */
 extern P_Arduino_pid_program_T Arduino_pid_program_P;
-
-/* Block signals (auto storage) */
-extern B_Arduino_pid_program_T Arduino_pid_program_B;
 
 /* Block states (auto storage) */
 extern DW_Arduino_pid_program_T Arduino_pid_program_DW;
@@ -134,7 +88,8 @@ extern RT_MODEL_Arduino_pid_program_T *const Arduino_pid_program_M;
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'Arduino_pid_program'
- * '<S1>'   : 'Arduino_pid_program/Enabled Subsystem'
+ * '<S1>'   : 'Arduino_pid_program/Digital Output'
+ * '<S2>'   : 'Arduino_pid_program/Enabled Subsystem'
  */
 #endif                                 /* RTW_HEADER_Arduino_pid_program_h_ */
 

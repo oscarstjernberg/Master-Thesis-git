@@ -1,5 +1,5 @@
-MW_ArduinoHWInit.o: \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinotarget/registry/../src/MW_ArduinoHWInit.cpp \
+MW_digitalio.o: \
+ C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/src/MW_digitalio.cpp \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/binary.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/WCharacter.h \
@@ -11,8 +11,8 @@ MW_ArduinoHWInit.o: \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/USBAPI.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/mega/pins_arduino.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h
+ C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_digitalio.h \
+ C:/Users/Alexander/Desktop/Master-Thesis-git/Arduino_and_simulink/Arduino_pid_program_ert_rtw/rtwtypes.h
 
 C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h:
 
@@ -36,6 +36,6 @@ C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/ard
 
 C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/mega/pins_arduino.h:
 
-C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h:
+C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_digitalio.h:
 
-C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h:
+C:/Users/Alexander/Desktop/Master-Thesis-git/Arduino_and_simulink/Arduino_pid_program_ert_rtw/rtwtypes.h:

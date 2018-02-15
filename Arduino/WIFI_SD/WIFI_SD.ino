@@ -9,7 +9,7 @@
 
 ////////////////////////////////////
 //          WIFI SETTINGS         //
-///////////////////////////////////
+////////////////////////////////////
 
 // Create WiFi module object on GPIO pin 22 (RX) and 24 (TX)
 SoftwareSerial SerialWifi(22, 24);
@@ -107,15 +107,25 @@ void loop() {
   
   // Write to ThingSpeak
   if (countTS >= 2 && WiFi.status()==1) {
+    long TS_begin = millis();
     ThingSpeak.setField(1, P );
     ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
     countTS = 0;
+    long TS_end = millis();
+    long TS_time = TS_end - TS_begin;
+    Serial.print("Time for TS:");
+    Serial.println(TS_time);
   }
 
   // Write to google spreadsheet
   if (countPush >= 9 && WiFi.status()==1) {
+    long GG_begin= millis();
     sendToSpreadsheet(P);
     countPush = 0;
+    long GG_end = millis();
+    long GG_time = GG_end - GG_begin;
+    Serial.print("Time for GG:");
+    Serial.println(GG_time);
   }
 
   // Write to SD-card
@@ -126,7 +136,7 @@ void loop() {
   
   // Ensuring steady frequency of the program loop
 
-  int Delay = loopTime - (unsigned int)(millis() - timeMillis);
+  int Delay = loopTime - (int)(millis() - timeMillis);
   Serial.println(Delay);
   if (Delay < loopTime && Delay > 0) {
     Serial.println("Delaying.......");

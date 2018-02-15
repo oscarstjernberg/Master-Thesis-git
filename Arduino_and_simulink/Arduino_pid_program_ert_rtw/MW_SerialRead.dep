@@ -10,7 +10,7 @@ MW_SerialRead.o: \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Printable.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/USBAPI.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/mega/pins_arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_SerialRead.h \
  C:/Users/Alexander/Desktop/Master-Thesis-git/Arduino_and_simulink/Arduino_pid_program_ert_rtw/rtwtypes.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h
@@ -35,7 +35,7 @@ C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/ard
 
 C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h:
 
-C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h:
+C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/mega/pins_arduino.h:
 
 C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_SerialRead.h:
 
