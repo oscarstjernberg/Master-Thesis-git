@@ -1,3 +1,5 @@
+@echo off
+
 cd .
 
 if "%1"=="" ("C:\PROGRA~1\MATLAB\R2017b\bin\win64\gmake"  -f Arduino_pid_program.mk all) else ("C:\PROGRA~1\MATLAB\R2017b\bin\win64\gmake"  -f Arduino_pid_program.mk %1)

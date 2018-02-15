@@ -152,10 +152,10 @@ A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
  
  %% PID parameters
  
- Kp = 0.01;
- Ki=0.0001;
+ Kp = 0.1;
+ Ki=0.01;
  Kd=0;
- Kb=0;
+ Kb=0.01;
  N=0;
  
  

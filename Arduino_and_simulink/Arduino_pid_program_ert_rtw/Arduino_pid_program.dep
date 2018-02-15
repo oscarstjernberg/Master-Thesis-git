@@ -5,7 +5,8 @@ Arduino_pid_program.o: Arduino_pid_program.c Arduino_pid_program.h \
  C:/PROGRA~1/MATLAB/R2017b/simulink/include/rtw_continuous.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_SerialWrite.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_SerialRead.h \
- Arduino_pid_program_types.h MW_target_hardware_resources.h \
+ Arduino_pid_program_types.h multiword_types.h \
+ MW_target_hardware_resources.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/binary.h \
@@ -29,6 +30,8 @@ C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/ardu
 C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_SerialRead.h:
 
 Arduino_pid_program_types.h:
+
+multiword_types.h:
 
 MW_target_hardware_resources.h:
 

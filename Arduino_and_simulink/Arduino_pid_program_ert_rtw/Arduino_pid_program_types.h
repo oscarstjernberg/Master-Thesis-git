@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Arduino_pid_program'.
  *
- * Model version                  : 1.5
+ * Model version                  : 1.55
  * Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
- * C/C++ source code generated on : Wed Feb 14 15:52:59 2018
+ * C/C++ source code generated on : Thu Feb 15 11:22:06 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -20,6 +20,7 @@
 #ifndef RTW_HEADER_Arduino_pid_program_types_h_
 #define RTW_HEADER_Arduino_pid_program_types_h_
 #include "rtwtypes.h"
+#include "multiword_types.h"
 #ifndef typedef_codertarget_arduinobase_inter_T
 #define typedef_codertarget_arduinobase_inter_T
 

@@ -144,7 +144,7 @@ Output entry point of generated code
 Timing
 </td>
 <td width="75%" align="left" valign="top">
-Must be called periodically, every 0.1 seconds
+Must be called periodically, every 0.01 seconds
 </td>
 
 </tr>
@@ -264,7 +264,7 @@ Interface Parameters
 </a>
 
 </h3>
-<table width="100%" class="AltRow FirstColumn" cellspacing="0">
+<span title="Click to shrink or expand table" onclick="rtwTableShrink(this)">[-]</span><table width="100%" class="AltRow FirstColumn" cellspacing="0">
 <tr class="heading">
 <th width="38%" align="left" valign="top">
 <b>
@@ -300,13 +300,141 @@ Dimension
 </tr>
 <tr class="even">
 <td width="38%" align="left" valign="top">
-<a href="matlab:coder.internal.code2model('Arduino_pid_program:6')" name="code2model" class="code2model">&lt;S1&gt;/Out1</a>
+N
 </td>
 <td width="23%" align="left" valign="top">
-Arduino_pid_program_P.Out1_Y0
+Arduino_pid_program_P.N
 </td>
 <td width="19%" align="left" valign="top">
-uint8_T
+int64m_T
+</td>
+<td width="9%" align="left" valign="top">
+<span title="  DataTypeMode: Fixed-point: binary point scaling
+    Signedness: Signed
+    WordLength: 64
+FractionLength: 1000
+">sfix64_En1000</span>
+</td>
+<td width="9%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="38%" align="left" valign="top">
+Kb
+</td>
+<td width="23%" align="left" valign="top">
+Arduino_pid_program_P.Kb
+</td>
+<td width="19%" align="left" valign="top">
+int64m_T
+</td>
+<td width="9%" align="left" valign="top">
+<span title="  DataTypeMode: Fixed-point: binary point scaling
+    Signedness: Signed
+    WordLength: 64
+FractionLength: 69
+">sfix64_En69</span>
+</td>
+<td width="9%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="38%" align="left" valign="top">
+Kp
+</td>
+<td width="23%" align="left" valign="top">
+Arduino_pid_program_P.Kp
+</td>
+<td width="19%" align="left" valign="top">
+int32_T
+</td>
+<td width="9%" align="left" valign="top">
+<span title="  DataTypeMode: Fixed-point: binary point scaling
+    Signedness: Signed
+    WordLength: 32
+FractionLength: 34
+">sfix32_En34</span>
+</td>
+<td width="9%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="38%" align="left" valign="top">
+Ki
+</td>
+<td width="23%" align="left" valign="top">
+Arduino_pid_program_P.Ki
+</td>
+<td width="19%" align="left" valign="top">
+int32_T
+</td>
+<td width="9%" align="left" valign="top">
+<span title="  DataTypeMode: Fixed-point: binary point scaling
+    Signedness: Signed
+    WordLength: 32
+FractionLength: 37
+">sfix32_En37</span>
+</td>
+<td width="9%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="38%" align="left" valign="top">
+Kd
+</td>
+<td width="23%" align="left" valign="top">
+Arduino_pid_program_P.Kd
+</td>
+<td width="19%" align="left" valign="top">
+int32_T
+</td>
+<td width="9%" align="left" valign="top">
+<span title="  DataTypeMode: Fixed-point: binary point scaling
+    Signedness: Signed
+    WordLength: 32
+FractionLength: 1000
+">sfix32_En1000</span>
+</td>
+<td width="9%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="38%" align="left" valign="top">
+<a href="matlab:coder.internal.code2model('Arduino_pid_program:46')" name="code2model" class="code2model">&lt;S1&gt;/Saturation</a>
+</td>
+<td width="23%" align="left" valign="top">
+Arduino_pid_program_P.Saturation_UpperSat
+</td>
+<td width="19%" align="left" valign="top">
+int32_T
+</td>
+<td width="9%" align="left" valign="top">
+&#160;
+</td>
+<td width="9%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="38%" align="left" valign="top">
+<a href="matlab:coder.internal.code2model('Arduino_pid_program:46')" name="code2model" class="code2model">&lt;S1&gt;/Saturation</a>
+</td>
+<td width="23%" align="left" valign="top">
+Arduino_pid_program_P.Saturation_LowerSat
+</td>
+<td width="19%" align="left" valign="top">
+int32_T
 </td>
 <td width="9%" align="left" valign="top">
 &#160;
@@ -318,20 +446,46 @@ uint8_T
 </tr>
 <tr class="odd">
 <td width="38%" align="left" valign="top">
-<a href="matlab:coder.internal.code2model('Arduino_pid_program:30')" name="code2model" class="code2model">&lt;S1&gt;/Gain5</a>
+<a href="matlab:coder.internal.code2model('Arduino_pid_program:52')" name="code2model" class="code2model">&lt;S1&gt;/Discrete-Time Integrator</a>
 </td>
 <td width="23%" align="left" valign="top">
-Arduino_pid_program_P.Gain5_Gain
+Arduino_pid_program_P.DiscreteTimeIntegrator_IC
 </td>
 <td width="19%" align="left" valign="top">
-uint8_T
+int32_T
 </td>
 <td width="9%" align="left" valign="top">
-<span title="  DataTypeMode: Fixed-point: binary point scaling
-    Signedness: Unsigned
-    WordLength: 8
-FractionLength: 7
-">ufix8_En7</span>
+<span title="
+          DataTypeMode: Fixed-point: slope and bias scaling
+            Signedness: Signed
+            WordLength: 32
+                 Slope: 0.01
+                  Bias: 0
+">sfix32_Sp01</span>
+</td>
+<td width="9%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="38%" align="left" valign="top">
+<a href="matlab:coder.internal.code2model('Arduino_pid_program:53')" name="code2model" class="code2model">&lt;S1&gt;/Discrete-Time Integrator1</a>
+</td>
+<td width="23%" align="left" valign="top">
+Arduino_pid_program_P.DiscreteTimeIntegrator1_IC
+</td>
+<td width="19%" align="left" valign="top">
+int32_T
+</td>
+<td width="9%" align="left" valign="top">
+<span title="
+          DataTypeMode: Fixed-point: slope and bias scaling
+            Signedness: Signed
+            WordLength: 32
+                 Slope: 0.01
+                  Bias: 0
+">sfix32_Sp01</span>
 </td>
 <td width="9%" align="right" valign="top">
 1

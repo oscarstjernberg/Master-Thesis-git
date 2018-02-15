@@ -61,9 +61,9 @@
 <tr name="25" id="25">
 <td><a id="l25" class='ln'>25</a></td><td><span class="pp">#define</span> <a id="25c9" class="tk">MW_RUNTIME_BUILDACTION</a> 1</td></tr>
 <tr name="26" id="26">
-<td><a id="l26" class='ln'>26</a></td><td><span class="pp">#define</span> <a id="26c9" class="tk">MW_HOSTCOMPORT_SET_HOST_COM_PORT</a> 1</td></tr>
+<td><a id="l26" class='ln'>26</a></td><td><span class="pp">#define</span> <a id="26c9" class="tk">MW_HOSTCOMPORT_SET_HOST_COM_PORT</a> 0</td></tr>
 <tr name="27" id="27">
-<td><a id="l27" class='ln'>27</a></td><td><span class="pp">#define</span> <a id="27c9" class="tk">MW_HOSTCOMPORT_COM_PORT_NUMBER</a> 4</td></tr>
+<td><a id="l27" class='ln'>27</a></td><td><span class="pp">#define</span> <a id="27c9" class="tk">MW_HOSTCOMPORT_COM_PORT_NUMBER</a> 1</td></tr>
 <tr name="28" id="28">
 <td><a id="l28" class='ln'>28</a></td><td><span class="pp">#define</span> <a id="28c9" class="tk">MW_OVERRUNDETECTION_ENABLE_OVERRUN_DETECTION</a> 0</td></tr>
 <tr name="29" id="29">
@@ -85,11 +85,11 @@
 <tr name="37" id="37">
 <td><a id="l37" class='ln'>37</a></td><td><span class="pp">#define</span> <a id="37c9" class="tk">MW_ETHERNET_LOCAL_MAC_ADDRESS</a> <a id="37c39" class="tk">DE</a><a id="37c41" class="tk">:</a><a id="37c42" class="tk">AD</a><a id="37c44" class="tk">:</a><a id="37c45" class="tk">BE</a><a id="37c47" class="tk">:</a><a id="37c48" class="tk">EF</a><a id="37c50" class="tk">:</a><a id="37c51" class="tk">FE</a><a id="37c53" class="tk">:</a><a id="37c54" class="tk">ED</a></td></tr>
 <tr name="38" id="38">
-<td><a id="l38" class='ln'>38</a></td><td><span class="pp">#define</span> <a id="38c9" class="tk">MW_WIFI_WIFI_HARDWARE</a> 0</td></tr>
+<td><a id="l38" class='ln'>38</a></td><td><span class="pp">#define</span> <a id="38c9" class="tk">MW_WIFI_WIFI_HARDWARE</a> <a id="38c31" class="tk">-</a>1</td></tr>
 <tr name="39" id="39">
 <td><a id="l39" class='ln'>39</a></td><td><span class="pp">#define</span> <a id="39c9" class="tk">MW_WIFI_DISABLE_DHCP_WIFI</a> 0</td></tr>
 <tr name="40" id="40">
-<td><a id="l40" class='ln'>40</a></td><td><span class="pp">#define</span> <a id="40c9" class="tk">MW_WIFI_WIFI_IP_ADDRESS</a> 192.168.1.20</td></tr>
+<td><a id="l40" class='ln'>40</a></td><td><span class="pp">#define</span> <a id="40c9" class="tk">MW_WIFI_WIFI_IP_ADDRESS</a> 192.168.0.20</td></tr>
 <tr name="41" id="41">
 <td><a id="l41" class='ln'>41</a></td><td><span class="pp">#define</span> <a id="41c9" class="tk">MW_WIFI_WIFI_SSID</a> <a id="41c27" class="tk">yourNetwork</a></td></tr>
 <tr name="42" id="42">
@@ -101,7 +101,7 @@
 <tr name="45" id="45">
 <td><a id="l45" class='ln'>45</a></td><td><span class="pp">#define</span> <a id="45c9" class="tk">MW_WIFI_WIFI_WPA_PASSWORD</a> <a id="45c35" class="tk">secretPassword</a></td></tr>
 <tr name="46" id="46">
-<td><a id="l46" class='ln'>46</a></td><td><span class="pp">#define</span> <a id="46c9" class="tk">MW_WIFI_WIFI_ESP8266_HW_SERIAL_PORT</a> 0</td></tr>
+<td><a id="l46" class='ln'>46</a></td><td><span class="pp">#define</span> <a id="46c9" class="tk">MW_WIFI_WIFI_ESP8266_HW_SERIAL_PORT</a> <a id="46c45" class="tk">-</a>1</td></tr>
 <tr name="47" id="47">
 <td><a id="l47" class='ln'>47</a></td><td><span class="pp">#define</span> <a id="47c9" class="tk">MW_THINGSPEAK_ENABLE_CUSTOMSERVER</a> 48</td></tr>
 <tr name="48" id="48">
@@ -111,21 +111,23 @@
 <tr name="50" id="50">
 <td><a id="l50" class='ln'>50</a></td><td><span class="pp">#define</span> <a id="50c9" class="tk">MW_DATAVERSION</a> 2016.02</td></tr>
 <tr name="51" id="51">
-<td><a id="l51" class='ln'>51</a></td><td><span class="pp">#define</span> <a id="51c9" class="tk">MW_MULTI_TASKING_MODE</a> 1</td></tr>
+<td><a id="l51" class='ln'>51</a></td><td><span class="pp">#define</span> <a id="51c9" class="tk">MW_BUILD_ACTION</a> <a id="51c25" class="tk">Build</a>, <a id="51c32" class="tk">load</a> <a id="51c37" class="tk">and</a> <a id="51c41" class="tk">run</a></td></tr>
 <tr name="52" id="52">
-<td><a id="l52" class='ln'>52</a></td><td></td></tr>
+<td><a id="l52" class='ln'>52</a></td><td><span class="pp">#define</span> <a id="52c9" class="tk">MW_MULTI_TASKING_MODE</a> 1</td></tr>
 <tr name="53" id="53">
-<td><a id="l53" class='ln'>53</a></td><td><span class="pp">#endif</span> <span class="ct">/* __MW_TARGET_HARDWARE_RESOURCES_H__ */</span></td></tr>
+<td><a id="l53" class='ln'>53</a></td><td></td></tr>
 <tr name="54" id="54">
-<td><a id="l54" class='ln'>54</a></td><td></td></tr>
+<td><a id="l54" class='ln'>54</a></td><td><span class="pp">#endif</span> <span class="ct">/* __MW_TARGET_HARDWARE_RESOURCES_H__ */</span></td></tr>
 <tr name="55" id="55">
-<td><a id="l55" class='ln'>55</a></td><td><span class="pp">#endif</span></td></tr>
+<td><a id="l55" class='ln'>55</a></td><td></td></tr>
 <tr name="56" id="56">
-<td><a id="l56" class='ln'>56</a></td><td></td></tr>
+<td><a id="l56" class='ln'>56</a></td><td><span class="pp">#endif</span></td></tr>
 <tr name="57" id="57">
-<td><a id="l57" class='ln'>57</a></td><td><span class="pp">#endif</span></td></tr>
+<td><a id="l57" class='ln'>57</a></td><td></td></tr>
 <tr name="58" id="58">
-<td><a id="l58" class='ln'>58</a></td><td></td></tr>
+<td><a id="l58" class='ln'>58</a></td><td><span class="pp">#endif</span></td></tr>
+<tr name="59" id="59">
+<td><a id="l59" class='ln'>59</a></td><td></td></tr>
 </table>
 </pre>
 </body>

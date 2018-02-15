@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Arduino_pid_program'.
  *
- * Model version                  : 1.5
+ * Model version                  : 1.55
  * Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
- * C/C++ source code generated on : Wed Feb 14 15:52:59 2018
+ * C/C++ source code generated on : Thu Feb 15 11:22:06 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -22,15 +22,50 @@
 
 /* Block parameters (auto storage) */
 P_Arduino_pid_program_T Arduino_pid_program_P = {
-  /* Computed Parameter: Out1_Y0
-   * Referenced by: '<S1>/Out1'
+  /* Variable: N
+   * Referenced by: '<S1>/Gain3'
    */
-  0U,
+  { { 0UL, 0UL } },
 
-  /* Computed Parameter: Gain5_Gain
-   * Referenced by: '<S1>/Gain5'
+  /* Variable: Kb
+   * Referenced by: '<S1>/Gain4'
    */
-  128U
+  { { 0xB851EC00UL, 0x51EB851EUL } },
+
+  /* Variable: Kp
+   * Referenced by: '<S1>/Gain'
+   */
+  1717986918,
+
+  /* Variable: Ki
+   * Referenced by: '<S1>/Gain1'
+   */
+  1374389535,
+
+  /* Variable: Kd
+   * Referenced by: '<S1>/Gain2'
+   */
+  0,
+
+  /* Computed Parameter: Saturation_UpperSat
+   * Referenced by: '<S1>/Saturation'
+   */
+  100000,
+
+  /* Computed Parameter: Saturation_LowerSat
+   * Referenced by: '<S1>/Saturation'
+   */
+  -100000,
+
+  /* Computed Parameter: DiscreteTimeIntegrator_IC
+   * Referenced by: '<S1>/Discrete-Time Integrator'
+   */
+  0,
+
+  /* Computed Parameter: DiscreteTimeIntegrator1_IC
+   * Referenced by: '<S1>/Discrete-Time Integrator1'
+   */
+  0
 };
 
 /*
