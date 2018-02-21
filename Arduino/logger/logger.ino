@@ -1,5 +1,5 @@
 #include <ESP8266WiFi.h>
-
+#include "SD_FUNCTIONS.h"
 ////////////////////////////////////
 //          WIFI SETTINGS         //
 ////////////////////////////////////
@@ -63,7 +63,7 @@ void setup() {
   connectToWiFi();
 
   // Initialize SD-card
-  //SDinit(SD_pin);
+  SDinit(SD_pin);
 
 }
 
