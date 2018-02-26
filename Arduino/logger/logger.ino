@@ -1,7 +1,8 @@
 #include <ESP8266WiFi.h>
 #include <SD.h>
 #include <ThingSpeak.h>
-
+#include <HX711_ADC.h>
+#include <SPI.h>
 
 ////////////////////////////////////
 //          WIFI SETTINGS         //
@@ -19,7 +20,7 @@ char cmd[100];
 //          SD SETTINGS           //
 ///////////////////////////////////
 File BackupFile;
-int SD_pin = 53;
+int SD_pin = 15;
 
 enum months  {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
 months switch_month;
@@ -44,7 +45,7 @@ const char * myWriteAPIKey = "A86F3R21OEZKIIQQ";  // Channel API-key
 //      Loadcell SETTINGS         //
 ////////////////////////////////////
 
-#include <HX711_ADC.h>
+
 
 //HX711 constructor (dout pin, sck pin)
 HX711_ADC LoadCell(D1, D2);
@@ -213,10 +214,13 @@ void setup() {
   connectToWiFi();
 
   // Initialize SD-card
-  //SDinit(SD_pin);
+  SDinit(SD_pin);
 
   // Initialize reading the load cell
   loadCellInit();
+
+  // ThingSpeak setup
+  ThingSpeak.begin(client);
 
 }
 
@@ -230,11 +234,11 @@ void loop() {
 	float val = loadCellRead();
 
 	// Write to SD-card
-	//SDwrite(val);
+	SDwrite(val);
   
 	// send to thingspeak
-  //ThingSpeak.setField(1,val);
-  //ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
+  ThingSpeak.setField(1,val);
+  ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
 
 
   
