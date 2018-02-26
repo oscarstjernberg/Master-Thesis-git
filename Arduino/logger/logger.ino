@@ -47,7 +47,7 @@ const char * myWriteAPIKey = "A86F3R21OEZKIIQQ";  // Channel API-key
 #include <HX711_ADC.h>
 
 //HX711 constructor (dout pin, sck pin)
-HX711_ADC LoadCell(D2, D3);
+HX711_ADC LoadCell(D1, D2);
 
 long t;
 
@@ -174,10 +174,10 @@ float loadCellRead() {
 	//update() should be called at least as often as HX711 sample rate; >10Hz@10SPS, >80Hz@80SPS
 	//longer delay in scetch will reduce effective sample rate (be carefull with delay() in loop)
 	LoadCell.update();
-
+  float val;
 	//get smoothed value from data set + current calibration factor
 	if (millis() > t + 250) {
-		float val = LoadCell.getData();
+		val = LoadCell.getData();
 		Serial.print("Load_cell output val: ");
 		Serial.println(val);
 		t = millis();
@@ -185,7 +185,7 @@ float loadCellRead() {
 
 	//receive from serial terminal
 	if (Serial.available() > 0) {
-		float val;
+		val;
 		char inByte = Serial.read();
 		if (inByte == 't') LoadCell.tareNoDelay();
 	}
@@ -213,7 +213,7 @@ void setup() {
   connectToWiFi();
 
   // Initialize SD-card
-  SDinit(SD_pin);
+  //SDinit(SD_pin);
 
   // Initialize reading the load cell
   loadCellInit();
@@ -230,12 +230,13 @@ void loop() {
 	float val = loadCellRead();
 
 	// Write to SD-card
-	SDwrite(val);
-
+	//SDwrite(val);
+  
 	// send to thingspeak
-  ThingSpeak.setField(1,val);
-  ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
+  //ThingSpeak.setField(1,val);
+  //ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
 
 
+  
 }
 
