@@ -1,5 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <SD.h>
+#include <ThingSpeak.h>
 
 
 ////////////////////////////////////
@@ -40,6 +41,17 @@ unsigned long myChannelNumber  = 420692; // Channel ID
 const char * myWriteAPIKey = "A86F3R21OEZKIIQQ";  // Channel API-key
 
 ////////////////////////////////////
+//      Loadcell SETTINGS         //
+////////////////////////////////////
+
+#include <HX711_ADC.h>
+
+//HX711 constructor (dout pin, sck pin)
+HX711_ADC LoadCell(D2, D3);
+
+long t;
+
+////////////////////////////////////
 //          MISC SETTINGS         //
 ///////////////////////////////////
 
@@ -50,25 +62,6 @@ int loopTime = delaySeconds * 1000;
 // counters for data saving
 int countPush = 10;
 int countTS = 10;
-
-
-
-
-////////////////////////////////////
-//          SETUP                 //
-///////////////////////////////////
-
-void setup() {
-  Serial.begin(115200);
-  delay(10);
-
-  // connect to WiFi
-  connectToWiFi();
-
-  // Initialize SD-card
-  SDinit(SD_pin);
-
-}
 
 
 //////////////////// WiFi functions /////////////////////
@@ -119,11 +112,11 @@ void SDinit(int SD_pin)
     Serial.println(F("ERROR: File not found"));
   }
   BackupFile.close();
-} // SD_init
+} // SD_init end
 
 
 // WRITES CONTENT OF SG TO SD CARD  
-void SDwrite(int SG) {
+void SDwrite(float SG) {
 
   String time_str;
 
@@ -158,13 +151,91 @@ void SDwrite(int SG) {
   }
   BackupFile.close();
 
-} // Write to sd
+} // Write to sd end
+
+////////////////////////////// Load cell functions //////////////////////////////////////////////////////
+
+// Initialize load cell
+void loadCellInit(){
+	ESP.wdtDisable();
+	ESP.wdtEnable(WDTO_8S);
+	delay(0);
+	Serial.begin(115200);
+	LoadCell.begin();
+	long stabilisingtime = 2000; // tare preciscion can be improved by adding a few seconds of stabilising time
+	LoadCell.start(stabilisingtime);
+	LoadCell.setCalFactor(696.0); // user set calibration factor (float)
+	Serial.println("Startup + tare is complete");
+} // Initialize load cell end
 
 
-////////////////////////////// main //////////////////////////////////////////////////////
+float loadCellRead() {
+	ESP.wdtFeed();
+	//update() should be called at least as often as HX711 sample rate; >10Hz@10SPS, >80Hz@80SPS
+	//longer delay in scetch will reduce effective sample rate (be carefull with delay() in loop)
+	LoadCell.update();
+
+	//get smoothed value from data set + current calibration factor
+	if (millis() > t + 250) {
+		float val = LoadCell.getData();
+		Serial.print("Load_cell output val: ");
+		Serial.println(val);
+		t = millis();
+	}
+
+	//receive from serial terminal
+	if (Serial.available() > 0) {
+		float val;
+		char inByte = Serial.read();
+		if (inByte == 't') LoadCell.tareNoDelay();
+	}
+
+	//check if last tare operation is complete
+	if (LoadCell.getTareStatus() == true) {
+		Serial.println("Tare complete");
+	}
+	
+	return	val;
+
+} // loadCellRead end
+
+////////////////////////////// End functions //////////////////////////////////////////////////////
+
+////////////////////////////////////
+//          SETUP                 //
+///////////////////////////////////
+
+void setup() {
+  Serial.begin(115200);
+  delay(10);
+
+  // connect to WiFi
+  connectToWiFi();
+
+  // Initialize SD-card
+  SDinit(SD_pin);
+
+  // Initialize reading the load cell
+  loadCellInit();
+
+}
+
+////////////////////////////////////
+//          MAIN                  //
+///////////////////////////////////
 
 void loop() {
-  // put your main code here, to run repeatedly:
+
+	// read value from load cell
+	float val = loadCellRead();
+
+	// Write to SD-card
+	SDwrite(val);
+
+	// send to thingspeak
+  ThingSpeak.setField(1,val);
+  ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
+
 
 }
 
