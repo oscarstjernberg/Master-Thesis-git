@@ -16,6 +16,8 @@ char pass[] = "plasmakorv";
 char server[] = "api.pushingbox.com";
 char cmd[100];
 
+int status = WL_IDLE_STATUS;
+
 ////////////////////////////////////
 //          SD SETTINGS           //
 ///////////////////////////////////
@@ -64,6 +66,8 @@ int loopTime = delaySeconds * 1000;
 int countPush = 10;
 int countTS = 10;
 
+long previousMillis = 0;
+long interval = 20000;
 
 //////////////////// WiFi functions /////////////////////
 
@@ -84,8 +88,18 @@ Serial.println();
 Serial.print(ssid);
 Serial.println();
 Serial.println(WiFi.localIP());
+Serial.print("Wifistatus ");
+Serial.println(WiFi.status());
 }
 
+// WiFiConnection
+void checkWiFiConnection() {
+  if (WiFi.status() != 3) {
+    status = WL_IDLE_STATUS;
+    connectToWiFi();
+    Serial.println("reconnect");
+  }
+}
 
 //////////////////////// SD-card functions ////////////////////////////////////
 
@@ -128,8 +142,9 @@ void SDwrite(float SG) {
   if (BackupFile)
   {
     // Write time
-    if (WiFi.status() == 1) {
-      time_str = String(DT.year) + "-" + DT.month + "-" + String(DT.day) + ":" + String(DT.hour) + ":" + String(DT.minute) + ":" + String(DT.second);
+    if (WiFi.status() == 3) {
+      time_str = String(DT.year) + "-" + DT.month + "-" + String(DT.day) + ":" + String(DT.hour) +
+      ":" + String(DT.minute) + ":" + String(DT.second);
       Serial.println(time_str);
       BackupFile.print(time_str);
     }
@@ -200,6 +215,46 @@ float loadCellRead() {
 
 } // loadCellRead end
 
+
+//////////////////////////////// Get time function ///////////////////////////////////////////////
+
+void webTime (Client &client)
+{
+  unsigned long time = 0;
+
+  // Just choose any reasonably busy web server, the load is really low
+  if (client.connect("g.cn", 80))
+  {
+    // Make an HTTP 1.1 request which is missing a Host: header
+    // compliant servers are required to answer with an error that includes
+    // a Date: header.
+    client.print(F("GET / HTTP/1.1 \r\n\r\n"));
+
+    char buf[5];      // temporary buffer for characters
+    client.setTimeout(5000);
+    if (client.find((char *)"\r\nDate: ") // look for Date: header
+        && client.readBytes(buf, 5) == 5) // discard day name
+    {
+
+      DT.day = client.parseInt();    // day number
+      client.readBytes(buf, 1);    // discard
+      client.readBytes(DT.month_buf, 3);    // month_buf
+      String str(DT.month_buf);
+      DT.month = str.substring(0, 3);
+      DT.year = client.parseInt();    // year
+      DT.hour = client.parseInt();   // hour
+      DT.minute = client.parseInt(); // minute
+      DT.second = client.parseInt(); // second
+
+      //      }
+    }
+  }
+  delay(10);
+  client.flush();
+  client.stop();
+
+} // end webTime
+
 ////////////////////////////// End functions //////////////////////////////////////////////////////
 
 ////////////////////////////////////
@@ -207,6 +262,7 @@ float loadCellRead() {
 ///////////////////////////////////
 
 void setup() {
+  
   Serial.begin(115200);
   delay(10);
 
@@ -222,6 +278,7 @@ void setup() {
   // ThingSpeak setup
   ThingSpeak.begin(client);
 
+
 }
 
 ////////////////////////////////////
@@ -230,17 +287,34 @@ void setup() {
 
 void loop() {
 
+  
+  unsigned long timeMillis = millis();
+
+  // Check WiFi connection
+  //checkWiFiConnection();
+
+  // Get current time from the web
+  if(WiFi.status()==3){
+  webTime(client);
+  }
+
 	// read value from load cell
 	float val = loadCellRead();
 
 	// Write to SD-card
+  delay(1000);
 	SDwrite(val);
+
   
 	// send to thingspeak
+  if((timeMillis - previousMillis) >= 20000 && WiFi.status()==3){
+  previousMillis = timeMillis;
+  Serial.print("Sending to ThingSpeak ");
+  Serial.println(val);
   ThingSpeak.setField(1,val);
   ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
-
-
+  }
+  
   
 }
 
