@@ -22,7 +22,7 @@ int status = WL_IDLE_STATUS;
 //          SD SETTINGS           //
 ///////////////////////////////////
 File BackupFile;
-int SD_pin = 15;
+int SD_pin = D4;
 
 enum months  {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
 months switch_month;
@@ -50,7 +50,7 @@ const char * myWriteAPIKey = "A86F3R21OEZKIIQQ";  // Channel API-key
 
 
 //HX711 constructor (dout pin, sck pin)
-HX711_ADC LoadCell(D1, D2);
+HX711_ADC LoadCell(D1, D0);
 
 long t;
 
@@ -69,6 +69,9 @@ int countTS = 10;
 long previousMillis = 0;
 long interval = 20000;
 
+int SD_LED = D8;
+int WiFi_LED = D3;
+
 //////////////////// WiFi functions /////////////////////
 
 void connectToWiFi(){
@@ -84,7 +87,7 @@ delay(500);
 Serial.print(".");
 }
 Serial.println("WiFI connected!");
-digitalWrite(D3, HIGH);
+digitalWrite(WiFi_LED, HIGH);
 Serial.println();
 Serial.print(ssid);
 Serial.println();
@@ -133,7 +136,9 @@ void SDinit(int SD_pin)
 
 // WRITES CONTENT OF SG TO SD CARD  
 void SDwrite(float SG) {
-
+  
+  digitalWrite(SD_LED, HIGH); // Indicates that we are writning to SD-card
+  
   String time_str;
 
   // Open file for writing
@@ -264,7 +269,8 @@ void webTime (Client &client)
 
 void setup() {
 
-  pinMode(D3, OUTPUT);
+  pinMode(WiFi_LED, OUTPUT);
+  pinMode(SD_LED, OUTPUT);
   
   Serial.begin(115200);
   delay(10);
@@ -305,6 +311,7 @@ void loop() {
 	float val = loadCellRead();
 
 	// Write to SD-card
+  digitalWrite(SD_LED, LOW);
   delay(1000);
 	SDwrite(val);
 
