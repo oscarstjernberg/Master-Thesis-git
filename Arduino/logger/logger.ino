@@ -84,6 +84,7 @@ delay(500);
 Serial.print(".");
 }
 Serial.println("WiFI connected!");
+digitalWrite(D3, HIGH);
 Serial.println();
 Serial.print(ssid);
 Serial.println();
@@ -262,6 +263,8 @@ void webTime (Client &client)
 ///////////////////////////////////
 
 void setup() {
+
+  pinMode(D3, OUTPUT);
   
   Serial.begin(115200);
   delay(10);
