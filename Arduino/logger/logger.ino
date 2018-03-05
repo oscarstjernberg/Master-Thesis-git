@@ -59,9 +59,10 @@ long t;
 //          MAX31865             //
 ///////////////////////////////////
 
-const int PT_pin = D2;
-
-Adafruit_MAX31865 maxx = Adafruit_MAX31865(D2);
+//const int PT_pin = D2;
+// Use software SPI: CS, DI, DO, CLK
+Adafruit_MAX31865 maxx = Adafruit_MAX31865(4, 9, 10, 0);
+//Adafruit_MAX31865 maxx = Adafruit_MAX31865(D2);
 // Reference value for a PT100 sensor, if using PT1000 use RREF = 4300.
 #define RREF      430.0
 #define RNOMINAL  100.0
@@ -82,10 +83,10 @@ int countTS = 10;
 long previousMillis = 0;
 long interval = 20000;
 
-int SD_LED = D8;
-int WiFi_LED = D3;
+//int SD_LED = D8;
+//int WiFi_LED = D3;
 
-SPISettings settingsPT(14000000, MSBFIRST, SPI_MODE3);
+SPISettings settingsPT(500000, MSBFIRST, SPI_MODE1);
 SPISettings settingsSD(14000000, LSBFIRST, SPI_MODE0);
 
 //////////////////// WiFi functions /////////////////////
@@ -103,7 +104,7 @@ void connectToWiFi() {
 		Serial.print(".");
 	}
 	Serial.println("WiFI connected!");
-	digitalWrite(WiFi_LED, HIGH);
+	//digitalWrite(WiFi_LED, HIGH);
 	Serial.println();
 	Serial.print(ssid);
 	Serial.println();
@@ -140,7 +141,7 @@ void SDinit(int SD_pin)
 	// If the file is open-write
 	if (BackupFile)
 	{
-		BackupFile.print("Time\tMeasurement");
+		BackupFile.print("Time\tMeasurement\tTemperature");
 		BackupFile.println();
 	}
 	else {
@@ -151,9 +152,9 @@ void SDinit(int SD_pin)
 
 
   // WRITES CONTENT OF SG TO SD CARD  
-void SDwrite(float SG) {
+void SDwrite(float SG, float temp) {
 
-	digitalWrite(SD_LED, HIGH); // Indicates that we are writning to SD-card
+//	digitalWrite(SD_LED, HIGH); // Indicates that we are writning to SD-card
 
 	String time_str;
 
@@ -176,7 +177,9 @@ void SDwrite(float SG) {
 
 		BackupFile.print("\t");
 		// Write Measurement value
-		BackupFile.println(SG);
+		BackupFile.print(SG);
+    BackupFile.print("\t");
+    BackupFile.println(temp);
 
 		Serial.print(F("Writing to SD-card: \t"));
 		Serial.print(time_str);
@@ -238,7 +241,7 @@ float loadCellRead() {
 } // loadCellRead end
 
   ///////////////////////////////// Temperature function ////////////////////////////////////////////
-void tempRead(){
+float tempRead(){
 uint16_t rtd = maxx.readRTD();
 
 Serial.print("RTD value: "); Serial.println(rtd);
@@ -274,6 +277,7 @@ if(fault) {
 	maxx.clearFault();
 }
 Serial.println();
+return maxx.temperature(RNOMINAL, RREF);
 }
 //////////////////////////////// Get time function ///////////////////////////////////////////////
 
@@ -322,14 +326,14 @@ void webTime(Client &client)
 
 void setup() {
 
-	pinMode(WiFi_LED, OUTPUT);
-	pinMode(SD_LED, OUTPUT);
+	//pinMode(WiFi_LED, OUTPUT);
+	//pinMode(SD_LED, OUTPUT);
   
-	pinMode(SD_pin, OUTPUT);
-  digitalWrite(SD_pin, HIGH);
+	//pinMode(SD_pin, OUTPUT);
+  //digitalWrite(SD_pin, HIGH);
   
-	pinMode(PT_pin, OUTPUT);
-  digitalWrite(PT_pin, HIGH);
+//	pinMode(PT_pin, OUTPUT);
+ // digitalWrite(PT_pin, HIGH);
 
 	Serial.begin(115200);
 	delay(10);
@@ -359,21 +363,10 @@ void setup() {
 ///////////////////////////////////
 
 void loop() {
-
-
+  
 	unsigned long timeMillis = millis();
 
-
-	SPI.beginTransaction(settingsPT);
-  digitalWrite (PT_pin, LOW);
-	// read value from PT100/PT1000 sensor
-	tempRead();
-  digitalWrite (PT_pin, HIGH);
-	SPI.endTransaction();
-
-	// Check WiFi connection
-	//checkWiFiConnection();
-
+  float temp = tempRead();
 
   delay(5000);
 
@@ -386,15 +379,8 @@ void loop() {
 	float val = loadCellRead();
 
 
-	SPI.beginTransaction(settingsSD);
-  digitalWrite (SD_pin, LOW);
-	// Write to SD-card
-	
-	SDwrite(val);
-  digitalWrite (SD_pin, HIGH);
-	SPI.endTransaction();
-  
-  //digitalWrite(SD_LED, LOW);
+
+	SDwrite(val,temp);
 
 	// send to thingspeak
 	if ((timeMillis - previousMillis) >= 20000 && WiFi.status() == 3) {
@@ -402,7 +388,11 @@ void loop() {
 		Serial.print("Sending to ThingSpeak ");
 		Serial.println(val);
 		ThingSpeak.setField(1, val);
+    ThingSpeak.setField(2,temp);
 		ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
+
+   
+   //ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
 	}
 
 
