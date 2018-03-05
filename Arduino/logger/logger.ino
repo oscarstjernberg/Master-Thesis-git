@@ -59,7 +59,7 @@ long t;
 //          MAX31865             //
 ///////////////////////////////////
 
-const int pt_pin = D2;
+const int PT_pin = D2;
 
 Adafruit_MAX31865 maxx = Adafruit_MAX31865(D2);
 // Reference value for a PT100 sensor, if using PT1000 use RREF = 4300.
@@ -85,8 +85,8 @@ long interval = 20000;
 int SD_LED = D8;
 int WiFi_LED = D3;
 
-SPISettings settingsA(2000000, MSBFIRST, SPI_MODE1);
-SPISettings settingsB(16000000, LSBFIRST, SPI_MODE3);
+SPISettings settingsPT(14000000, MSBFIRST, SPI_MODE3);
+SPISettings settingsSD(14000000, LSBFIRST, SPI_MODE0);
 
 //////////////////// WiFi functions /////////////////////
 
@@ -324,8 +324,12 @@ void setup() {
 
 	pinMode(WiFi_LED, OUTPUT);
 	pinMode(SD_LED, OUTPUT);
+  
 	pinMode(SD_pin, OUTPUT);
-	pinMode(pt_pin, OUTPUT);
+  digitalWrite(SD_pin, HIGH);
+  
+	pinMode(PT_pin, OUTPUT);
+  digitalWrite(PT_pin, HIGH);
 
 	Serial.begin(115200);
 	delay(10);
@@ -360,13 +364,18 @@ void loop() {
 	unsigned long timeMillis = millis();
 
 
-	SPI.beginTransaction(pt_pin);
+	SPI.beginTransaction(settingsPT);
+  digitalWrite (PT_pin, LOW);
 	// read value from PT100/PT1000 sensor
 	tempRead();
+  digitalWrite (PT_pin, HIGH);
 	SPI.endTransaction();
 
 	// Check WiFi connection
 	//checkWiFiConnection();
+
+
+  delay(5000);
 
 	// Get current time from the web
 	if (WiFi.status() == 3) {
@@ -377,13 +386,15 @@ void loop() {
 	float val = loadCellRead();
 
 
-	SPI.beginTransaction(SD_pin);
+	SPI.beginTransaction(settingsSD);
+  digitalWrite (SD_pin, LOW);
 	// Write to SD-card
-	digitalWrite(SD_LED, LOW);
-	delay(1000);
+	
 	SDwrite(val);
+  digitalWrite (SD_pin, HIGH);
 	SPI.endTransaction();
-
+  
+  //digitalWrite(SD_LED, LOW);
 
 	// send to thingspeak
 	if ((timeMillis - previousMillis) >= 20000 && WiFi.status() == 3) {
