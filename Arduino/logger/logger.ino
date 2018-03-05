@@ -3,6 +3,7 @@
 #include <ThingSpeak.h>
 #include <HX711_ADC.h>
 #include <SPI.h>
+#include <Adafruit_MAX31865.h>
 
 ////////////////////////////////////
 //          WIFI SETTINGS         //
@@ -53,6 +54,18 @@ const char * myWriteAPIKey = "A86F3R21OEZKIIQQ";  // Channel API-key
 HX711_ADC LoadCell(D1, D0);
 
 long t;
+
+////////////////////////////////////
+//          MAX31865             //
+///////////////////////////////////
+
+int pt_pin = D2;
+
+Adafruit_MAX31865 maxx = Adafruit_MAX31865(D2);
+// Reference value for a PT100 sensor, if using PT1000 use RREF = 4300.
+#define RREF      430.0
+#define RNOMINAL  100.0
+
 
 ////////////////////////////////////
 //          MISC SETTINGS         //
@@ -221,7 +234,44 @@ float loadCellRead() {
 
 } // loadCellRead end
 
+///////////////////////////////// Temperature function ////////////////////////////////////////////
 
+uint16_t rtd = maxx.readRTD();
+
+ Serial.print("RTD value: "); Serial.println(rtd);
+ float ratio = rtd;
+ ratio /= 32768;
+ Serial.print("Ratio = "); Serial.println(ratio,8);
+ Serial.print("Resistance = "); Serial.println(RREF*ratio,8);
+ Serial.print("Temperature = "); Serial.println(maxx.temperature(RNOMINAL, RREF));
+
+
+  // Check and print any faults
+  uint8_t fault = maxx.readFault();
+  if (fault) {
+    Serial.print("Fault 0x"); Serial.println(fault, HEX);
+    if (fault & MAX31865_FAULT_HIGHTHRESH) {
+      Serial.println("RTD High Threshold"); 
+    }
+    if (fault & MAX31865_FAULT_LOWTHRESH) {
+      Serial.println("RTD Low Threshold"); 
+    }
+    if (fault & MAX31865_FAULT_REFINLOW) {
+      Serial.println("REFIN- > 0.85 x Bias"); 
+    }
+    if (fault & MAX31865_FAULT_REFINHIGH) {
+      Serial.println("REFIN- < 0.85 x Bias - FORCE- open"); 
+    }
+    if (fault & MAX31865_FAULT_RTDINLOW) {
+      Serial.println("RTDIN- < 0.85 x Bias - FORCE- open"); 
+    }
+    if (fault & MAX31865_FAULT_OVUV) {
+      Serial.println("Under/Over voltage"); 
+    }
+    maxx.clearFault();
+  }
+  Serial.println();
+  
 //////////////////////////////// Get time function ///////////////////////////////////////////////
 
 void webTime (Client &client)
@@ -275,6 +325,9 @@ void setup() {
   Serial.begin(115200);
   delay(10);
 
+  // Starts the MAX31865 with a 3-wired connection, for 2 or 4 wire connection change to 2WIRE respectly 4Wire
+  maxx.begin(MAX31865_3WIRE);
+
   // connect to WiFi
   connectToWiFi();
 
@@ -287,6 +340,8 @@ void setup() {
   // ThingSpeak setup
   ThingSpeak.begin(client);
 
+  // Starts SPI protocol
+  SPI.begin();
 
 }
 
@@ -299,6 +354,12 @@ void loop() {
   
   unsigned long timeMillis = millis();
 
+
+  SPI.beginTransaction(pt_pin);
+  // read value from PT100/PT1000 sensor
+  tempRead();
+  SPI.endTransaction();
+  
   // Check WiFi connection
   //checkWiFiConnection();
 
@@ -310,10 +371,13 @@ void loop() {
 	// read value from load cell
 	float val = loadCellRead();
 
+
+  SPI.beginTransaction(SD_pin);
 	// Write to SD-card
   digitalWrite(SD_LED, LOW);
   delay(1000);
 	SDwrite(val);
+  SPI.endTransaction();
 
   
 	// send to thingspeak
