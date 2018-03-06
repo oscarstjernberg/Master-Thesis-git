@@ -5,6 +5,8 @@
 #include <SPI.h>
 #include <Adafruit_MAX31865.h>
 
+#define Board_3;  // Board_1, Board_2, Board_3
+
 ////////////////////////////////////
 //          WIFI SETTINGS         //
 ////////////////////////////////////
@@ -40,10 +42,20 @@ struct DateandTime {
 ////////////////////////////////////
 //      ThingSpeak SETTINGS       //
 ////////////////////////////////////
+#if defined(Board_1)
+  unsigned long myChannelNumber = 420692; // Channel ID
+  const char * myWriteAPIKey = "A86F3R21OEZKIIQQ";  // Channel API-key
+#endif
 
-unsigned long myChannelNumber = 420692; // Channel ID
-const char * myWriteAPIKey = "A86F3R21OEZKIIQQ";  // Channel API-key
+#if defined(Board_2)
+  unsigned long myChannelNumber = 441326; // Channel ID
+  const char * myWriteAPIKey = "8H4EAGF3VE2IF6UT";  // Channel API-key
+#endif
 
+#if defined(Board_3)
+  unsigned long myChannelNumber = 441330; // Channel ID
+  const char * myWriteAPIKey = "Q3I84GD3QUIC1LQT";  // Channel API-key
+#endif
 ////////////////////////////////////
 //      Loadcell SETTINGS         //
 ////////////////////////////////////
