@@ -217,7 +217,7 @@ void loadCellInit() {
   LoadCell.begin();
   long stabilisingtime = 2000; // tare preciscion can be improved by adding a few seconds of stabilising time
   LoadCell.start(stabilisingtime);
-  LoadCell.setCalFactor(696.0); // user set calibration factor (float)
+  LoadCell.setCalFactor(2090.0); // user set calibration factor (float)
   Serial.println("Startup + tare is complete");
 } // Initialize load cell end
 
