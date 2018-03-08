@@ -6,9 +6,11 @@
 
 void GoogleSpreadsheet::send(float val, float temp, Client &client)
 {
+	val_int = int32(val * 1000);
+	temp_int = int32(temp * 1000);
 	// Constructing GET request string
-	sprintf(cmd, "GET /pushingbox?devid=vAADBEE37B57A997&meas=%d&temp=%d HTTP/1.1", 1234, 4567);
-	  Serial.println(cmd);
+	sprintf(cmd, "GET /pushingbox?devid=vAADBEE37B57A997&meas=%f&temp=%f HTTP/1.1", val,temp);
+	 Serial.println(cmd);
 	 Serial.println(F("Starting connection to server..."));
 
 	// if you get a connection, report back via serial
@@ -19,11 +21,11 @@ void GoogleSpreadsheet::send(float val, float temp, Client &client)
 		client.println(F("Host: api.pushingbox.com"));
 		client.println(F("Connection: close"));
 		client.println();
+		delay(100);
 		client.stop();
 		Serial.println("Data sent");
 		Serial.println("Connection closed");
 	}
-
 }
 
 GoogleSpreadsheet To_spreadsheet;

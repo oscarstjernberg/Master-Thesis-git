@@ -15,8 +15,11 @@
 class GoogleSpreadsheet
 {
  protected:
-	 char cmd[100];
+	 char cmd[200];
 	 char server[25] = "api.pushingbox.com";
+	 int32 val_int;
+	 int32 temp_int;
+
  public:
 	void send(float val, float temp, Client &client);
 };

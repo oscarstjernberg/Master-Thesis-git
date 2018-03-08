@@ -19,6 +19,9 @@ class WiFi_FunctionsClass
 	 char pass[15] = "plasmakorv";
 	 int status = WL_IDLE_STATUS;
 
+	 enum month_enum {Sep, Oct, Nov, Dec };
+	 month_enum month_switch;
+
  public:
 	void checkWiFiConnection(ESP8266WiFiClass &WiFi);
 	void connectToWiFi(ESP8266WiFiClass &WiFi);
@@ -27,7 +30,8 @@ class WiFi_FunctionsClass
 	struct DateandTime {
 		char month_buf[3];
 		String month;
-		int year;
+		int month_int;
+		byte year;
 		unsigned day;
 		byte hour;
 		byte minute;

@@ -24,8 +24,10 @@ float LoadCellClass::read(HX711_ADC &LoadCellBridge)
 	//get smoothed value from data set + current calibration factor
 	if (millis() > t + 250) {
 		val = LoadCellBridge.getData();
+#ifdef SERIAL_PRINT_LOADCELL
 		Serial.print("Load_cell output val: ");
 		Serial.println(val);
+#endif
 		t = millis();
 	}
 

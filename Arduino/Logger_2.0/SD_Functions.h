@@ -10,16 +10,19 @@
 #endif
 
 #include "globals.h"
+#include "WiFi_Functions.h"
 #include <SD.h>
 
 class SD_FunctionsClass
 {
  protected:
 	File BackupFile;
+	String fileName;
 
  public:
-	void init(int SD_pin);
-	void write(float SG, float temp);
+	void init(int SD_pin, WiFi_FunctionsClass &Wifi_func);
+	void write(float SG, float temp, WiFi_FunctionsClass &Wifi_func);
+	void createFileName(WiFi_FunctionsClass &Wifi_func);
 };
 
 extern SD_FunctionsClass SD_Functions;

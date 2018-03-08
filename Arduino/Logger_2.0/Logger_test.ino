@@ -48,16 +48,10 @@ PT100Class PT100;
 //          MISC SETTINGS         //
 ///////////////////////////////////
 
-int delaySeconds = 10;
-int loopTime = delaySeconds * 1000;
-
 long previousMillis_thingspeak = 0;
 long previousMillis_google = 0;
 long previousMillis_SD = 0;
-long interval = 20000;
 
-int SD_LED = D8;
-int WiFi_LED = D3;
 const int SD_pin = D4;
 
   ////////////////////////////////////
@@ -65,27 +59,33 @@ const int SD_pin = D4;
   ///////////////////////////////////
 
 void setup() {
+	ESP.wdtDisable();
+
 	Serial.begin(115200);
 	delay(10);
 	
 	// Define thingspeak channel
-	TS.BoardDefine(3);
+	 TS.BoardDefine(3);
 
 	// Initialize the PT100 sensor 
 	PT100.init(PT100Bridge, MAX31865_3WIRE);
 	
 	// connect to WiFi
-	WiFi_func.connectToWiFi(WiFi);
+	 WiFi_func.connectToWiFi(WiFi);
+
+	// Get date
+	 WiFi_func.webTime(client);
 
 	// Initialize SD-card
-	SD_func.init(SD_pin);
+	SD_func.init(SD_pin, WiFi_func);
 
 	// Initialize reading the load cell
 	LoadCell.init(LoadCellBridge);
 
 	// ThingSpeak setup
-	ThingSpeak.begin(client);
+	 ThingSpeak.begin(client);
 
+	ESP.wdtEnable(WDTO_0MS);
 }// end Setup
 
  ////////////////////////////////////
@@ -93,6 +93,7 @@ void setup() {
  ///////////////////////////////////
 
 void loop() {
+	ESP.wdtFeed();
 
 	unsigned long timeMillis = millis();
 
@@ -101,23 +102,23 @@ void loop() {
 
 	// read value from load cell
 	float val = LoadCell.read(LoadCellBridge);
-
 	// Writes the loadcell value and the temperature to the SD-card
-	if ((timeMillis - previousMillis_SD) >= interval) {
+	if ((timeMillis - previousMillis_SD) >= INTERVAL_SD) {
 		previousMillis_SD = timeMillis;
-		SD_func.write(val, temp);
+		SD_func.write(val, temp, WiFi_func);
 	}
 
-	// Send to google spreadsheet
-	if ((timeMillis - previousMillis_google) >= interval && WiFi.status() == 3) {
-		previousMillis_google = timeMillis;
-		// GSS.send(val, temp, client);
-	}
+	//// Send to google spreadsheet
+	//if ((timeMillis - previousMillis_google) >= INTERVAL_GOOGLE && WiFi.status() == 3) {
+	//	previousMillis_google = timeMillis;
+	//	//GSS.send(val, temp, client);
+	//}
 
-	// send to thingspeak
-	if ((timeMillis - previousMillis_thingspeak) >= interval && WiFi.status() == 3) {
+	// Send to thingspeak
+
+	if ((timeMillis - previousMillis_thingspeak) >= INTERVAL_THINGSPEAK && WiFi.status() == 3) {
 		previousMillis_thingspeak = timeMillis;
-		TS.send(val, temp);
+		TS.send(val,temp);
 	}
 	
 }// end main loop

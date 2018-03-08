@@ -15,3 +15,16 @@
 // Reference value for a PT100 sensor, if using PT1000 use RREF = 4300.
 #define RREF      430.0
 #define RNOMINAL  100.0
+
+// Time interval for logging of data
+#define INTERVAL_SD 200
+#define INTERVAL_GOOGLE 120000
+#define INTERVAL_THINGSPEAK 120000
+
+// Serial print inside functions
+
+// #define SERIAL_PRINT_TEMPERATURE
+// #define SERIAL_PRINT_LOADCELL
+
+// File name definition
+ #define ONLINE_FILE_NAME

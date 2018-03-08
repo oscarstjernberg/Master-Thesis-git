@@ -13,13 +13,16 @@ void PT100Class::init(Adafruit_MAX31865 &PT100Bridge, max31865_numwires n)
 float PT100Class::read(Adafruit_MAX31865 &PT100Bridge) {
 	uint16_t rtd = PT100Bridge.readRTD();
 
-	Serial.print("RTD value: "); Serial.println(rtd);
+
 	float ratio = rtd;
 	ratio /= 32768;
+
+#ifdef SERIAL_PRINT_TEMPERATURE
+	Serial.print("RTD value: "); Serial.println(rtd);
 	Serial.print("Ratio = "); Serial.println(ratio, 8);
 	Serial.print("Resistance = "); Serial.println(RREF * ratio, 8);
 	Serial.print("Temperature = "); Serial.println(PT100Bridge.temperature(RNOMINAL, RREF));
-
+#endif
 
 	// Check and print any faults
 	uint8_t fault = PT100Bridge.readFault();
@@ -45,7 +48,9 @@ float PT100Class::read(Adafruit_MAX31865 &PT100Bridge) {
 		}
 		PT100Bridge.clearFault();
 	}
+#ifdef SERIAL_PRINT_TEMPERATURE
 	Serial.println();
+#endif
 	return PT100Bridge.temperature(RNOMINAL, RREF);
 
 }
