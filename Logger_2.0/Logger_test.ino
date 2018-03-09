@@ -54,27 +54,30 @@ long previousMillis_SD = 0;
 
 const int SD_pin = D4;
 
-  ////////////////////////////////////
-  //          SETUP                 //
-  ///////////////////////////////////
+// Check if first loop
+bool first = true;
+
+////////////////////////////////////
+//          SETUP                 //
+///////////////////////////////////
 
 void setup() {
 	ESP.wdtDisable();
 
 	Serial.begin(115200);
 	delay(10);
-	
+
 	// Define thingspeak channel
-	 TS.BoardDefine(3);
+	// TS.BoardDefine(3);
 
 	// Initialize the PT100 sensor 
 	PT100.init(PT100Bridge, MAX31865_3WIRE);
-	
+
 	// connect to WiFi
-	 WiFi_func.connectToWiFi(WiFi);
+	// WiFi_func.connectToWiFi(WiFi);
 
 	// Get date
-	 WiFi_func.webTime(client);
+	// WiFi_func.webTime(client);
 
 	// Initialize SD-card
 	SD_func.init(SD_pin, WiFi_func);
@@ -83,7 +86,8 @@ void setup() {
 	LoadCell.init(LoadCellBridge);
 
 	// ThingSpeak setup
-	 ThingSpeak.begin(client);
+	// ThingSpeak.begin(client);
+
 
 	ESP.wdtEnable(WDTO_0MS);
 }// end Setup
@@ -102,24 +106,33 @@ void loop() {
 
 	// read value from load cell
 	float val = LoadCell.read(LoadCellBridge);
-	// Writes the loadcell value and the temperature to the SD-card
-	if ((timeMillis - previousMillis_SD) >= INTERVAL_SD) {
+
+#ifdef SD_CARD
+	if ((timeMillis - previousMillis_SD) >= INTERVAL_SD || first == true) {
 		previousMillis_SD = timeMillis;
 		SD_func.write(val, temp, WiFi_func);
 	}
+#endif // SD_CARD
 
-	//// Send to google spreadsheet
-	//if ((timeMillis - previousMillis_google) >= INTERVAL_GOOGLE && WiFi.status() == 3) {
-	//	previousMillis_google = timeMillis;
-	//	//GSS.send(val, temp, client);
-	//}
 
-	// Send to thingspeak
-
-	if ((timeMillis - previousMillis_thingspeak) >= INTERVAL_THINGSPEAK && WiFi.status() == 3) {
-		previousMillis_thingspeak = timeMillis;
-		TS.send(val,temp);
+#ifdef GOOGLE_SPREADSHEET
+	if ((timeMillis - previousMillis_google) >= INTERVAL_GOOGLE && WiFi.status() == 3 || first == true) {
+		previousMillis_google = timeMillis;
+		GSS.send(val, temp, client);
 	}
-	
+#endif // GOOGLE_SPREADSHEET
+
+
+#ifdef THINGSPEAK
+	if ((timeMillis - previousMillis_thingspeak) >= INTERVAL_THINGSPEAK && WiFi.status() == 3 || first == true) {
+		previousMillis_thingspeak = timeMillis;
+		TS.send(val, temp);
+}
+#endif //THINKSPEAK 
+
+	// WiFi_func.checkWiFiConnection(WiFi);
+
+	// Check if first loop
+	first = false;
 }// end main loop
 
