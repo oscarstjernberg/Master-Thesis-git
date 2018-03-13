@@ -67,17 +67,18 @@ void setup() {
 	Serial.begin(115200);
 	delay(10);
 
-	// Define thingspeak channel
-	// TS.BoardDefine(3);
-
 	// Initialize the PT100 sensor 
 	PT100.init(PT100Bridge, MAX31865_3WIRE);
 
+#if defined(GOOGLE_SPREADSHEET) || defined(THINGSPEAK)
 	// connect to WiFi
-	// WiFi_func.connectToWiFi(WiFi);
+	WiFi_func.connectToWiFi(WiFi);
+#endif
 
+#ifdef ONLINE_FILE_NAME
 	// Get date
-	// WiFi_func.webTime(client);
+	WiFi_func.webTime(client);
+#endif // ONLINE_FILE_NAME
 
 	// Initialize SD-card
 	SD_func.init(SD_pin, WiFi_func);
@@ -85,9 +86,12 @@ void setup() {
 	// Initialize reading the load cell
 	LoadCell.init(LoadCellBridge);
 
+#ifdef THINGSPEAK
 	// ThingSpeak setup
-	// ThingSpeak.begin(client);
-
+	ThingSpeak.begin(client);
+	// Define thingspeak channel
+	TS.BoardDefine(3);
+#endif //THINKSPEAK 
 
 	ESP.wdtEnable(WDTO_0MS);
 }// end Setup
@@ -130,8 +134,10 @@ void loop() {
 }
 #endif //THINKSPEAK 
 
-	// WiFi_func.checkWiFiConnection(WiFi);
 
+#if defined(GOOGLE_SPREADSHEET) || defined(THINGSPEAK)
+	WiFi_func.checkWiFiConnection(WiFi);
+#endif
 	// Check if first loop
 	first = false;
 }// end main loop

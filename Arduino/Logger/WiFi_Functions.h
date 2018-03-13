@@ -15,8 +15,8 @@
 class WiFi_FunctionsClass
 {
  protected:
-	 char ssid[10] = "Combine";
-	 char pass[15] = "plasmakorv";
+	 char ssid[10] = "HUAWEIP10";
+	 char pass[15] = "HejAlexander";
 	 int status = WL_IDLE_STATUS;
 
 	 enum month_enum {Sep, Oct, Nov, Dec };

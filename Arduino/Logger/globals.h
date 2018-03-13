@@ -27,9 +27,9 @@
 // #define SERIAL_PRINT_LOADCELL
 
 // File name definition
-// #define ONLINE_FILE_NAME
+ #define ONLINE_FILE_NAME
 
 // Define what functions to run
 #define SD_CARD
-// #define GOOGLE_SPREADSHEET
+#define GOOGLE_SPREADSHEET
 // #define THINGSPEAK

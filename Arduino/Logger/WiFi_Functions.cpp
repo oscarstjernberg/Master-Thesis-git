@@ -16,6 +16,7 @@ void WiFi_FunctionsClass::checkWiFiConnection(ESP8266WiFiClass &WiFi)
 
 void WiFi_FunctionsClass::connectToWiFi(ESP8266WiFiClass &WiFi)
 {
+	int WIFI_count = 0;
 	Serial.println();
 	Serial.println();
 	Serial.print("Connecting to ");
@@ -23,16 +24,19 @@ void WiFi_FunctionsClass::connectToWiFi(ESP8266WiFiClass &WiFi)
 
 	WiFi.begin(ssid, pass);
 
-	while (WiFi.status() != WL_CONNECTED) {
+	while (WiFi.status() != WL_CONNECTED && WIFI_count <20) {
 		delay(500);
 		Serial.print(".");
+		WIFI_count++;
 	}
+
 	Serial.println("WiFI connected!");	Serial.println();
 	Serial.print(ssid);
 	Serial.println();
 	Serial.println(WiFi.localIP());
 	Serial.print("Wifistatus ");
 	Serial.println(WiFi.status());
+	WIFI_count = 0;
 }
 
 void WiFi_FunctionsClass::webTime(WiFiClient &client)
