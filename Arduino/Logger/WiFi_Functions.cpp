@@ -8,6 +8,7 @@ void WiFi_FunctionsClass::checkWiFiConnection(ESP8266WiFiClass &WiFi)
 {
 	if (WiFi.status() != 3) {
 		status = WL_IDLE_STATUS;
+		WiFi.disconnect(true);
 		connectToWiFi(WiFi);
 		Serial.println("reconnect");
 	}
@@ -29,7 +30,8 @@ void WiFi_FunctionsClass::connectToWiFi(ESP8266WiFiClass &WiFi)
 		Serial.print(".");
 		WIFI_count++;
 	}
-
+	if (WiFi.status() == 3)
+	{	
 	Serial.println("WiFI connected!");	Serial.println();
 	Serial.print(ssid);
 	Serial.println();
@@ -37,6 +39,8 @@ void WiFi_FunctionsClass::connectToWiFi(ESP8266WiFiClass &WiFi)
 	Serial.print("Wifistatus ");
 	Serial.println(WiFi.status());
 	WIFI_count = 0;
+	}
+	WiFi.localIP();
 }
 
 void WiFi_FunctionsClass::webTime(WiFiClient &client)

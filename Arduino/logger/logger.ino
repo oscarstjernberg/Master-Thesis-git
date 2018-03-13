@@ -63,10 +63,10 @@ bool first = true;
 
 void setup() {
 	ESP.wdtDisable();
-
+	
 	Serial.begin(115200);
 	delay(10);
-
+	
 	// Initialize the PT100 sensor 
 	PT100.init(PT100Bridge, MAX31865_3WIRE);
 

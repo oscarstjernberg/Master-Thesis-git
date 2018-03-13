@@ -6,6 +6,8 @@
 
 void GoogleSpreadsheet::send(float val, float temp, Client &client)
 {
+	client.stop();
+	delay(100);
 	val_int = int32(val * 1000);
 	temp_int = int32(temp * 1000);
 	// Constructing GET request string
