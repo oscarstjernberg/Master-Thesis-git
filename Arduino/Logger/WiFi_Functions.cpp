@@ -17,7 +17,6 @@ void WiFi_FunctionsClass::checkWiFiConnection(ESP8266WiFiClass &WiFi)
 
 void WiFi_FunctionsClass::connectToWiFi(ESP8266WiFiClass &WiFi)
 {
-		// hej
 	int WIFI_count = 0;
 	Serial.println();
 	Serial.println();
