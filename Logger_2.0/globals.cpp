@@ -1,7 +1,0 @@
-// 
-// 
-// 
-
-#include "globals.h"
-
-
