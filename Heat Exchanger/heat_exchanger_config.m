@@ -41,7 +41,7 @@ T_wort_out=16;
 %Temperature in-flow water
 T_H2O_in=5;
 % Temperature for out-flow water
-T_H2O_out=81.29;
+T_H2O_out=81;
 % Density of wort
 rho_wort=1.06; % Same as the specific gravity
 % Mass of wort in heat exchanger
@@ -65,8 +65,8 @@ Area=n*A_heat_plate;
 
 %% Parameters for model
 % Steady state values for the states
-x_wort_0=0;
-x_H2O_0=0;
+x_wort_0=19;
+x_H2O_0=81;
 % Steady state values for the inputs
 u_wort_0=0.23;
 u_H2O_0=m_dot_H2O;
@@ -90,7 +90,7 @@ A(1,1) = (-u_wort_0*cp_wort-U*Area)/(m_wort*cp_wort);
 A(1,2) = U*Area/(m_wort*cp_wort);
 A(2,1) = U*Area/(m_H2O*cp_H2O);
 A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
-
+     
  % Constructing the linearized B-Matrix
    B = [(cp_wort*(T_wort_in - x_wort_0))/(m_wort*cp_wort) 0
       0 (cp_H2O*(T_H2O_in - x_H2O_0))/(m_H2O*cp_H2O)];
@@ -132,16 +132,16 @@ A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
    %% LQR_exact
   
  % Weight matrix for the states
- Q_exact=diag([300 0.01]);
+ Q_exact=diag([1 1]);
  % Weights matrix for the inputs
- R_exact=diag([0.01 0.01]);
+ R_exact=diag([1 1]);
  % Create the system from the matrix
  SYS_exact=ss(A_exact,B_exact,C_exact,D);
  % Calculate the LQR-gain
  [LQR_gain_exact,S_exact,E_exact]= lqr(SYS_exact,Q_exact,R_exact);
  % Calculating the reference gain
  Kr_exact=inv(D-(C_exact-D*LQR_gain_exact)*inv(A_exact-B_exact*LQR_gain_exact));
-  
+
  %% Nyquist
  Ts = 1;
  u = 0;

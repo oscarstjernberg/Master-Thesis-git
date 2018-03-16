@@ -1,19 +1,17 @@
 Arduino_pid_program_data.o: Arduino_pid_program_data.c \
  Arduino_pid_program.h rtwtypes.h \
  C:/PROGRA~1/MATLAB/R2017b/simulink/include/rtw_continuous.h \
- C:/Users/Alexander/Desktop/Master-Thesis-git/Arduino_and_simulink/Arduino_pid_program_ert_rtw/rtwtypes.h \
+ C:/Users/Alexander/Desktop/Master-thesis-git/Arduino_and_simulink/Arduino_pid_program_ert_rtw/rtwtypes.h \
  C:/PROGRA~1/MATLAB/R2017b/simulink/include/rtw_solver.h \
  C:/PROGRA~1/MATLAB/R2017b/simulink/include/rtw_continuous.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_digitalio.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/blocks/sfcn/include/arduino_analoginput_lct.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/blocks/sfcn/include/arduino_blocks_abstraction.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_SerialWrite.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_SerialRead.h \
+ Arduino_pid_program_types.h multiword_types.h \
+ MW_target_hardware_resources.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/binary.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/mega/pins_arduino.h \
- Arduino_pid_program_types.h MW_target_hardware_resources.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h \
  Arduino_pid_program_private.h
 
 Arduino_pid_program.h:
@@ -22,32 +20,28 @@ rtwtypes.h:
 
 C:/PROGRA~1/MATLAB/R2017b/simulink/include/rtw_continuous.h:
 
-C:/Users/Alexander/Desktop/Master-Thesis-git/Arduino_and_simulink/Arduino_pid_program_ert_rtw/rtwtypes.h:
+C:/Users/Alexander/Desktop/Master-thesis-git/Arduino_and_simulink/Arduino_pid_program_ert_rtw/rtwtypes.h:
 
 C:/PROGRA~1/MATLAB/R2017b/simulink/include/rtw_solver.h:
 
 C:/PROGRA~1/MATLAB/R2017b/simulink/include/rtw_continuous.h:
 
-C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_digitalio.h:
+C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_SerialWrite.h:
 
-C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/blocks/sfcn/include/arduino_analoginput_lct.h:
-
-C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h:
-
-C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/blocks/sfcn/include/arduino_blocks_abstraction.h:
-
-C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h:
-
-C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/binary.h:
-
-C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/mega/pins_arduino.h:
+C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinobase/include/MW_SerialRead.h:
 
 Arduino_pid_program_types.h:
+
+multiword_types.h:
 
 MW_target_hardware_resources.h:
 
 C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h:
 
-C:/ProgramData/MATLAB/SupportPackages/R2017b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h:
+C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h:
+
+C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/binary.h:
+
+C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h:
 
 Arduino_pid_program_private.h:

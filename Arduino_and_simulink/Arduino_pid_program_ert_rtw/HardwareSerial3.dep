@@ -9,7 +9,7 @@ HardwareSerial3.o: \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Print.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Printable.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/USBAPI.h \
- C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/mega/pins_arduino.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/HardwareSerial_private.h \
  C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/wiring_private.h
 
@@ -31,7 +31,7 @@ C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/ard
 
 C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/USBAPI.h:
 
-C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/mega/pins_arduino.h:
+C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h:
 
 C:/ProgramData/MATLAB/SupportPackages/R2017b/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/HardwareSerial_private.h:
 

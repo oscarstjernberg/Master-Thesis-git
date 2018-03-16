@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Arduino_pid_program'.
  *
- * Model version                  : 1.56
+ * Model version                  : 1.58
  * Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
- * C/C++ source code generated on : Thu Feb 15 13:20:57 2018
+ * C/C++ source code generated on : Fri Mar 16 11:06:09 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -26,8 +26,8 @@
 #include "rtwtypes.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
-#include "MW_digitalio.h"
-#include "arduino_analoginput_lct.h"
+#include "MW_SerialWrite.h"
+#include "MW_SerialRead.h"
 #endif                                 /* Arduino_pid_program_COMMON_INCLUDES_ */
 
 #include "Arduino_pid_program_types.h"
@@ -42,25 +42,24 @@
 # define rtmSetErrorStatus(rtm, val)   ((rtm)->errorStatus = (val))
 #endif
 
+/* Block signals (auto storage) */
+typedef struct {
+  int32_T In1;                         /* '<S1>/In1' */
+} B_Arduino_pid_program_T;
+
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  codertarget_arduinobase_block_T obj; /* '<S1>/Digital Output' */
+  codertarget_arduinobase_int_d_T obj; /* '<Root>/Serial Transmit' */
+  codertarget_arduinobase_inter_T obj_m;/* '<Root>/Serial Receive' */
 } DW_Arduino_pid_program_T;
-
-/* Parameters (auto storage) */
-struct P_Arduino_pid_program_T_ {
-  uint32_T AnalogInput_p1;             /* Computed Parameter: AnalogInput_p1
-                                        * Referenced by: '<Root>/Analog Input'
-                                        */
-};
 
 /* Real-time Model Data Structure */
 struct tag_RTM_Arduino_pid_program_T {
   const char_T *errorStatus;
 };
 
-/* Block parameters (auto storage) */
-extern P_Arduino_pid_program_T Arduino_pid_program_P;
+/* Block signals (auto storage) */
+extern B_Arduino_pid_program_T Arduino_pid_program_B;
 
 /* Block states (auto storage) */
 extern DW_Arduino_pid_program_T Arduino_pid_program_DW;
@@ -88,8 +87,7 @@ extern RT_MODEL_Arduino_pid_program_T *const Arduino_pid_program_M;
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'Arduino_pid_program'
- * '<S1>'   : 'Arduino_pid_program/Digital Output'
- * '<S2>'   : 'Arduino_pid_program/Enabled Subsystem'
+ * '<S1>'   : 'Arduino_pid_program/Enabled Subsystem'
  */
 #endif                                 /* RTW_HEADER_Arduino_pid_program_h_ */
 

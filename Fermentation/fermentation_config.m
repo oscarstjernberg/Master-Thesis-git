@@ -104,19 +104,23 @@ ki_M0 = 6360;
 % Reference values
 T_0 = 16;
 % Coolant temperature
-T_c = 2;
+T_c = -2;
 % Surrounding temperature
-T_s=18;
+T_s=20;
+
 % Reference value
 T_ref(:,1)=0:250;
+
+%T_ref(:,2)=12;
+
 T_ref (1:50,2) = 10;
 T_ref(51:120,2)= 12;
 T_ref(121:180,2)=8;
 T_ref(181:251,2) = 8;
 
 % Integral action
-Kp = 10;
-Ki = 0.001;
-Kd = 2;
-Kb = 1;
-N = 1; % Filter coefficient
+Kp = 2;
+Ki = 0;
+Kd = 0;
+Kb = 10;
+N = 0; % Filter coefficient
