@@ -120,7 +120,7 @@ T_ref(181:251,2) = 8;
 
 % Integral action
 Kp = 2;
-Ki = 0;
+Ki = 0.05;
 Kd = 0;
 Kb = 10;
 N = 0; % Filter coefficient
