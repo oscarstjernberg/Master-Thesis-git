@@ -1,0 +1,11 @@
+﻿Visual Micro free version. CTRL+click for secure purchase http://www.visualmicro.com/page/shop.aspx
+
+Compiling 'HeatExchangerController' for 'NodeMCU 1.0 (ESP-12E Module)'
+Program size: 257 135 bytes (used 25% of a 1 044 464 byte maximum) (2,17 secs)
+Minimum Memory Usage: 33904 bytes (41% of a 81920 byte maximum)
+ 
+Uploading 'HeatExchangerController' to 'NodeMCU 1.0 (ESP-12E Module)' using 'COM3'
+The uploader returned an error
+warning: espcomm_sync failed
+error: espcomm_open failed
+error: espcomm_upload_mem failed
