@@ -80,7 +80,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="PT100.h" />
+    <ClInclude Include="SD_Functions.h" />
+    <ClInclude Include="WiFi_Functions.h" />
     <ClInclude Include="__vm\.HeatExchangerController.vsarduino.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="globals.cpp" />
+    <ClCompile Include="PT100.cpp" />
+    <ClCompile Include="SD_Functions.cpp" />
+    <ClCompile Include="WiFi_Functions.cpp" />
   </ItemGroup>
   <PropertyGroup>
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>

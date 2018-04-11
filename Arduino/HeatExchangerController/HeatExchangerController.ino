@@ -4,12 +4,19 @@
 #include <LiquidCrystal.h>
 #include <Adafruit_MAX31865.h>
 #include <SD.h>
+#include "globals.h"
+#include <PID_v1.h>
 
 #include "PT100.h"
 #include "SD_Functions.h"
 
 LiquidCrystal lcd(D0, D1, D2, D3, D4, 10);
 int button = 9;
+bool mode = false;
+
+// PID parameters
+double Setpoint, Input, Output;
+PID myPID(&Input, &Output, &Setpoint, 2, 5, 1, DIRECT);
 
 int pMin = 20;	// minimum value from potentiometer
 int pMax = 1004;	// maximum value from potentiometer
@@ -44,8 +51,8 @@ float setRefTemp() {
 
 		//Serial.print(x);
 
-		x = map(x, pMin, pMax, 0, 100); // Translates potentiometer value and scales it from 0 to 100
-		Serial.print("\t");
+		x = map(x, pMin, pMax, 15, 35); // Translates potentiometer value and scales it from 0 to 100
+		//Serial.print("\t");
 		//Serial.println(x);
 
 		if (x == -1){
@@ -67,7 +74,7 @@ float setRefTemp() {
 		delay(100);
 		lcd.clear();
 
-		Serial.print(val);
+		//Serial.print(val);
 		val = digitalRead(button);
 		if (val == 1)
 		{
@@ -78,19 +85,31 @@ float setRefTemp() {
 	return x;
 }
 
-float showTemp(float ref,float temp) {
+void showStatus(float ref,float temp, bool mode) {
+	if (mode == false) {
+		lcd.setCursor(0, 0);
+		lcd.write("Ref: ");
+		lcd.setCursor(5, 0);
+		lcd.print(ref);
+		lcd.setCursor(9, 0);
+		lcd.write(1);
+		lcd.write("C");
 
-	lcd.setCursor(0, 0);
-	lcd.write("Ref: ");
-	lcd.setCursor(10, 0);
-	lcd.print(ref);
-
-	lcd.setCursor(0, 1);
-	lcd.write("Current: ");
-	lcd.setCursor(10, 1);
-	lcd.print(temp);
-
-	//return temp;
+		lcd.setCursor(0, 1);
+		lcd.write("Cur: ");
+		lcd.setCursor(5, 1);
+		lcd.print(temp);
+		lcd.setCursor(9, 1);
+		lcd.write(1);
+		lcd.write("C");
+	}
+	else {
+		lcd.setCursor(0, 0);
+		lcd.write("Load: ");
+		lcd.setCursor(7,0);
+		lcd.write("46 %");
+	}
+	
 }
 
 
@@ -107,6 +126,8 @@ void setup()
 	//SD_func.init(SD_pin, WiFi_func);
 
 	setRefTemp();
+	delay(2000);
+
 	
 }
 
@@ -117,7 +138,14 @@ void loop()
 
 	
 	float temp = PT100.read(PT100Bridge);
-	//showTemp(x,temp);	
-	
+	if (digitalRead(button) == 1){
+		mode = true;
+	}
+	else{
+		mode = false;
+	}
+	Serial.print(digitalRead(button));
+	lcd.clear();
+	showStatus(x,temp, mode);
 
 }
