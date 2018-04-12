@@ -32,8 +32,8 @@ bool mode = false;	// Varible which decides what to be printed on the LCD
 double Setpoint, Input, Output;
 PID myPID(&Input, &Output, &Setpoint, 2, 5, 1, DIRECT);
 
-int pMin = 10;	// minimum value from potentiometer
-int pMax = 990;	// maximum value from potentiometer
+int pMin = 27;	// minimum value from potentiometer
+int pMax = 1024;	// maximum value from potentiometer
 float x = 0; // stores readings of the potentiometer
 float y;
 
@@ -74,7 +74,7 @@ float setRefTemp() {
 		{
 			done = true;
 		}
-
+		Serial.println(analogRead(A0));
 	}
 	return x;
 }
