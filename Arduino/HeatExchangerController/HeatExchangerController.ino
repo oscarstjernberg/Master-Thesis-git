@@ -79,7 +79,9 @@ float setRefTemp() {
 	return x;
 }
 
-void showStatus(float ref,float temp, bool mode) {
+float showStatus(float ref,float temp, bool mode) {
+	y = analogRead(A0);
+	y = map(y, 27, 1024, 100, 0);
 	if (mode == false) {
 		lcd.setCursor(0, 0);
 		lcd.write("Ref: ");
@@ -98,22 +100,21 @@ void showStatus(float ref,float temp, bool mode) {
 		lcd.write("C");
 	}
 	else {
-		y = analogRead(A0);
-		y = map(y, 35, 1024, 100, 0);
+	
 		lcd.setCursor(0, 0);
-		lcd.write("Load: ");
-		lcd.setCursor(7,0);
+		lcd.write("Load:");
+		lcd.setCursor(6,0);
 		lcd.print(y);
 		lcd.setCursor(9,0);
 		lcd.write("%");
 	}
-	
+	return y;
 }
 
 void start() {
-	lcd.setCursor(0, 0);
+	lcd.setCursor(2, 0);
 	lcd.write("Press ok to");
-	lcd.setCursor(4, 1);
+	lcd.setCursor(5, 1);
 	lcd.write("start");
 	while (digitalRead(button) == false) {
 		delay(50);
@@ -131,17 +132,23 @@ void setup()
 	PT100.init(PT100Bridge, MAX31865_3WIRE);
 
 	setRefTemp();
-	delay(1000);
+	delay(50);
 	lcd.clear();
 	start();
 }
 
+bool alarm(float a) {
+	if (a > 90)
+	{
+		// Warning high capacity or something........
+		return true;
+	}else{
+		return false;
+	}
+}
+
 void loop()
 {
-
-	//Serial.print(digitalRead(button));
-
-	
 	float temp = PT100.read(PT100Bridge);
 	if (digitalRead(button) == 1){
 		mode = true;
@@ -151,5 +158,7 @@ void loop()
 	}
 	lcd.clear();
 	showStatus(x,temp, mode);
+
+	alarm(y);
 
 }
