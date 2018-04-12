@@ -10,26 +10,35 @@
 #include "PT100.h"
 #include "SD_Functions.h"
 
+
+// MAX31865 - PT100 sensor
+// Use software SPI: CS, DI, DO, CLK
+
+Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865(3, D7, D6, D5);
+
+PT100Class PT100;
+
+
+////////////////////////////////////
+//          MISC SETTINGS         //
+///////////////////////////////////
+
+
 LiquidCrystal lcd(D0, D1, D2, D3, D4, 10);
 int button = 9;
-bool mode = false;
+bool mode = false;	// Varible which decides what to be printed on the LCD
 
 // PID parameters
 double Setpoint, Input, Output;
 PID myPID(&Input, &Output, &Setpoint, 2, 5, 1, DIRECT);
 
-int pMin = 20;	// minimum value from potentiometer
-int pMax = 1004;	// maximum value from potentiometer
-int x = 0; // stores readings of the potentiometer
+int pMin = 10;	// minimum value from potentiometer
+int pMax = 990;	// maximum value from potentiometer
+float x = 0; // stores readings of the potentiometer
+float y;
 
-// MAX31865 - PT100 sensor
-// Use software SPI: CS, DI, DO, CLK
-Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865(3, D7, D6, D5);
-// use hardware SPI, just pass in the CS pin
-//Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865(3);
 
-PT100Class PT100;
-
+// Generates the degree sign
 byte degree[8] =
 {
 	0b00011,
@@ -48,21 +57,8 @@ float setRefTemp() {
 	while (!done)
 	{
 		x = analogRead(A0);
-
-		//Serial.print(x);
-
-		x = map(x, pMin, pMax, 15, 35); // Translates potentiometer value and scales it from 0 to 100
-		//Serial.print("\t");
-		//Serial.println(x);
-
-		if (x == -1){
-			x = 0;
-		}
-
-		if (x>100){
-			x = 100;
-		}
-
+		x = map(x, pMin, pMax, 350, 150); // Translates potentiometer value and scales it from 15 to 35
+		x = x / 10;
 
 		lcd.setCursor(1, 0);
 		lcd.write("Set ref Temp:");
@@ -72,9 +68,7 @@ float setRefTemp() {
 		lcd.write(1);
 		lcd.write("C"); 
 		delay(100);
-		lcd.clear();
 
-		//Serial.print(val);
 		val = digitalRead(button);
 		if (val == 1)
 		{
@@ -104,15 +98,28 @@ void showStatus(float ref,float temp, bool mode) {
 		lcd.write("C");
 	}
 	else {
+		y = analogRead(A0);
+		y = map(y, 35, 1024, 100, 0);
 		lcd.setCursor(0, 0);
 		lcd.write("Load: ");
 		lcd.setCursor(7,0);
-		lcd.write("46 %");
+		lcd.print(y);
+		lcd.setCursor(9,0);
+		lcd.write("%");
 	}
 	
 }
 
-
+void start() {
+	lcd.setCursor(0, 0);
+	lcd.write("Press ok to");
+	lcd.setCursor(4, 1);
+	lcd.write("start");
+	while (digitalRead(button) == false) {
+		delay(50);
+	}
+	lcd.clear();
+}
 
 void setup()
 {
@@ -123,12 +130,10 @@ void setup()
 
 	PT100.init(PT100Bridge, MAX31865_3WIRE);
 
-	//SD_func.init(SD_pin, WiFi_func);
-
 	setRefTemp();
-	delay(2000);
-
-	
+	delay(1000);
+	lcd.clear();
+	start();
 }
 
 void loop()
@@ -144,7 +149,6 @@ void loop()
 	else{
 		mode = false;
 	}
-	Serial.print(digitalRead(button));
 	lcd.clear();
 	showStatus(x,temp, mode);
 
