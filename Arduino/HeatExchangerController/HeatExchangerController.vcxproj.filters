@@ -36,6 +36,9 @@
     <ClInclude Include="..\..\..\..\Documents\Arduino\I2C_LCD\LiquidCrystal_I2C.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Arduino\libraries\PID\PID_v1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PT100.cpp">
@@ -51,6 +54,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Documents\Arduino\I2C_LCD\LiquidCrystal_I2C.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PID_v1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
