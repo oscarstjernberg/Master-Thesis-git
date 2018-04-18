@@ -90,7 +90,7 @@ double setRefTemp() {
 	return Setpoint;
 }
 
-float showStatus(float ref, double temp, bool mode) {
+void showStatus(float ref, double temp, bool mode, double Output) {
 	
 	if (mode == false) {
 		lcd.setCursor(0, 0);
@@ -110,8 +110,8 @@ float showStatus(float ref, double temp, bool mode) {
 		lcd.print("C");
 	}
 	else {
-		y = analogRead(A0);
-		y = map(y, 27, 1024, 100, 0);
+		
+		y = map(Output, pwmMin, pwmMax, 0, 100);
 		lcd.setCursor(0, 0);
 		lcd.print("Load:");
 		lcd.setCursor(6,0);
@@ -119,7 +119,6 @@ float showStatus(float ref, double temp, bool mode) {
 		lcd.setCursor(12,0);
 		lcd.print("%");
 	}
-	return y;
 }
 
 void start() {
@@ -131,6 +130,30 @@ void start() {
 		delay(20);
 	}
 	lcd.clear();
+}
+
+bool modeSwitch(double temp, bool mode, double Output ) {
+	if (digitalRead(button) == 1) {
+		mode = true;
+	}
+	else {
+		mode = false;
+	}
+	lcd.clear();
+	showStatus(Setpoint, temp, mode, Output);
+	delay(50);
+	return mode;
+}
+
+void warning(double temp){
+	if (temp > 26)		// If the output temperature exceeds this value, the warning led light up.
+	{
+		digitalWrite(warningLED, HIGH);
+	}
+	else
+	{
+		digitalWrite(warningLED, LOW);
+	}
 }
 
 
@@ -196,36 +219,18 @@ void loop()
 {
 	double temp = PT100.read(PT100Bridge);
 
-	if (temp > 26)		// If the output temperature exceeds this value, the warning led light up.
-	{
-		digitalWrite(warningLED, HIGH);
-	}
-	else
-	{
-		digitalWrite(warningLED, LOW);
-	}
+	warning(temp);
 
 	if (digitalRead(MA) == 0)
 	{
 		Input = temp;
 		myPID.Compute();
 		analogWrite(Output, PWM_out);
+		// Prints the PWM-signal on the monitor
 		Serial.println(Output);
-
-		if (digitalRead(button) == 1) {
-			mode = true;
-		}
-		else {
-			mode = false;
-		}
-		lcd.clear();
-		showStatus(Setpoint, temp, mode);
-		delay(50);
+		modeSwitch(temp, mode, Output);
 	}
 	else {
-
-		manualMode(temp);
-		
+		manualMode(temp);	
 	}
-
 }
