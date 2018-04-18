@@ -3,7 +3,7 @@
 #include <Adafruit_MAX31865.h>
 #include <SD.h>
 #include "globals.h"
-#include <PID_v1.h>
+#include "PID_v1.h"
 
 #include "PT100.h"
 #include "SD_Functions.h"
@@ -28,12 +28,24 @@ int MA = 9;	// Manual/Automatic switch input
 int warningLED = 3;
 
 // PID parameters
-double Setpoint, Input, Output;
-PID myPID(&Input, &Output, &Setpoint, 2, 5, 1, DIRECT);
+double Setpoint;
+double Input;
+double Output;
+double Kp = 0.1;
+double Ki = 0.5;
+double Kd = 0;
+
+int pwmMin = 0;		// Minimum PWM-signal
+int pwmMax = 850;	// Maximum PWM-signal
+
+PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, REVERSE);
+
+
+
 
 int pMin = 27;	// minimum value from potentiometer
 int pMax = 1024;	// maximum value from potentiometer
-float x = 0; // stores readings of the potentiometer
+//float x = 0; // stores readings of the potentiometer
 float y;
 
 
@@ -50,19 +62,19 @@ byte degree[8] =
 	0b00000
 };
 
-float setRefTemp() {
+double setRefTemp() {
 	int val = 0;
 	bool done = false;
 	while (!done)
 	{
-		x = analogRead(A0);
-		x = map(x, pMin, pMax, 350, 150); // Translates potentiometer value and scales it from 15 to 35
-		x = x / 10;
+		Input = analogRead(A0);
+		Setpoint = map(Input, pMin, pMax, 150, 350); // Translates potentiometer value and scales it from 150 to 350
+		Setpoint = Setpoint / 10;	// Divides by 10 gives us a Setpoint from 15.0 to 35.0
 
 		lcd.setCursor(1, 0);
 		lcd.print("Set ref Temp:");
 		lcd.setCursor(5, 1);
-		lcd.print(x);
+		lcd.print(Setpoint);
 		lcd.setCursor(11, 1);
 		lcd.write(1);
 		lcd.print("C"); 
@@ -75,10 +87,10 @@ float setRefTemp() {
 		}
 		Serial.println(analogRead(A0));
 	}
-	return x;
+	return Setpoint;
 }
 
-float showStatus(float ref,float temp, bool mode) {
+float showStatus(float ref, double temp, bool mode) {
 	
 	if (mode == false) {
 		lcd.setCursor(0, 0);
@@ -122,18 +134,8 @@ void start() {
 }
 
 
-/*bool alarm(float a) {
-	if (a > 90)
-	{
-		// Warning high capacity or something........
-		return true;
-	}
-	else {
-		return false;
-	}
-}*/
 
-void manualMode(float temp) {
+void manualMode(double temp) {
 	lcd.clear();
 	int load = 0;
 	int value = analogRead(A0);
@@ -158,6 +160,7 @@ void manualMode(float temp) {
 	delay(100);
 }
 
+
 void setup()
 {
 	lcd.begin(16, 2);
@@ -165,22 +168,33 @@ void setup()
 	lcd.backlight();
 	Serial.begin(9600);
 	lcd.createChar(1, degree);
+
+	
 	pinMode(button, INPUT);
 	pinMode(MA, INPUT);
 	pinMode(warningLED, OUTPUT);
 
 	PT100.init(PT100Bridge, MAX31865_3WIRE);
 
+	// Tells the PID range between pwmMin and pwmMax.
+	myPID.SetOutputLimits(pwmMin, pwmMax);
+
+	// turn on the PID
+	myPID.SetMode(AUTOMATIC);
+
+	// Sets the reference temperature
 	setRefTemp();
 	delay(200);
 	lcd.clear();
+
+	// Asks the user to start
 	start();
 }
 
 
 void loop()
 {
-	float temp = PT100.read(PT100Bridge);
+	double temp = PT100.read(PT100Bridge);
 
 	if (temp > 26)		// If the output temperature exceeds this value, the warning led light up.
 	{
@@ -193,6 +207,11 @@ void loop()
 
 	if (digitalRead(MA) == 0)
 	{
+		Input = temp;
+		myPID.Compute();
+		analogWrite(Output, PWM_out);
+		Serial.println(Output);
+
 		if (digitalRead(button) == 1) {
 			mode = true;
 		}
@@ -200,8 +219,7 @@ void loop()
 			mode = false;
 		}
 		lcd.clear();
-		showStatus(x, temp, mode);
-		Serial.println(digitalRead(button));
+		showStatus(Setpoint, temp, mode);
 		delay(50);
 	}
 	else {
