@@ -21,6 +21,19 @@
 #define INTERVAL_GOOGLE 260000 // every 260 seconds ~= 5min
 #define INTERVAL_THINGSPEAK 120000
 
+// Reference values for setting the reference temperature
+#define pMin 27
+#define pMax 1024
+
+// Reference Values for the PWM-signal
+#define pwmMin 0
+#define pwmMax 850
+
+#define button D0
+
+// Temporary variable used to show the PID output on the lcd.
+//#define y 0
+
 // Serial print inside functions
 
 // #define SERIAL_PRINT_TEMPERATURE
