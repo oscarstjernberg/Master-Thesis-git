@@ -30,6 +30,7 @@
 #define pwmMax 850
 
 #define button D0
+#define warningLED 3
 
 // Temporary variable used to show the PID output on the lcd.
 //#define y 0

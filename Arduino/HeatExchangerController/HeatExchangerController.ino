@@ -11,7 +11,13 @@
 #include "Start.h"	
 #include "ManualMode.h"
 #include "ModeSwitch.h"
+#include "Warning.h"
 
+////////////////////////////////////
+//           Class cals          //
+///////////////////////////////////
+
+// lcd(adress, cols, rows) adress may vary depending on microprocessor
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 SetRefTempClass SetRefTemp_func;
@@ -22,23 +28,16 @@ ManualModeClass ManualMode_func;
 
 ModeSwitchClass ModeSwitch_func;
 
+WarningClass warning_func;
+
 Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865(D4);
 PT100Class PT100;
 
-
 ////////////////////////////////////
-//          MISC SETTINGS         //
+//          PID SETTINGS         //
 ///////////////////////////////////
 
-//int button = D0;	// ok/status button input
-bool mode = false;	// Varible which decides what to be printed on the LCD
-int PWM_out = D3;	// PWM output pin
-int MA = 9;	// Manual/Automatic switch input
-int warningLED = 3;
-int load = 0;
-int value = 0;
-
-// PID parameters
+// Parameters
 double Setpoint;
 double Input;
 double Output;
@@ -48,7 +47,18 @@ double Kd = 0;
 // Temporary variable used to show the PID output on the lcd.
 int y = 0;
 
-PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, REVERSE);
+PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, REVERSE);  
+
+////////////////////////////////////
+//          MISC SETTINGS         //
+///////////////////////////////////
+
+//int button = D0;	// ok/status button input
+bool mode = false;	// Varible which decides what to be printed on the LCD
+int PWM_out = D3;	// PWM output pin
+int MA = 9;	// Manual/Automatic switch input
+int load = 0;
+int value = 0;
 
 // Generates the degree sign
 byte degree[8] =
@@ -63,30 +73,22 @@ byte degree[8] =
 	0b00000
 };
 
-void warning(double temp){
-	if (temp > 26)		// If the output temperature exceeds this value, the warning led light up.
-	{
-		digitalWrite(warningLED, HIGH);
-	}
-	else
-	{
-		digitalWrite(warningLED, LOW);
-	}
-}
-
 void setup()
 {
+	// Starts the LCD screen
 	lcd.begin(16, 2);
 	lcd.init();
 	lcd.backlight();
-	Serial.begin(9600);
-	lcd.createChar(1, degree);
 
-	
+	Serial.begin(9600);		// Starts serial communication
+	lcd.createChar(1, degree); // Creates the degree sign and gives it the "call name" 1
+
+	// Set specific pins to input and output
 	pinMode(button, INPUT);
 	pinMode(MA, INPUT);
 	pinMode(warningLED, OUTPUT);
 
+	// Initializes the PT100 sensor and amplifier
 	PT100.init(PT100Bridge, MAX31865_3WIRE);
 
 	// Tells the PID range between pwmMin and pwmMax.
@@ -104,15 +106,18 @@ void setup()
 	// Asks the user to start
 	//start();
 	Start_func.start(lcd);
-}
+}// end setup
 
 
 void loop()
 {
+	// Reads the temperature from the PT100 sensor
 	double temp = PT100.read(PT100Bridge);
 
-	warning(temp);
+	// Checks that the output temperarure is not to high
+	warning_func.warning(temp);
 
+	// Running automaticmode using a PID or manual
 	if (digitalRead(MA) == 0)
 	{
 		Input = temp;
@@ -126,4 +131,4 @@ void loop()
 	else {
 		ManualMode_func.manualMode(temp, load, value, lcd);
 	}
-}
+}// end loop
