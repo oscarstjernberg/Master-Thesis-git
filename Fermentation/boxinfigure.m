@@ -12,3 +12,6 @@ box on % put box around new pair of axes
 index = [7000, 90000];
 plot(index(1):index(2),1-duty_cycle_weight.Data(index(1):index(2)))
 axis tight
+% Clear the axis values of the box
+xticks([]);
+yticks([]);
