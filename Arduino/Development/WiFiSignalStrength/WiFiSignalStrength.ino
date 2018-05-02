@@ -2,8 +2,8 @@
 #include <ESP8266WiFi.h>
 
 //SSID of your network 
-char ssid[] = "Combine";
-char pass[] = "plasmakorv";
+char ssid[] = "SadRobot";
+char pass[] = "RiverTam";
 
 
 
@@ -33,7 +33,7 @@ Serial.println(WiFi.localIP());
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   connectToWiFi();
 

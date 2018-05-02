@@ -54,7 +54,7 @@
     <ClInclude Include="ModeSwitch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WarningLED.h">
+    <ClInclude Include="Warning.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,7 +92,7 @@
     <ClCompile Include="ModeSwitch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WarningLED.cpp">
+    <ClCompile Include="Warning.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
