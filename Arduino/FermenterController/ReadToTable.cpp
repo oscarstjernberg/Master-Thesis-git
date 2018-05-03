@@ -7,15 +7,21 @@
 
 #include "ReadToTable.h"
 
-int ReadToTableClass::getTemp(int index) {
-	
+void ReadToTableClass::init(int CS_PIN, File &file)
+{
+	// Initialize the SD.
+	if (!SD.begin(CS_PIN)) {
+		errorHalt("begin failed");
+	}
+	// Create or open the file.
+	file = SD.open("file.txt", FILE_WRITE);
+	if (!file) {
+		errorHalt("open failed");
+	}
+	file.close();
 }
 
-int ReadToTableClass::getTime(int index) {
-
-}
-
-void ReadToTableClass::init(File &file)
+void ReadToTableClass::read(File &file)
 {
 	file = SD.open("file.txt",FILE_READ);
 	// Find number of lines in file.
@@ -96,6 +102,20 @@ void ReadToTableClass::init(File &file)
 	file.close();
 }
 
+int	 ReadToTableClass::currentIndex(int millis)
+{	
+	int hour = millis / MillisToHour;
+
+		if (hour > Time_ref[Index] && Index < ROW_DIM)
+		{
+			return ++Index;
+		}
+		else
+		{
+			return Index;
+		}
+}
+
 int ReadToTableClass::readField(File* file, char* str, size_t size, char* delim) {
 	char ch;
 	int n = 0;
@@ -113,6 +133,4 @@ int ReadToTableClass::readField(File* file, char* str, size_t size, char* delim)
 	return n;
 }
 
-
 ReadToTableClass ReadToTable;
-

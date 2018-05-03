@@ -11,7 +11,10 @@
 
 #include "globals.h"
 #include "WiFi_Functions.h"
+
+#ifndef __SD_H__
 #include <SD.h>
+#endif // !__SD_H__
 
 class SD_FunctionsClass
 {
