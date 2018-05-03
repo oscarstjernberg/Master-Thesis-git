@@ -17,9 +17,15 @@ PT100Class PT100;
 // SD functions for init and write
 SD_FunctionsClass SD_func;
 
-ReadToTableClass read_func;
+ReadToTableClass table_func;
 
 StartClass start_func;
+
+////////////////////////////////////
+//          DUTY CYCLE            //
+///////////////////////////////////
+
+
 
 ////////////////////////////////////
 //          PID SETTINGS         //
@@ -60,10 +66,36 @@ byte degree[8] =
 	0b00000
 };
 
-void selectProfile()
+
+void dutyCycle(double Output)
 {
- 
+
 }
+
+/*
+function u  = duty_cycle(e,t)
+global  duty_cycle_weight_sigmf
+% Slope of the sigmoid function
+sig_slope = 3;
+% Point of 1/2 output from the sigmoid function
+sig_half= 0.45;
+% Duty time which gets divided to an active and an inactive phase
+duty_cycle_time = 0.25;
+% The modulus of the current time of the cycle time corresponds to
+% percentage of the current cycle
+t_in_cycle=mod(t,duty_cycle_time);
+
+% Approx steady state active phase
+if t_in_cycle ==0
+duty_cycle_weight_sigmf = sigmf(e,[sig_slope,sig_half]);
+end
+
+if  t_in_cycle/duty_cycle_time > duty_cycle_weight_sigmf
+u=1;
+else
+u=0;
+end
+*/
 
 void setup()
 {
@@ -78,13 +110,24 @@ void setup()
 
 	start_func.start(lcd);
 
-	lcd.setCursor(1,0);
-	lcd.print("Hello");
-	Serial.println("Test");
-	delay(10000);
-
 	// Initializes the PT100 sensor and amplifier
 	PT100.init(PT100Bridge, MAX31865_3WIRE);
+
+	// Initialize the SD.
+	if (!SD.begin(CS_PIN)) {
+		errorHalt("begin failed");
+	}
+	// Create or open the file.
+	file = SD.open("file.txt", FILE_WRITE);
+	if (!file) {
+		errorHalt("open failed");
+	}
+	file.close();
+
+	// Read the file and import to Temp_ref and Time_ref
+	// file must be named file.txt
+	// Accessed via Table.Temp_ref[i] Table.Time_ref[i] 
+	Table.init(file);
 
 	// turn on the PID
 	myPID.SetMode(AUTOMATIC);
@@ -97,8 +140,7 @@ void loop()
 	//double temp = PT100.read(PT100Bridge);
 
 	myPID.Compute();
-	s = 1 / (1 + exp(-slope * (Output - half)));
-	Serial.println(s);
+
 
 	lcd.setCursor(1,0);
 	lcd.print("Set temp");
