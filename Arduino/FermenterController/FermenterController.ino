@@ -12,7 +12,7 @@
 #include "ReadToTable.h"
 
 // lcd(adress, cols, rows) adress may vary depending on I2C display. Common adresses are 0x27 and 0x3F.
-// LiquidCrystal_I2C lcd(0x3F, 16, 2);
+ LiquidCrystal_I2C lcd(0x3F, 16, 2);
 
 // Temperature sensor
 Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865(D8);
@@ -32,7 +32,7 @@ File file;
 StartClass start_func;
 
 // Controller function
-ControllerClass Controller;
+ControllerClass Controller_func;
 
 
 ////////////////////////////////////
@@ -119,7 +119,7 @@ void loop()
 	myPID.Compute();
 
 	// Control
-	Controller.Control(Output_PID, control_pin);
+	Controller_func.Control(Output_PID, control_pin);
 	
 
 	lcd.setCursor(1,0);
