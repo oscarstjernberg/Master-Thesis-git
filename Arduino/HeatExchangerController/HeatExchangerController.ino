@@ -45,7 +45,7 @@ double Kp = 0.1;
 double Ki = 0.5;
 double Kd = 0;
 // Temporary variable used to show the PID output on the lcd.
-int y = 0;
+int y = 0; // remove!
 
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, REVERSE);  
 
