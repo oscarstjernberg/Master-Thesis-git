@@ -1,0 +1,30 @@
+clc
+close all
+tdfread('Sensordata1.tsv');
+
+Current_measurement(581:1154) = Current_measurement(581:1154) + 4.082;
+Current_measurement(1155:1693) = Current_measurement(1155:1693) + 12.4;
+Current_measurement(1694:2500) = Current_measurement(1694:2500) + 18.78;
+
+Current_measurement(1:2500) = smooth(Current_measurement(1:2500),10);
+
+% Convert to ABV
+Current_measurement = Current_measurement*(4.33/20.5);
+
+x = linspace(0,160,length(Current_measurement(286:2500)));
+
+
+plot(x,Current_temperature(286:2500))
+%hold on
+plot(x,Current_temperature(286:2500))
+
+title('Fermentation at 14 degree Celcius')
+xlabel('Time (hours)')
+ylabel('Temperature (C)')
+legend('Load cell', 'Temperature')
+yyaxis right
+ylabel('Load cell measurement (Ohm)')
+axis([0 160 0 8])
+
+
+
