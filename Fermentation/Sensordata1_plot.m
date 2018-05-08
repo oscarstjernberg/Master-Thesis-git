@@ -17,11 +17,7 @@ Current_measurement = Current_measurement*(4.33/20.5);
 
 x = linspace(0,160,length(Current_measurement(286:2500)));
 
-
-
 plot(x,Current_temperature(286:2500))
-%hold on
-
 
 title('Fermentation at 14 degree Celcius')
 xlabel('Time (hours)')
