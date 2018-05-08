@@ -33,9 +33,6 @@
     <ClInclude Include="globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Documents\Arduino\I2C_LCD\LiquidCrystal_I2C.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\Documents\Arduino\libraries\PID\PID_v1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -69,9 +66,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="globals.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Documents\Arduino\I2C_LCD\LiquidCrystal_I2C.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PID_v1.cpp">

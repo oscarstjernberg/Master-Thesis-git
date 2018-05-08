@@ -26,8 +26,8 @@
 #define pMax 1024
 
 // Reference Values for the PWM-signal
-#define pwmMin 0
-#define pwmMax 850
+#define pwmMin 450
+#define pwmMax 700
 
 #define button D0
 #define warningLED 3

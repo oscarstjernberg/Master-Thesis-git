@@ -1,12 +1,10 @@
-
-
 #include <Adafruit_MAX31865.h>
 #include "globals.h"
-#include "PID_v1.h"
+#include "LiquidCrystal_I2C.h"
 
+#include "PID_v1.h"
 #include "PT100.h"
 #include "SD_Functions.h"
-#include "LiquidCrystal_I2C.h"
 #include "SetRefTemp.h"
 #include "Start.h"	
 #include "ManualMode.h"
@@ -30,7 +28,7 @@ ModeSwitchClass ModeSwitch_func;
 
 WarningClass warning_func;
 
-Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865(D4);
+Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865(D4, D6, D7, D5);
 PT100Class PT100;
 
 ////////////////////////////////////
@@ -41,8 +39,8 @@ PT100Class PT100;
 double Setpoint;
 double Input;
 double Output;
-double Kp = 0.1;
-double Ki = 0.5;
+double Kp = 30;
+double Ki = 3;
 double Kd = 0;
 // Temporary variable used to show the PID output on the lcd.
 int y = 0; // remove!
@@ -122,13 +120,21 @@ void loop()
 	{
 		Input = temp;
 		myPID.Compute();
-		analogWrite(Output, PWM_out);
-		// Prints the PWM-signal on the monitor
-		Serial.println(Output);
+		analogWrite(PWM_out, Output);
+		
 		//modeSwitch(temp, mode, Output);
 		mode = ModeSwitch_func.modeSwitch(temp, mode, Output, y, lcd, Setpoint);
 	}
 	else {
 		ManualMode_func.manualMode(temp, load, value, lcd);
 	}
+	// Prints the PWM-signal on the monitor
+	Serial.print(Output);
+	Serial.print("\t");
+	Serial.print(temp);
+	Serial.print("\t");
+	Serial.print(millis());
+	Serial.println();
+
+	
 }// end loop
