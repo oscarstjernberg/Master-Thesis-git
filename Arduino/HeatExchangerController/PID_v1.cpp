@@ -80,7 +80,7 @@ bool PID::Compute()
       else output = 0;
 
       /*Compute Rest of PID Output*/
-      output += outputSum - kd * dInput;
+      output += outputSum + kd * MovingAverage(error);
 
 	    if(output > outMax) output = outMax;
       else if(output < outMin) output = outMin;
@@ -210,6 +210,45 @@ void PID::SetControllerDirection(int Direction)
    }
    controllerDirection = Direction;
 }
+
+void PID::SetMovingAverageWindow(int WindowSize) 
+{
+	if (WindowSize > 32)
+	{
+		n = 32;
+	}
+	else if (WindowSize < 1)
+	{
+		n = 1;
+	}
+	else
+	{
+		n = WindowSize;
+	}
+	// Calculate the normalizing denominator
+	D = 1 / 2 * n*(n + 1);
+}
+
+double PID::MovingAverage(double error)
+{
+	// Shift all elements in history buffer one step
+	for (int i = n-1; i >= 0; i--)
+	{
+		errorBuffer[i + 1] = errorBuffer[i];
+	}
+	// Add latest error to buffer
+	errorBuffer[0] = error;
+
+	// Calculate the weighted moving average
+	for (int i = 0; i < n; i++)
+	{	
+		WMA += (n-i)*errorBuffer[i];
+	}
+	// Normalize the average and return
+	return WMA / D;
+}
+
+
 
 /* Status Funcions*************************************************************
  * Just because you set the Kp=-1 doesn't mean it actually happened.  these

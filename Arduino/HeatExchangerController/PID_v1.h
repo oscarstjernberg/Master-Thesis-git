@@ -37,6 +37,7 @@ class PID
 	
 
 
+
   //available but not commonly used functions ********************************************************
     void SetTunings(double, double,       // * While most users will set the tunings once in the 
                     double);         	    //   constructor, this function gives the user the option
@@ -50,7 +51,11 @@ class PID
 										  //   once it is set in the constructor.
     void SetSampleTime(int);              // * sets the frequency, in Milliseconds, with which 
                                           //   the PID calculation is performed.  default is 100
-										  
+
+	void SetMovingAverageWindow(int);	  // Set the window size for the moving average used in 
+										  // smoothing for use of the derivative part of the PID
+
+
 										  
 										  
   //Display functions ****************************************************************
@@ -62,6 +67,8 @@ class PID
 
   private:
 	void Initialize();
+
+	double MovingAverage(double);
 	
 	double dispKp;				// * we'll hold on to the tuning parameters in user-entered 
 	double dispKi;				//   format for display purposes
@@ -78,6 +85,11 @@ class PID
     double *myOutput;             //   This creates a hard link between the variables and the 
     double *mySetpoint;           //   PID, freeing the user from having to constantly tell us
                                   //   what these values are.  with pointers we'll just know.
+
+	int n = 1;						  // Moving average window size
+	double D;					  // Denominator used for moving average normalization
+	double errorBuffer[32];		  // Buffer for saving history of errors
+	double WMA;					  // Weighted Moving Average
 			  
 	unsigned long lastTime;
 	double outputSum, lastInput;
