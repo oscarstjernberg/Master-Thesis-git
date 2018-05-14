@@ -21,15 +21,18 @@ Measurement = Measurement*(9/19.75);
 
 x = linspace(0,160,length(Measurement(60:2294)));
 
-plot(x,Temperature(60:2294))
+plot(x,Temperature(60:2294),'linewidth',1.5)
 
 title('Test of measurement equipment')
 xlabel('Time (hours)')
 ylabel('Temperature (C)')
 
 yyaxis right
-plot(x,Measurement(60:2294))
+plot(x,Measurement(60:2294),'linewidth',1.5)
 ylabel('ABV (%)')
 axis([0 160 0 10])
 
 legend('Temperature', 'ABV', 'location','east')
+grid on
+set(gca,'fontsize',18)
+set(gca,'LineWidth',2)

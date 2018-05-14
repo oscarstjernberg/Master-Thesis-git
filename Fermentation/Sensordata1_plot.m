@@ -1,6 +1,5 @@
 % Plot from first fermentation at 14 C
 %
-% TODO! fixe font size and linewidth!!!!!
 %
 clc
 close all
@@ -17,17 +16,23 @@ Current_measurement = Current_measurement*(4.33/20.5);
 
 x = linspace(0,160,length(Current_measurement(286:2500)));
 
-plot(x,Current_temperature(286:2500))
+plot(x,Current_temperature(286:2500),'linewidth',1.5)
 
-title('Fermentation at 14 degree Celcius')
+
 xlabel('Time (hours)')
 ylabel('Temperature (C)')
+hold on
 
 axis([0 160 10 18])
 yyaxis right
-plot(x,Current_measurement(286:2500))
+plot(x,Current_measurement(286:2500),'linewidth',1.5)
+plot(sim_ABV*100,'linewidth',1.5)
 ylabel('ABV (%)')
 axis([0 160 0 5])
-legend('Temperature', 'ABV', 'location','northwest')
+xlabel("Time [ hours ]")
+grid on
 
-
+legend('Temperature', 'ABV', 'Simulated ABV', 'location','northwest')
+title('Fermentation at 14 degree Celcius')
+set(gca,'fontsize',18)
+set(gca,'LineWidth',2)

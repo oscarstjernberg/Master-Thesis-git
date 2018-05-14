@@ -21,7 +21,7 @@ T = [4, 8, 12, 16]';
 OG = 1060; 
 
 % ABV_limit
-ABV_lim = 0.0433;
+ABV_lim = 0.04;
 
 % variabels
 a = 40/142.3;

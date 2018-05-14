@@ -80,7 +80,7 @@ bool PID::Compute()
       else output = 0;
 
       /*Compute Rest of PID Output*/
-      output += outputSum + kd * MovingAverage(error);
+      output += outputSum + kd * MovingAverage(dInput);
 
 	    if(output > outMax) output = outMax;
       else if(output < outMin) output = outMin;
@@ -229,7 +229,7 @@ void PID::SetMovingAverageWindow(int WindowSize)
 	D = 1 / 2 * n*(n + 1);
 }
 
-double PID::MovingAverage(double error)
+double PID::MovingAverage(double dInput)
 {
 	// Shift all elements in history buffer one step
 	for (int i = n-1; i >= 0; i--)
@@ -237,7 +237,7 @@ double PID::MovingAverage(double error)
 		errorBuffer[i + 1] = errorBuffer[i];
 	}
 	// Add latest error to buffer
-	errorBuffer[0] = error;
+	errorBuffer[0] = dInput;
 
 	// Calculate the weighted moving average
 	for (int i = 0; i < n; i++)

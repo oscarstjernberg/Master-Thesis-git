@@ -116,7 +116,11 @@ void loop()
 	warning_func.warning(temp);
 
 	// Running automaticmode using a PID or manual
-	if (digitalRead(MA) == 0)
+	bool AutoManual = digitalRead(MA);
+	Serial.print("A/M state: ");
+	Serial.println(AutoManual);
+
+	if (!AutoManual)
 	{
 		Input = temp;
 		myPID.Compute();
