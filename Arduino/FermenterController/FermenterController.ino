@@ -39,7 +39,9 @@ ControllerClass Controller_func;
 //          DUTY CYCLE            //
 ///////////////////////////////////
 
-
+int interval = 180000;	// interval of 3 min
+unsigned long previousMillis = 0;
+int first_run = 1;
 
 ////////////////////////////////////
 //          PID SETTINGS         //
@@ -63,6 +65,7 @@ PID myPID(&Input_PID, &Output_PID, &Setpoint_PID, Kp, Ki, Kd, REVERSE);
 // SD
 const int SD_pin = D3;
 const int control_pin = D4;
+const int relay_pin = D4;
 
 // Generates the degree sign
 byte degree[8] =
@@ -77,9 +80,16 @@ byte degree[8] =
 	0b00000
 };
 
+double sigmoid(double Output) {
+	double s;
+	s = exp(Output) / (exp(Output) + 1);
+	return s;
+}
 
 void setup()
 {
+
+
 	lcd.begin(16, 2);
 	lcd.init(); 
 	lcd.backlight();
@@ -89,11 +99,14 @@ void setup()
 
 	pinMode(button, INPUT);
 	pinMode(control_pin, OUTPUT);
+	pinMode(relay_pin, OUTPUT);
+	digitalWrite(relay_pin, LOW);
 
 	start_func.start(lcd);
+	delay(50);
 
 	// Initializes the PT100 sensor and amplifier
-	PT100.init(PT100Bridge, MAX31865_3WIRE);
+	//PT100.init(PT100Bridge, MAX31865_3WIRE);
 
 	table_func.init(SD_pin, file);
 	// Read the file and import to Temp_ref and Time_ref
@@ -108,25 +121,40 @@ void setup()
 void loop()
 {
 	// Reads the temperature from the PT100 sensor
-	double temp = PT100.read(PT100Bridge);
+	//double temp = PT100.read(PT100Bridge);
+	double temp = 23;
+	double s;
 	Serial.println("Temperature Measurement: ");
 	Serial.println(temp);
 
 	// Calculate error
 	Input_PID = table_func.Temp_ref[table_func.currentIndex(millis())] - temp;
-	
+
 	// Calculate PID output
 	myPID.Compute();
 
 	// Control
 	Controller_func.Control(Output_PID, control_pin);
-	
 
-	lcd.setCursor(1,0);
-	lcd.print("Set temp");
+	unsigned long currentMillis = millis();
+
+
+	if (currentMillis - previousMillis >= interval || currentMillis < first_run = 1)
+	{
+		s = sigmoid(Output_PID);
+		first_run = 0;
+	}
+
+	lcd.setCursor(0,0);
+	lcd.print("Ref temp:");
+	lcd.setCursor(10,0);
+	lcd.print(table_func.currentIndex(millis()));
 	// reads the current temp from sd card
 	lcd.setCursor(0,1);
-	lcd.print("Cur temp");
-	lcd.setCursor(9,1);
+	lcd.print("Cur temp:");
+	lcd.setCursor(10,1);
+	lcd.print(temp);
+	analogWrite(relay_pin, 1024);
 	delay(100);
+	analogWrite(relay_pin,0);
 }
