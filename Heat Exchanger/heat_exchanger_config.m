@@ -86,10 +86,10 @@ HE_delay = 50;
 
 %% Transfer function definition linearization
 % Constructing the linearized A-matrix
-A(1,1) = (-u_wort_0*cp_wort-U*Area)/(m_wort*cp_wort);
+A(1,1) = (u_wort_0*cp_wort-U*Area)/(m_wort*cp_wort);
 A(1,2) = U*Area/(m_wort*cp_wort);
 A(2,1) = U*Area/(m_H2O*cp_H2O);
-A(2,2) = (-u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
+A(2,2) = (u_H2O_0*cp_H2O-U*Area)/(m_H2O*cp_H2O);
      
  % Constructing the linearized B-Matrix
    B = [(cp_wort*(T_wort_in - x_wort_0))/(m_wort*cp_wort) 0

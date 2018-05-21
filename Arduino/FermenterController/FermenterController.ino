@@ -1,6 +1,7 @@
 #include <Wire.h>
 #include <Adafruit_MAX31865.h>
 #include <SD.h>
+#include <SPI.h>
 
 #include "Controller.h"
 #include "LiquidCrystal_I2C.h"
@@ -15,7 +16,7 @@
  LiquidCrystal_I2C lcd(0x3F, 16, 2);
 
 // Temperature sensor
-Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865(D8);
+Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865();
 
 PT100Class PT100;
 
@@ -71,7 +72,8 @@ PID myPID(&Input_PID, &Output_PID, &Setpoint_PID, Kp, Ki, Kd, REVERSE);
 // SD
 const int SD_pin = D3;
 const int control_pin = D4;
-const int relay_pin = D4;
+
+
 
 // Generates the degree sign
 byte degree[8] =
@@ -96,15 +98,14 @@ void setup()
 	Serial.begin(9600);
 
 	pinMode(button, INPUT);
-	//pinMode(control_pin, OUTPUT);
-	pinMode(relay_pin, OUTPUT);
-	digitalWrite(relay_pin, LOW);
+	pinMode(control_pin, OUTPUT);
+
 
 	start_func.start(lcd);
 	delay(50);
 
 	// Initializes the PT100 sensor and amplifier
-	//PT100.init(PT100Bridge, MAX31865_3WIRE);
+	PT100.init(PT100Bridge, MAX31865_3WIRE);
 
 	table_func.init(SD_pin, file);
 	// Read the file and import to Temp_ref and Time_ref
@@ -119,32 +120,27 @@ void setup()
 void loop()
 {
 	// Reads the temperature from the PT100 sensor
-	//double temp = PT100.read(PT100Bridge);
-	double temp = 23;
+	double temp = PT100.read(PT100Bridge);
 	Serial.println("Temperature Measurement: ");
 	Serial.println(temp);
 
 	// Calculate error
-	Input_PID = table_func.Temp_ref[table_func.currentIndex(millis())] - temp;
+	Input_PID = table_func.GetCurrentTemp() - temp;
 
 	// Calculate PID output
 	myPID.Compute();
 
 	// Control
 	Controller_func.Control(Output_PID, control_pin);
-	
-	unsigned long currentMillis = millis();
+
 
 	lcd.setCursor(0,0);
 	lcd.print("Ref temp:");
 	lcd.setCursor(10,0);
-	lcd.print(table_func.currentIndex(millis()));
+	lcd.print(table_func.GetCurrentTemp());
 	// reads the current temp from sd card
 	lcd.setCursor(0,1);
 	lcd.print("Cur temp:");
 	lcd.setCursor(10,1);
 	lcd.print(temp);
-	analogWrite(relay_pin, 1024);
-	delay(100);
-	analogWrite(relay_pin,0);
 }

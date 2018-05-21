@@ -26,6 +26,10 @@ public:
 
 	void init(int CS_PIN, File &file);
 	void read(File &file);
+	
+	double GetCurrentTemp();
+
+private:
 	int	 currentIndex(int millis);
 
 protected:
@@ -42,6 +46,7 @@ protected:
 
 
 	int readField(File* file, char* str, size_t size, char* delim);
+
 };
 
 extern ReadToTableClass ReadToTable;

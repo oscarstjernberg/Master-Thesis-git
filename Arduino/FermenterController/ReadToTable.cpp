@@ -116,6 +116,12 @@ int	 ReadToTableClass::currentIndex(int millis)
 		}
 }
 
+double ReadToTableClass::GetCurrentTemp()
+{
+	return double(Temp_ref[currentIndex(millis())]);
+
+}
+
 int ReadToTableClass::readField(File* file, char* str, size_t size, char* delim) {
 	char ch;
 	int n = 0;
