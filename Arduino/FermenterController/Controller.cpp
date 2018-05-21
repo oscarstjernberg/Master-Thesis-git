@@ -16,7 +16,7 @@ void ControllerClass::Control(double error, int control_pin)
 
 	if (millis()-duty_cycle_fraction*duty_cycle < millis_start_active_phase || just_active)
 	{
-		digitalWrite(control_pin, HIGH);
+		analogWrite(control_pin, 1024);
 		if (just_active)
 		{
 			millis_start_active_phase = millis();
@@ -25,7 +25,7 @@ void ControllerClass::Control(double error, int control_pin)
 	}
 	else
 	{
-		digitalWrite(control_pin, LOW);
+		analogWrite(control_pin, 0);
 		if (millis() > millis_start_active_phase+duty_cycle)
 		{
 			just_active = true;

@@ -39,9 +39,15 @@ ControllerClass Controller_func;
 //          DUTY CYCLE            //
 ///////////////////////////////////
 
+double s;
 int interval = 180000;	// interval of 3 min
-unsigned long previousMillis = 0;
-int first_run = 1;
+int open = 0;
+unsigned long previousMillis = 10000000000000;	// set to a high value just so the sigmoid function is 
+												// calculated the first run-loop
+
+unsigned long previousMillisOpen = 0;			// Used for opening the valve
+
+
 
 ////////////////////////////////////
 //          PID SETTINGS         //
@@ -80,16 +86,8 @@ byte degree[8] =
 	0b00000
 };
 
-double sigmoid(double Output) {
-	double s;
-	s = exp(Output) / (exp(Output) + 1);
-	return s;
-}
-
 void setup()
 {
-
-
 	lcd.begin(16, 2);
 	lcd.init(); 
 	lcd.backlight();
@@ -98,7 +96,7 @@ void setup()
 	Serial.begin(9600);
 
 	pinMode(button, INPUT);
-	pinMode(control_pin, OUTPUT);
+	//pinMode(control_pin, OUTPUT);
 	pinMode(relay_pin, OUTPUT);
 	digitalWrite(relay_pin, LOW);
 
@@ -123,7 +121,6 @@ void loop()
 	// Reads the temperature from the PT100 sensor
 	//double temp = PT100.read(PT100Bridge);
 	double temp = 23;
-	double s;
 	Serial.println("Temperature Measurement: ");
 	Serial.println(temp);
 
@@ -135,15 +132,8 @@ void loop()
 
 	// Control
 	Controller_func.Control(Output_PID, control_pin);
-
+	
 	unsigned long currentMillis = millis();
-
-
-	if (currentMillis - previousMillis >= interval || currentMillis < first_run = 1)
-	{
-		s = sigmoid(Output_PID);
-		first_run = 0;
-	}
 
 	lcd.setCursor(0,0);
 	lcd.print("Ref temp:");
