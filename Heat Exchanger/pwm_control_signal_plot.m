@@ -11,7 +11,7 @@ grid on
 
 axis([0 8 0 12]);
 
-set(gca,'fontsize',24)
+set(gca,'fontsize',18)
 set(gca,'LineWidth',2)
 
 title('Output signal');
