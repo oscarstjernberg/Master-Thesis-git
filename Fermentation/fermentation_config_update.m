@@ -116,21 +116,34 @@ ki_M0 = 6360;
 
 %% Control
 % Reference values
-T_0 = 12;
+T_0 = 14;
 % Coolant temperature
+<<<<<<< HEAD
 T_c = 2;
 % Surrounding temperature
 T_s=25;
+=======
+T_c = 12.5;
+% Surrounding temperature
+T_s=12.5;
+>>>>>>> 90a1ccbe9ecc2df426d1714efdf58692d911ced6
 
 % Reference value
 T_ref(:,1)=0:250;
 
 %T_ref(:,2)=12;
 %T_ref(1:end,2)=19;
+<<<<<<< HEAD
 T_ref (1:50,2) = 14;
 T_ref(51:120,2)= 16;
 T_ref(121:180,2)=12;
 T_ref(181:251,2) = 12;
+=======
+T_ref (1:50,2) = 15;
+T_ref(51:120,2)= 15;
+T_ref(121:180,2)=15;
+T_ref(181:251,2) = 15;
+>>>>>>> 90a1ccbe9ecc2df426d1714efdf58692d911ced6
 
 
 
