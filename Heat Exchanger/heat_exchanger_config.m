@@ -82,7 +82,7 @@ wort_low_lim=0.1;
 H2O_up_lim=100;
 H2O_low_lim=0.1;
 % Delay for heat exchanger
-HE_delay = 50;
+HE_delay = 30;
 
 %% Transfer function definition linearization
 % Constructing the linearized A-matrix
