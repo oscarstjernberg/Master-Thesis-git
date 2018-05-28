@@ -16,7 +16,7 @@
  LiquidCrystal_I2C lcd(0x3F, 16, 2);
 
 // Temperature sensor
-Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865();
+ Adafruit_MAX31865 PT100Bridge = Adafruit_MAX31865(12, 11, 9, 10);
 
 PT100Class PT100;
 
@@ -70,7 +70,7 @@ PID myPID(&Input_PID, &Output_PID, &Setpoint_PID, Kp, Ki, Kd, REVERSE);
 
 
 // SD
-const int SD_pin = D3;
+const int SD_pin = D8;
 const int control_pin = D4;
 
 
